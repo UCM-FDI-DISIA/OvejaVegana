@@ -19,7 +19,20 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\OvejaVeganaSolucion.cpp" />
+    <ClCompile Include="..\src\Components\BulletComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorMovementComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorPlayerInputComponent.cpp" />
+    <ClCompile Include="..\src\Components\MovementComponent.cpp" />
+    <ClCompile Include="..\src\Components\PlayerInputComponent.cpp" />
+    <ClCompile Include="..\src\OvejaVeganaSolucion\OvejaVeganaSolucion.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\Components\BulletComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorMovementComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorPlayerInputComponent.h" />
+    <ClInclude Include="..\src\Components\MovementComponent.h" />
+    <ClInclude Include="..\src\Components\PlayerInputComponent.h" />
+    <ClInclude Include="..\src\Export.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -114,7 +127,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;OVEJAVEGANA_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
@@ -133,7 +146,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;OVEJAVEGANA_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
