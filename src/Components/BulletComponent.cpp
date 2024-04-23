@@ -23,7 +23,8 @@ void OvejaVegana::BulletComponent::ShootBullet(VeryReal::Vector3 dir)
 	
 }
 
-void OnCollisionEnter(VeryReal::Entity* other)
+
+void OvejaVegana::BulletComponent::OnCollisionEnter(VeryReal::Entity* other)
 {
 	if(other->HasComponent("LifeComponent"))
 	{

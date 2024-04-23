@@ -22,6 +22,7 @@ namespace OvejaVegana
 		inline void SetMoventDirectionX(float X) { movementDirection.SetX(X); }
 		inline void SetMoventDirectionY(float Y) { movementDirection.SetY(Y); }
 		inline void SetMoventDirectionZ(float Z) { movementDirection.SetZ(Z); }
+		inline void SetSpeed(float Speed) { this->speed = Speed; }
 
 	private:
 		float speed = 1;

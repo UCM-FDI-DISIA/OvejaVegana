@@ -11,5 +11,4 @@ void OvejaVegana::CreatorPlayerInputComponent::SpecificInitComponent(VeryReal::C
     if (!pi->InitComponent()) {
         // Gestion de error
     }
-      
 }
