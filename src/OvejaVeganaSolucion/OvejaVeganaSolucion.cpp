@@ -29,8 +29,8 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
     __declspec(dllexport) bool start() {
         //CREACION DE TODOS LOS COMPONENETES DEL JUEGO
 
-        ScriptManager::Instance()->ReadScene("HouseScene");
-        VeryReal::SceneManager::Instance()->GetScene("HouseScene")->SetActive(true);
+        ScriptManager::Instance()->ReadScene("Level1Scene");
+        VeryReal::SceneManager::Instance()->GetScene("Level1Scene")->SetActive(true);
         return true;
     }
 

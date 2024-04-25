@@ -47,7 +47,7 @@ Entities={
                     color = {0.8, 0.3, 1},
                     offset = {100, 100, 100}
                 }
-            },                           
+            }                           
         }
     }, 
     {  
@@ -111,7 +111,7 @@ Entities={
                     rotation = {0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
-            }
+            },
             {
                 name = "ColliderComponent",
                 parameters = {                
@@ -140,7 +140,7 @@ Entities={
                     rotation = {0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
-            }
+            },
             {
                 name = "ColliderComponent",
                 parameters = {                
@@ -169,7 +169,7 @@ Entities={
                     rotation = {0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
-            }
+            },
             {
                 name = "ColliderComponent",
                 parameters = {                
@@ -198,7 +198,7 @@ Entities={
                     rotation = {90, 0, 0},
                     scale = {1, 1, 1}                   
                 }
-            }
+            },
             {
                 name = "ColliderComponent",
                 parameters = {                
@@ -215,7 +215,7 @@ Entities={
                 }
             }  
         }
-    }
+    },
     {
         name = "WorldBoundsW",
         components = {
@@ -227,7 +227,7 @@ Entities={
                     rotation = {90, 0, 0},
                     scale = {1, 1, 1}                   
                 }
-            }
+            },
             {
                 name = "ColliderComponent",
                 parameters = {                
