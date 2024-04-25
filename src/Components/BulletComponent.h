@@ -6,7 +6,7 @@
 #include "CreatorComponent.h"
 #include "../Export.h"
 namespace VeryReal {
-	class TransformComponent;
+	class ColliderComponent;
 	class Vector3;
 	class Entity;
 }
@@ -21,13 +21,11 @@ namespace OvejaVegana
 	class OVEJAVEGANA_API BulletComponent : public VeryReal::Component {
 	public:
 		virtual bool InitComponent();
-		virtual void Update(const double& dt);
-		void ShootBullet(VeryReal::Vector3 dir);
+		virtual void Update(const double& dt) {}
 		virtual void OnCollisionEnter(VeryReal::Entity* other);
 	private:
 		float damage = 1;
-		OvejaVegana::MovementComponent* my_movement_component = nullptr;
-		VeryReal::TransformComponent* my_transform = nullptr;
+		VeryReal::ColliderComponent* my_collider = nullptr;
 	};
 }
 #endif
