@@ -107,13 +107,13 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>$(SolutionDir)VeryReal\VeryRealSolucion\bin</OutDir>
-    <IntDir>$(SolutionDir)temp\$(ProjectName)\$(Configuration)</IntDir>
+    <OutDir>$(SolutionDir)VeryReal\VeryRealSolucion\bin\</OutDir>
+    <IntDir>$(SolutionDir)temp\$(ProjectName)\$(Configuration)\</IntDir>
     <TargetName>Game_d</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>$(SolutionDir)VeryReal\VeryRealSolucion\bin</OutDir>
-    <IntDir>$(SolutionDir)temp\$(ProjectName)\$(Configuration)</IntDir>
+    <OutDir>$(SolutionDir)VeryReal\VeryRealSolucion\bin\</OutDir>
+    <IntDir>$(SolutionDir)temp\$(ProjectName)\$(Configuration)\</IntDir>
     <TargetName>Game</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

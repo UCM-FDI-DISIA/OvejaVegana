@@ -13,10 +13,8 @@ bool OvejaVegana::BulletComponent::InitComponent()
 	return true;
 }
 
-void OvejaVegana::BulletComponent::OnCollisionEnter(VeryReal::Entity* other)
-{
-	if(other->HasComponent("LifeComponent"))
-	{
+void OvejaVegana::BulletComponent::OnCollisionEnter(VeryReal::Entity* other) {
+	if(other->HasComponent("LifeComponent")) {
 		auto lifeComponent = other->GetComponent<OvejaVegana::LifeComponent>();
 		lifeComponent->decreaselife(damage);
 		this->GetEntity()->SetActive(false);

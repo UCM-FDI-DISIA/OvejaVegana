@@ -8,16 +8,13 @@ bool OvejaVegana::MusicButtonComponent::InitComponent()
 	return true;
 }
 
-void OvejaVegana::MusicButtonComponent::ToggleMusic()
-{
-	if (!mute)
-	{
+void OvejaVegana::MusicButtonComponent::ToggleMusic() {
+	if (!mute) {
 		VeryReal::AL().PauseEverySound();
 		VeryReal::AL().StopEverySound();
 	}
-	else
-	{
+	else {
 		VeryReal::AL().ResumeEverySound();
 	}
-	mute != mute;
+	mute = !mute;
 }

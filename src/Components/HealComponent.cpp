@@ -8,7 +8,7 @@ HealComponent::HealComponent() : healAmount(0) {}
 
 HealComponent::~HealComponent() {}
 
-bool HealComponent::InitComponent(int healAmount) {
+bool HealComponent::InitComponent(float healAmount) {
     this->healAmount = healAmount;
     return true;
 }
