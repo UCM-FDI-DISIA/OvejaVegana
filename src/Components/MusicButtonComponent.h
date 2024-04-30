@@ -1,14 +1,20 @@
 #pragma once
-#include <Component.h>
+#ifndef MUSICBUTTONCOMPONENT
+#define MUSICBUTTONCOMPONENT
+#include <UI/UIButtonComponent.h>
+#include "../Export.h"
+
+#pragma warning(disable : 4251)
 
 namespace OvejaVegana {
-    class MusicButtonComponent : public VeryReal::Component {
-    public:
-        MusicButtonComponent() {}
-        virtual ~MusicButtonComponent() {}
-        bool InitComponent(); // Método para inicializar el componente (e.g., conectar eventos de botón)
-        void ToggleMusic();   // Método para alternar el estado de la música entre mutear y desmutear
+    class OVEJAVEGANA_API MusicButtonComponent : public VeryReal::UIButtonComponent {
+    public:      
+        virtual void accion(); // Método para alternar el estado de la música entre mutear y desmutear
     private:
         bool mute = false;
     };
 }
+
+#pragma warning(default : 4251)
+
+#endif
