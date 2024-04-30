@@ -29,7 +29,7 @@ Entities={
                 name = "MeshRenderComponent",
                 parameters = {                  
                     isstatic = true,
-                    modelname = "Sinbad.mesh",
+                    modelname = "enemigo.mesh",
                     entityname= "sinbad",
                     materialname = ""
                 }
@@ -45,6 +45,7 @@ Entities={
                 parameters = {                  
                     name = "anim",
                     color = {0.8, 0.3, 1},
+                    alfa = 1,
                     offset = {100, 100, 100}
                 }
             }                           
@@ -93,7 +94,7 @@ Entities={
                 name = "MeshRenderComponent",
                 parameters = {                  
                     isstatic = true,
-                    modelname = "Sinbad.mesh",
+                    modelname = "enemigo.mesh",
                     entityname= "sinbad",
                     materialname = ""
                 }
