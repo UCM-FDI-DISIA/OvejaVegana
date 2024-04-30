@@ -72,8 +72,9 @@ Entities={
             {
                 name = "TransformComponent",
                 parameters = {  
-                    position = {0, 0, 10},
-                    rotation ={10, 90, 0},
+                    a = 0;
+                    position = {10, 10, 10},
+                    rotation ={0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
             },
@@ -91,7 +92,7 @@ Entities={
                 parameters = {                  
                     name = "anim",
                     color = {1, 0, 0},
-                    alfa = 0,
+                    alfa = 1,
                     offset = {0, 0, 0}
                 }
             }, 
@@ -101,7 +102,38 @@ Entities={
                     moveSpeed = 5.0, -- Velocidad de movimiento de la cámara
                     rotateSpeed = 0.1 -- Velocidad de rotación de la cámara
                 }
-            }
+            },
+            {
+                name = "ColliderComponent",
+                parameters = {
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 2,
+                    size = {2, 2, 2},
+                    mass = 1,
+                    friction =1,
+                    restitution=1,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+            {
+                name="NodeComponent",
+                parameters={
+                    ispatrol=true,
+                    cost=1.8,
+                    hcost=1.8,
+                    iswalkable=true,
+                    id=3
+
+                }
+
+            },
         }
     },
     {  
@@ -192,7 +224,7 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     a = 0,
-                    position = {0, -30, 0},
+                    position = {0, -40, 0},
                     rotation = {0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
