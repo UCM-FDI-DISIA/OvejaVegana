@@ -12,19 +12,19 @@ Entities={
             },
            
   
-            {
-                name = "LightComponent",
-                parameters = {
-                    type = 1,
-                    diffusecolour = {1, 1, 1},
-                    shadowfardist = 25,
-                    shadowdist = 25,
-                    ineerangle = 90,
-                    outerangle = 180,
-                    nearclipdist = 0.1,
-                    shdws = true
-                }
-	        },
+            -- {
+            --     name = "LightComponent",
+            --     parameters = {
+            --         type = 1,
+            --         diffusecolour = {1, 1, 1},
+            --         shadowfardist = 25,
+            --         shadowdist = 25,
+            --         ineerangle = 90,
+            --         outerangle = 180,
+            --         nearclipdist = 0.1,
+            --         shdws = true
+            --     }
+	        -- },
             {
                 name = "ColliderComponent",
                 parameters = {
@@ -78,20 +78,20 @@ Entities={
                     alfa = 0,
                     offset = {0, 0, 0}
                 }
-            },   
+            },
             {
                 name = "LightComponent",
                 parameters = {
                     type = 1,
                     diffusecolour = {1, 1, 1},
                     shadowfardist = 25,
-                    shadowdist = 25,
+                    shadowdist = 100,
                     ineerangle = 90,
                     outerangle = 180,
                     nearclipdist = 0.1,
                     shdws = true
                 }
-	        },
+	        }  ,
             {
                 name = "ColliderComponent",
                 parameters = {
@@ -123,42 +123,9 @@ Entities={
                 parameters = {                  
                     
                 }
-            },   
-            {
-                name = "FlashlightComponent",
-                parameters = {                  
-                    
-                }
-            }          
+            }        
         }
     },
-    {  
-        name = "Light",
-        components = {
-	        {
-                name = "TransformComponent",
-                parameters = {  
-                    a = 0,
-                    position = {0, 30, 0},
-                    rotation = {0, 0, 0},
-                    scale = {1, 1, 1}                   
-                }
-            },
-            {
-                name = "LightComponent",
-                parameters = {
-                    type = 1,
-                    diffusecolour = {1, 1, 1},
-                    shadowfardist = 25,
-                    shadowdist = 25,
-                    ineerangle = 90,
-                    outerangle = 180,
-                    nearclipdist = 0.1,
-                    shdws = true
-                }
-	        }     
-        }
-    }, 
     {
         name = "Ogreman5",
         components = {
@@ -246,7 +213,7 @@ Entities={
                     isstatic = false,
                     modelname = "mapa1.mesh",
                     entityname= "Mundo",
-                    materialname = "material"
+                    materialname = ""
                 }
             }
         }
@@ -277,15 +244,6 @@ Entities={
                     mask = 1,
                     group = 1
                 }
-            },
-            {
-                name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = false,
-                    modelname = "mapa1.mesh",
-                    entityname= "Mundo",
-                    materialname = "Brown"
-                }
             }
         }
     },
@@ -315,16 +273,7 @@ Entities={
                     mask = 1,
                     group = 1
                 }
-            }  ,
-            {
-                name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = false,
-                    modelname = "mapa1.mesh",
-                    entityname= "Mundo",
-                    materialname = "Brown"
-                }
-            }
+            } 
         }
     },
     {
@@ -352,15 +301,6 @@ Entities={
                     size = {1, 5, 200},
                     mask = 1,
                     group = 1
-                }
-            }  ,
-            {
-                name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = false,
-                    modelname = "mapa1.mesh",
-                    entityname= "Mundo",
-                    materialname = "Brown"
                 }
             }
         }
@@ -391,16 +331,7 @@ Entities={
                     mask = 1,
                     group = 1
                 }
-            }  ,
-            {
-                name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = false,
-                    modelname = "mapa1.mesh",
-                    entityname= "Mundo",
-                    materialname = "Brown"
-                }
-            }
+            } 
         }
     }
     
