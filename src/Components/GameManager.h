@@ -9,8 +9,7 @@ namespace OvejaVegana {
 	class  GameManager:public VeryReal::Manager<GameManager>
 	{
 	private:
-		VeryReal::SceneManager* scene_manager = nullptr;
-
+		GameManager() {}
 	public:
 		
 		virtual ~GameManager();
@@ -29,7 +28,9 @@ namespace OvejaVegana {
 			}
 			return false;
 
-		}	
+		}
+
+
 	};
 }
 

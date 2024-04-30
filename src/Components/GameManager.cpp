@@ -6,37 +6,37 @@ GameManager::~GameManager() {
 }
 void GameManager::Start() {
 	//aquí añadiremos todas las escena del juego(Menu, Pausa, Juego,Win , Loose) y dejaremos activa la del Menu Inicial
-	scene_manager->AddScene("Menu", false);
-	scene_manager->AddScene("Play", false);
-	scene_manager->AddScene("Pause", false);
-	scene_manager->AddScene("Win", false);
-	scene_manager->AddScene("Loose", false);
+	VeryReal::SceneManager::Instance()->AddScene("Menu", false);
+	VeryReal::SceneManager::Instance()->AddScene("Play", false);
+	VeryReal::SceneManager::Instance()->AddScene("Pause", false);
+	VeryReal::SceneManager::Instance()->AddScene("Win", false);
+	VeryReal::SceneManager::Instance()->AddScene("Loose", false);
 	
 }
 void GameManager::Update(const double& dt) {
-	scene_manager->Update(dt);
+	VeryReal::SceneManager::Instance()->Update(dt);
 }
 void GameManager::Menu() {
-	scene_manager->ActivationScene("Menu", true);
-	scene_manager->ActivationScene("Play", false);
-	scene_manager->ActivationScene("Pause", false);
-	scene_manager->ActivationScene("Win", false);
-	scene_manager->ActivationScene("Loose", false);
+	VeryReal::SceneManager::Instance()->ActivationScene("Menu", true);
+	VeryReal::SceneManager::Instance()->ActivationScene("Play", false);
+	VeryReal::SceneManager::Instance()->ActivationScene("Pause", false);
+	VeryReal::SceneManager::Instance()->ActivationScene("Win", false);
+	VeryReal::SceneManager::Instance()->ActivationScene("Loose", false);
 }
 void GameManager::Pause() {
-	scene_manager->ActivationScene("Pause", true);
-	scene_manager->ActivationScene("Play", false);
+	VeryReal::SceneManager::Instance()->ActivationScene("Pause", true);
+	VeryReal::SceneManager::Instance()->ActivationScene("Play", false);
 }
 void GameManager::Play() {
-	scene_manager->ActivationScene("Play", true);
-	scene_manager->ActivationScene("Pause", false);
-	scene_manager->ActivationScene("Menu", false);
+	VeryReal::SceneManager::Instance()->ActivationScene("Play", true);
+	VeryReal::SceneManager::Instance()->ActivationScene("Pause", false);
+	VeryReal::SceneManager::Instance()->ActivationScene("Menu", false);
 }
 void GameManager::Win() {
-	scene_manager->ActivationScene("Win", true);
-	scene_manager->ActivationScene("Play", false);
+	VeryReal::SceneManager::Instance()->ActivationScene("Win", true);
+	VeryReal::SceneManager::Instance()->ActivationScene("Play", false);
 }
 void GameManager::Loose() {
-	scene_manager->ActivationScene("Loose", true);
-	scene_manager->ActivationScene("Play", false);
+	VeryReal::SceneManager::Instance()->ActivationScene("Loose", true);
+	VeryReal::SceneManager::Instance()->ActivationScene("Play", false);
 }
