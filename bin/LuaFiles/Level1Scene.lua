@@ -5,7 +5,7 @@ Entities={
             {
                 name = "TransformComponent",
                 parameters = {  
-                    position = {0, 0, 10},
+                    position = {0, 0, 0},
                     rotation ={0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
@@ -61,48 +61,37 @@ Entities={
     {
         name = "Camera",
         components = {
-            -- {
-            --     name = "TransformComponent",
-            --     parameters = {
-            --         position = {0, 10, -20},  -- Elevada a 10 unidades y colocada detrás del origen
-            --         rotation = {0, 0, 0},  -- Mirando directamente hacia el horizonte
-            --         scale = {1, 1, 1}
-            --     }
-            -- },
             {
                 name = "TransformComponent",
                 parameters = {  
-                    a = 0;
-                    position = {10, 10, 10},
-                    rotation ={0, 0, 0},
+                    position = {0, 200, 0},
+                    rotation ={0, 90, 0},
                     scale = {1, 1, 1}                   
                 }
             },
-            -- {
-            --     name = "CameraComponent",
-            --     parameters = {                  
-            --         name = "anim",
-            --         color = {0.8, 0.3, 1},
-            --         alfa = 1,
-            --         offset = {100, 100, 100}
-            --     }
-            -- },
+           
             {
                 name = "CameraComponent",
                 parameters = {                  
                     name = "anim",
-                    color = {1, 0, 0},
-                    alfa = 1,
+                    color = {0, 0, 0},
+                    alfa = 0,
                     offset = {0, 0, 0}
                 }
-            }, 
+            },   
             {
-                name = "InputComponent", -- Suponiendo que tienes un componente para manejar entradas
+                name = "LightComponent",
                 parameters = {
-                    moveSpeed = 5.0, -- Velocidad de movimiento de la cámara
-                    rotateSpeed = 0.1 -- Velocidad de rotación de la cámara
+                    type = 1,
+                    diffusecolour = {1, 1, 1},
+                    shadowfardist = 25,
+                    shadowdist = 25,
+                    ineerangle = 90,
+                    outerangle = 180,
+                    nearclipdist = 0.1,
+                    shdws = true
                 }
-            },
+	        },
             {
                 name = "ColliderComponent",
                 parameters = {
@@ -112,28 +101,35 @@ Entities={
                 name = "RigidBodyComponent",
                 parameters = {
                     shapeType = 1,
-                    movementType = 2,
+                    movementType = 0,
                     size = {2, 2, 2},
                     mass = 1,
-                    friction =1,
-                    restitution=1,
+                    friction = 0,
+                    restitution = 0,
                     trigger = false,
-                    mask = 1,
-                    group = 2
+                    mask = 2,
+                    group = 1
                 }
             },
             {
-                name="NodeComponent",
-                parameters={
-                    ispatrol=true,
-                    cost=1.8,
-                    hcost=1.8,
-                    iswalkable=true,
-                    id=3
-
+                name = "MovementComponent",
+                parameters = {                  
+                    
                 }
-
             },
+            
+            {
+                name = "PlayerInputComponent",
+                parameters = {                  
+                    
+                }
+            },   
+            {
+                name = "FlashlightComponent",
+                parameters = {                  
+                    
+                }
+            }          
         }
     },
     {  
@@ -224,9 +220,9 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     a = 0,
-                    position = {0, -40, 0},
-                    rotation = {0, 0, 0},
-                    scale = {1, 1, 1}                   
+                    position = {0, 0, 0},
+                    rotation = {90, 0, 0},
+                    scale = {10, 10, 10}                   
                 }
             },
             {
@@ -250,7 +246,7 @@ Entities={
                     isstatic = false,
                     modelname = "mapa1.mesh",
                     entityname= "Mundo",
-                    materialname = "mapa1"
+                    materialname = "material"
                 }
             }
         }
@@ -281,6 +277,15 @@ Entities={
                     mask = 1,
                     group = 1
                 }
+            },
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "mapa1.mesh",
+                    entityname= "Mundo",
+                    materialname = "Brown"
+                }
             }
         }
     },
@@ -310,7 +315,16 @@ Entities={
                     mask = 1,
                     group = 1
                 }
-            }  
+            }  ,
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "mapa1.mesh",
+                    entityname= "Mundo",
+                    materialname = "Brown"
+                }
+            }
         }
     },
     {
@@ -339,7 +353,16 @@ Entities={
                     mask = 1,
                     group = 1
                 }
-            }  
+            }  ,
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "mapa1.mesh",
+                    entityname= "Mundo",
+                    materialname = "Brown"
+                }
+            }
         }
     },
     {
@@ -368,7 +391,16 @@ Entities={
                     mask = 1,
                     group = 1
                 }
-            }  
+            }  ,
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "mapa1.mesh",
+                    entityname= "Mundo",
+                    materialname = "Brown"
+                }
+            }
         }
     }
     
