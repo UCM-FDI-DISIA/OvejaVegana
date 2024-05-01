@@ -5,26 +5,11 @@ Entities={
             {
                 name = "TransformComponent",
                 parameters = {  
-                    position = {0, 0, 0},
+                    position = {-25, 125, 50},
                     rotation ={0, 0, 90},
-                    scale = {1, 1, 1}                   
+                    scale = {5, 5, 5}                   
                 }
             },
-           
-  
-            -- {
-            --     name = "LightComponent",
-            --     parameters = {
-            --         type = 1,
-            --         diffusecolour = {1, 1, 1},
-            --         shadowfardist = 25,
-            --         shadowdist = 25,
-            --         ineerangle = 90,
-            --         outerangle = 180,
-            --         nearclipdist = 0.1,
-            --         shdws = true
-            --     }
-	        -- },
             {
                 name = "ColliderComponent",
                 parameters = {
@@ -55,7 +40,16 @@ Entities={
                 parameters = {                  
                     
                 }
-            }              
+            },
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "oveja.mesh",
+                    entityname= "Player",
+                    materialname = "OvejaMat"
+                }
+            }
         }
     }, 
     {
@@ -64,8 +58,8 @@ Entities={
             {
                 name = "TransformComponent",
                 parameters = {  
-                    position = {0, 0, 500},
-                    rotation ={0, 0, 90},
+                    position = {-25, 125, 750},
+                    rotation ={0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
             },
@@ -91,89 +85,6 @@ Entities={
                     shdws = true
                 }
 	        }  
-            -- {
-            --     name = "ColliderComponent",
-            --     parameters = {
-            --     }
-            -- },
-            -- {
-            --     name = "MovementComponent",
-            --     parameters = {                  
-                    
-            --     }
-            -- },
-            -- {
-            --     name = "PlayerInputComponent",
-            --     parameters = {                  
-                    
-            --     }
-            -- }
-        }
-    },
-    {
-        name = "Ogreman5",
-        components = {
-            {
-                name = "TransformComponent",
-                parameters = {  
-                    a = 0,
-                    position = {10, 0, -10},
-                    rotation = {0, 0, 0},
-                    scale = {1, 1, 1}                   
-                }
-            },
-            {
-                name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = false,
-                    modelname = "Sinbad.mesh",
-                    entityname= "sinbad5",
-                    materialname = "Sinbad/Gold"
-                }
-            },
-            {
-                name = "ColliderComponent",
-                parameters = {
-                }
-            },
-            {
-                name = "RigidBodyComponent",
-                parameters = {
-                    shapeType = 1,
-                    movementType = 2,
-                    size = {2, 2, 2},
-                    mass = 1,
-                    friction =1,
-                    restitution=1,
-                    trigger = false,
-                    mask = 1,
-                    group = 2
-                }
-            },
-            {
-                name="NodeComponent",
-                parameters={
-                    ispatrol=true,
-                    cost=1.8,
-                    hcost=1.8,
-                    iswalkable=true,
-                    id=3
-
-                }
-
-            },
-            {
-                name = "MovementComponent",
-                parameters = {                  
-                    
-                }
-            },
-            {
-                name = "PlayerInputComponent",
-                parameters = {                  
-                    
-                }
-            }   
         }
     },
     {
@@ -185,7 +96,7 @@ Entities={
                     a = 0,
                     position = {0, 0, 0},
                     rotation = {0, 0, 180},
-                    scale = {10, 10, 10}                   
+                    scale = {10, 10, 1}                   
                 }
             },
             {
@@ -221,9 +132,9 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     a = 0,
-                    position = {0, 5, 100},
+                    position = {0, 245, 5},
                     rotation = {0, 0, 0},
-                    scale = {1, 1, 1}                   
+                    scale = {10, 0.25, 1}                   
                 }
             },
             {
@@ -240,7 +151,16 @@ Entities={
                     mask = 1,
                     group = 1
                 }
-            }
+            },
+            -- {para debug
+            --     name = "MeshRenderComponent",
+            --     parameters = {                  
+            --         isstatic = false,
+            --         modelname = "mapa1.mesh",
+            --         entityname= "Mundo",
+            --         materialname = "Black"
+            --     }
+            -- }
         }
     },
     {
@@ -250,9 +170,9 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     a = 0,
-                    position = {0, 5, -100},
+                    position = {0, 0, 5},
                     rotation = {0, 0, 0},
-                    scale = {1, 1, 1}                   
+                    scale = {10, 0.25, 1}                   
                 }
             },
             {
@@ -269,7 +189,16 @@ Entities={
                     mask = 1,
                     group = 1
                 }
-            } 
+            }
+            -- {para debug
+            --     name = "MeshRenderComponent",
+            --     parameters = {                  
+            --         isstatic = false,
+            --         modelname = "mapa1.mesh",
+            --         entityname= "Mundo",
+            --         materialname = "Black"
+            --     }
+            -- }
         }
     },
     {
@@ -279,9 +208,9 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     a = 0,
-                    position = {100, 5, 0},
-                    rotation = {90, 0, 0},
-                    scale = {1, 1, 1}                   
+                    position = {95, 250, 5},
+                    rotation = {0, 0, 0},
+                    scale = {0.25, 10, 1}                   
                 }
             },
             {
@@ -299,6 +228,15 @@ Entities={
                     group = 1
                 }
             }
+            -- { para debug
+            --     name = "MeshRenderComponent",
+            --     parameters = {                  
+            --         isstatic = false,
+            --         modelname = "mapa1.mesh",
+            --         entityname= "Mundo",
+            --         materialname = "Black"
+            --     }
+            -- }
         }
     },
     {
@@ -308,9 +246,9 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     a = 0,
-                    position = {-100, 5, 0},
-                    rotation = {90, 0, 0},
-                    scale = {1, 1, 1}                   
+                    position = {-150, 250, 5},
+                    rotation = {0, 0, 0},
+                    scale = {0.25, 10, 1}                   
                 }
             },
             {
@@ -327,7 +265,16 @@ Entities={
                     mask = 1,
                     group = 1
                 }
-            } 
+            }
+            -- { para debug
+            --     name = "MeshRenderComponent",
+            --     parameters = {                  
+            --         isstatic = false,
+            --         modelname = "mapa1.mesh",
+            --         entityname= "Mundo",
+            --         materialname = "Black"
+            --     }
+            -- }
         }
     }
     
