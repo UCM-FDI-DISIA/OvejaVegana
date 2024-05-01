@@ -4,21 +4,25 @@
 #include "Manager.h"
 #include "InputManager.h"
 #include "CameraComponent.h"
-#include "TransformComponent.h"
 #include "AudioLeon.h"
+#include "TransformComponent.h"
+#include "RigidBodyComponent.h"
+
+using namespace std;
 
 bool OvejaVegana::PlayerInputComponent::InitComponent() {
 	my_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 	my_movement_component = this->GetEntity()->GetComponent<OvejaVegana::MovementComponent>();
 	my_camera_component = this->GetEntity()->GetComponent<VeryReal::CameraComponent>();
+	my_rigidbody = this->GetEntity()->GetComponent<VeryReal::RigidBodyComponent>();
 
-	if (this->my_movement_component != nullptr && this->my_camera_component != nullptr && my_transform != nullptr)
+	if (this->my_transform != nullptr && this->my_movement_component != nullptr && this->my_camera_component != nullptr)
 		return true;
 	else
 		return false;
 }
 
-void OvejaVegana::PlayerInputComponent::Update(const double& dt){
+void OvejaVegana::PlayerInputComponent::Update(const double& dt) {
 	if (!VeryReal::InputManager::Instance()->IsGameControllerConnected()) { // Movimiento Teclado
 		float sprint = 0.5;
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_LSHIFT)) {
@@ -48,9 +52,30 @@ void OvejaVegana::PlayerInputComponent::Update(const double& dt){
 			moveZ += rightDirection.GetZ();
 		}
 
+		//cout << my_transform->GetRotation().GetX() << " " << my_transform->GetRotation().GetY() << " " << my_transform->GetRotation().GetZ() << endl;
+		cout << forwardDirection.GetX() << " " << forwardDirection.GetY() << " " << forwardDirection.GetZ() << endl;
+		cout << rightDirection.GetX() << " " << rightDirection.GetY() << " " << rightDirection.GetZ() << endl;
+
 		my_movement_component->SetMoventDirectionX(moveX * sprint);
 		my_movement_component->SetMoventDirectionZ(moveZ * sprint);
-		
+
+		//Camara con teclado y raton 
+		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_LEFT)) { // Rotar la cámara hacia la izquierda
+			my_camera_component->yaw(1);
+			my_rigidbody->Rotate(VeryReal::Vector3(0, 1, 0), -1);
+		}
+		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_RIGHT)) { // Rotar la cámara hacia la derecha
+			my_camera_component->yaw(-1);
+			my_rigidbody->Rotate(VeryReal::Vector3(0, 1, 0), 1);
+		}
+		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_UP)) { // Rotar la cámara hacia arriba
+			my_camera_component->rotate(1, rightDirection);
+		}
+		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_DOWN)) { // Rotar la cámara hacia abajo
+			my_camera_component->rotate(-1, rightDirection);
+		}
+
+
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_ESCAPE)) {
 			//VeryReal::InputManager::Instance()->Quit();
 		}
@@ -60,12 +85,18 @@ void OvejaVegana::PlayerInputComponent::Update(const double& dt){
 		// Movimiento Mando
 		my_movement_component->SetMoventDirectionX(sprint * VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_LEFTX));
 		my_movement_component->SetMoventDirectionZ(sprint * VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_LEFTY));
+
+		// Camara Mando
+		if (VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_RIGHTX) != 0) {
+			my_camera_component->yaw(-VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_RIGHTX));
+		}
+		if (VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_RIGHTY) != 0) {
+			my_camera_component->pitch(-VeryReal::InputManager::Instance()->GetJoystickAxisState(TI_CONTROLLER_AXIS_RIGHTY));
+		}
 	}
+
+
 
 	// AUDIO
 	audio_intensity = VeryReal::AudioLeon::Instance()->InputSoundIntensity();
-}
-
-void OvejaVegana::PlayerInputComponent::setCanPickUp(bool newValue) {
-	canPickUp = newValue;
 }
