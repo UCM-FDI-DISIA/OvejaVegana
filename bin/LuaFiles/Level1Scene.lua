@@ -6,7 +6,7 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     position = {0, 0, 0},
-                    rotation ={0, 0, 0},
+                    rotation ={0, 0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
             },
@@ -65,11 +65,10 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     position = {0, 200, 0},
-                    rotation ={0, 90, 0},
+                    rotation ={0, 90, 0, 0},
                     scale = {1, 1, 1}                   
                 }
             },
-           
             {
                 name = "CameraComponent",
                 parameters = {                  
@@ -83,11 +82,11 @@ Entities={
                 name = "LightComponent",
                 parameters = {
                     type = 1,
-                    diffusecolour = {1, 1, 1},
-                    shadowfardist = 25,
-                    shadowdist = 100,
-                    ineerangle = 90,
-                    outerangle = 180,
+                    diffusecolour = {10, 10, 10},
+                    shadowfardist = 25.0,
+                    shadowdist = 100.0,
+                    ineerangle = 90.0,
+                    outerangle = 180.0,
                     nearclipdist = 0.1,
                     shdws = true
                 }
@@ -117,13 +116,12 @@ Entities={
                     
                 }
             },
-            
             {
                 name = "PlayerInputComponent",
                 parameters = {                  
                     
                 }
-            }        
+            }
         }
     },
     {
@@ -134,7 +132,7 @@ Entities={
                 parameters = {  
                     a = 0,
                     position = {10, 0, -10},
-                    rotation = {0, 0, 0},
+                    rotation = {0, 0, 0,0},
                     scale = {1, 1, 1}                   
                 }
             },
@@ -178,6 +176,18 @@ Entities={
                 }
 
             },
+            {
+                name = "MovementComponent",
+                parameters = {                  
+                    
+                }
+            },
+            {
+                name = "PlayerInputComponent",
+                parameters = {                  
+                    
+                }
+            }   
         }
     },
     {
@@ -188,7 +198,7 @@ Entities={
                 parameters = {  
                     a = 0,
                     position = {0, 0, 0},
-                    rotation = {90, 0, 0},
+                    rotation = {90, 0, 0,0},
                     scale = {10, 10, 10}                   
                 }
             },
@@ -226,7 +236,7 @@ Entities={
                 parameters = {  
                     a = 0,
                     position = {0, 5, 100},
-                    rotation = {0, 0, 0},
+                    rotation = {0, 0, 0,0},
                     scale = {1, 1, 1}                   
                 }
             },
@@ -255,7 +265,7 @@ Entities={
                 parameters = {  
                     a = 0,
                     position = {0, 5, -100},
-                    rotation = {0, 0, 0},
+                    rotation = {0, 0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
             },
@@ -284,7 +294,7 @@ Entities={
                 parameters = {  
                     a = 0,
                     position = {100, 5, 0},
-                    rotation = {90, 0, 0},
+                    rotation = {90, 0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
             },
@@ -313,7 +323,7 @@ Entities={
                 parameters = {  
                     a = 0,
                     position = {-100, 5, 0},
-                    rotation = {90, 0, 0},
+                    rotation = {90, 0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
             },
