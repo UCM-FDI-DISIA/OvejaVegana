@@ -6,7 +6,7 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     position = {0, 0, 0},
-                    rotation ={0, 0, 0, 0},
+                    rotation ={0, 0, 90},
                     scale = {1, 1, 1}                   
                 }
             },
@@ -64,8 +64,8 @@ Entities={
             {
                 name = "TransformComponent",
                 parameters = {  
-                    position = {0, 200, 0},
-                    rotation ={0, 90, 0, 0},
+                    position = {0, 0, 500},
+                    rotation ={0, 0, 90},
                     scale = {1, 1, 1}                   
                 }
             },
@@ -90,38 +90,24 @@ Entities={
                     nearclipdist = 0.1,
                     shdws = true
                 }
-	        }  ,
-            {
-                name = "ColliderComponent",
-                parameters = {
-                }
-            },
-            {
-                name = "RigidBodyComponent",
-                parameters = {
-                    shapeType = 1,
-                    movementType = 0,
-                    size = {2, 2, 2},
-                    mass = 1,
-                    friction = 0,
-                    restitution = 0,
-                    trigger = false,
-                    mask = 2,
-                    group = 1
-                }
-            },
-            {
-                name = "MovementComponent",
-                parameters = {                  
+	        }  
+            -- {
+            --     name = "ColliderComponent",
+            --     parameters = {
+            --     }
+            -- },
+            -- {
+            --     name = "MovementComponent",
+            --     parameters = {                  
                     
-                }
-            },
-            {
-                name = "PlayerInputComponent",
-                parameters = {                  
+            --     }
+            -- },
+            -- {
+            --     name = "PlayerInputComponent",
+            --     parameters = {                  
                     
-                }
-            }
+            --     }
+            -- }
         }
     },
     {
@@ -132,7 +118,7 @@ Entities={
                 parameters = {  
                     a = 0,
                     position = {10, 0, -10},
-                    rotation = {0, 0, 0,0},
+                    rotation = {0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
             },
@@ -198,7 +184,7 @@ Entities={
                 parameters = {  
                     a = 0,
                     position = {0, 0, 0},
-                    rotation = {90, 0, 0,0},
+                    rotation = {0, 0, 180},
                     scale = {10, 10, 10}                   
                 }
             },
@@ -236,7 +222,7 @@ Entities={
                 parameters = {  
                     a = 0,
                     position = {0, 5, 100},
-                    rotation = {0, 0, 0,0},
+                    rotation = {0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
             },
@@ -265,7 +251,7 @@ Entities={
                 parameters = {  
                     a = 0,
                     position = {0, 5, -100},
-                    rotation = {0, 0, 0, 0},
+                    rotation = {0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
             },
@@ -294,7 +280,7 @@ Entities={
                 parameters = {  
                     a = 0,
                     position = {100, 5, 0},
-                    rotation = {90, 0, 0, 0},
+                    rotation = {90, 0, 0},
                     scale = {1, 1, 1}                   
                 }
             },
@@ -323,7 +309,7 @@ Entities={
                 parameters = {  
                     a = 0,
                     position = {-100, 5, 0},
-                    rotation = {90, 0, 0, 0},
+                    rotation = {90, 0, 0},
                     scale = {1, 1, 1}                   
                 }
             },
