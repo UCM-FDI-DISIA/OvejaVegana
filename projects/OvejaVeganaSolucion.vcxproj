@@ -27,6 +27,7 @@
     <ClCompile Include="..\src\Components\CreatorPlayButtonComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorPlayerInputComponent.cpp" />
     <ClCompile Include="..\src\Components\EnemyChaseComponent.cpp" />
+    <ClCompile Include="..\src\Components\EnemyWaveManager.cpp" />
     <ClCompile Include="..\src\Components\ExitButtonComponent.cpp" />
     <ClCompile Include="..\src\Components\HealComponent.cpp" />
     <ClCompile Include="..\src\Components\LifeComponent.cpp" />
@@ -46,6 +47,7 @@
     <ClInclude Include="..\src\Components\CreatorPlayButtonComponent.h" />
     <ClInclude Include="..\src\Components\CreatorPlayerInputComponent.h" />
     <ClInclude Include="..\src\Components\EnemyChaseComponent.h" />
+    <ClInclude Include="..\src\Components\EnemyWaveManager.h" />
     <ClInclude Include="..\src\Components\ExitButtonComponent.h" />
     <ClInclude Include="..\src\Components\HealComponent.h" />
     <ClInclude Include="..\src\Components\LifeComponent.h" />

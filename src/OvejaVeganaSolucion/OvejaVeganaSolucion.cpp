@@ -37,10 +37,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         VeryReal::Creator::Instance()->AddCreator("MusicComponent", new OvejaVegana::CreatorMusicButtonComponent());
         VeryReal::Creator::Instance()->AddCreator("PlayButtonComponent", new OvejaVegana::CreatorPlayButtonComponent());
         VeryReal::Creator::Instance()->AddCreator("PlayerInputComponent", new OvejaVegana::CreatorPlayerInputComponent());
-
-
-
-
+        
         ScriptManager::Instance()->ReadScene("Level1Scene");
         VeryReal::SceneManager::Instance()->GetScene("Level1Scene")->SetActive(true);
         //VeryReal::ScriptManager::Instance()->ExposeFunctionsToLua("Arboles", OvejaVegana::GameManager::Instance()->CreateRandomTrees);

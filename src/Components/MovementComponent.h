@@ -5,10 +5,11 @@
 #include "Vector3.h"
 #include "CreatorComponent.h"
 #include "../Export.h"
+
 namespace VeryReal {
 	class TransformComponent;
-	class Vector3;
 	class RigidBodyComponent;
+	class Vector3;
 }
 
 namespace OvejaVegana
@@ -26,11 +27,10 @@ namespace OvejaVegana
 		inline void SetSpeed(float Speed) { this->speed = Speed; }
 
 	private:
-		float speed = 1;
-		VeryReal::Vector3 movementDirection = VeryReal::Vector3(1, 1, 0);
+		float speed = 15;
+		VeryReal::Vector3 movementDirection = VeryReal::Vector3(1, 0, 0);
 		VeryReal::TransformComponent* my_transform = nullptr;
 		VeryReal::RigidBodyComponent* my_rigidbody = nullptr;
-
 	};
 }
 #endif

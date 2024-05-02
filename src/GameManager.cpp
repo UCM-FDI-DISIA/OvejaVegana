@@ -2,9 +2,11 @@
 #include "Scene.h"
 #include <iostream>
 using namespace OvejaVegana;
+
 GameManager::~GameManager() {
 
 }
+
 void GameManager::Start() {
 	//aquí añadiremos todas las escena del juego(Menu, Pausa, Juego,Win , Loose) y dejaremos activa la del Menu Inicial
 	VeryReal::SceneManager::Instance()->AddScene("MenuScene", false);
@@ -14,9 +16,11 @@ void GameManager::Start() {
 	VeryReal::SceneManager::Instance()->AddScene("LoseScene", false);
 	
 }
+
 void GameManager::Update(const double& dt) {
 	VeryReal::SceneManager::Instance()->Update(dt);
 }
+
 void GameManager::Menu() {
 	VeryReal::SceneManager::Instance()->ActivationScene("MenuScene", true);
 	VeryReal::SceneManager::Instance()->ActivationScene("PlayScene", false);

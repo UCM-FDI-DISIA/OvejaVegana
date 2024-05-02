@@ -1,13 +1,13 @@
-Entities={
+Entities={ 
     {
         name = "Player",
         components = {
             {
                 name = "TransformComponent",
                 parameters = {  
-                    position = {-25, 125, 50},
+                    position = {0, 0, 50},
                     rotation ={0, 0, 90},
-                    scale = {5, 5, 5}                   
+                    scale = {10, 10, 10}                   
                 }
             },
             {
@@ -40,16 +40,16 @@ Entities={
                 parameters = {                  
                     
                 }
-            },
+            },  
             {
                 name = "MeshRenderComponent",
                 parameters = {                  
                     isstatic = false,
                     modelname = "oveja.mesh",
                     entityname= "Player",
-                    materialname = "OvejaMat"
+                    materialname = "oveja"
                 }
-            }
+            }         
         }
     }, 
     {
@@ -58,8 +58,8 @@ Entities={
             {
                 name = "TransformComponent",
                 parameters = {  
-                    position = {-25, 125, 350},
-                    rotation ={0, 0, 0},
+                    position = {0, 0, 200},
+                    rotation ={0, 0, 90},
                     scale = {1, 1, 1}                   
                 }
             },
@@ -84,7 +84,67 @@ Entities={
                     nearclipdist = 0.1,
                     shdws = true
                 }
-	        } 
+	        }  
+        }
+    },
+    {
+        name = "Ogreman5",
+        components = {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = {10, 0, -10},
+                    rotation = {0, 0, 0},
+                    scale = {1, 1, 1}                   
+                }
+            },
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "Sinbad.mesh",
+                    entityname= "node",
+
+                }
+            },
+            {
+                name = "ColliderComponent",
+                parameters = {
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 2,
+                    size = {2, 2, 2},
+                    mass = 1,
+                    friction =1,
+                    restitution=1,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+            {
+                name="NodeComponent",
+                parameters={
+                    ispatrol=true,
+                    cost=1.8,
+                    hcost=1.8,
+                    iswalkable=true,
+                    id=3
+
+                }
+
+            },
+            {
+                name = "MovementComponent",
+                parameters = {                  
+                    
+                }
+            } 
         }
     },
     {
@@ -277,5 +337,4 @@ Entities={
             -- }
         }
     }
-    
 }
