@@ -21,9 +21,9 @@ Entities={
                     shapeType = 1,
                     movementType = 0,
                     size = {2, 2, 2},
-                    mass = 1,
-                    friction = 0,
-                    restitution = 0,
+                    mass = 10.0,
+                    friction = 0.5,
+                    restitution = 0.0,
                     trigger = false,
                     mask = 2,
                     group = 1
@@ -58,7 +58,7 @@ Entities={
             {
                 name = "TransformComponent",
                 parameters = {  
-                    position = {-25, 125, 750},
+                    position = {-25, 125, 350},
                     rotation ={0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
@@ -68,7 +68,7 @@ Entities={
                 parameters = {                  
                     name = "anim",
                     color = {0, 0, 0},
-                    alfa = 0,
+                    alfa = 0.0,
                     offset = {0, 0, 0}
                 }
             },

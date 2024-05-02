@@ -19,8 +19,8 @@
 #include "ExitButtonComponent.h"
 #include "CreatorExitButtonComponent.h"
 #include "CreatorPlayButtonComponent.h"
-
-
+#include "CreatorEnemyChaseComponent.h"
+#include "CreatorMusicButtonComponent.h"
 using namespace VeryReal;
 
 extern "C"  //Para que al exportar la función de las DLLs los nombres no se contaminen (name mangling), esto es usado por el compilador para permitir la sobrecarga de funciones
@@ -29,6 +29,17 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
 
     __declspec(dllexport) bool start() {
         //CREACION DE TODOS LOS COMPONENETES DEL JUEGO
+        OvejaVegana::GameManager::Init();
+        //-----//
+        VeryReal::Creator::Instance()->AddCreator("EnemyIA", new OvejaVegana::CreatorEnemyChaseComponent());
+        VeryReal::Creator::Instance()->AddCreator("ExitButtonComponent", new OvejaVegana::CreatorExitButtonComponent());
+        VeryReal::Creator::Instance()->AddCreator("MovementComponent", new OvejaVegana::CreatorMovementComponent());
+        VeryReal::Creator::Instance()->AddCreator("MusicComponent", new OvejaVegana::CreatorMusicButtonComponent());
+        VeryReal::Creator::Instance()->AddCreator("PlayButtonComponent", new OvejaVegana::CreatorPlayButtonComponent());
+        VeryReal::Creator::Instance()->AddCreator("PlayerInputComponent", new OvejaVegana::CreatorPlayerInputComponent());
+
+
+
 
         ScriptManager::Instance()->ReadScene("Level1Scene");
         VeryReal::SceneManager::Instance()->GetScene("Level1Scene")->SetActive(true);

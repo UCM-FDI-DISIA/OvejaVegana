@@ -23,6 +23,7 @@ bool OvejaVegana::PlayerInputComponent::InitComponent() {
 }
 
 void OvejaVegana::PlayerInputComponent::Update(const double& dt) {
+	std::cout << "entro\n";
 	if (!VeryReal::InputManager::Instance()->IsGameControllerConnected()) { // Movimiento Teclado
 		float sprint = 0.5;
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_LSHIFT)) {
@@ -33,23 +34,24 @@ void OvejaVegana::PlayerInputComponent::Update(const double& dt) {
 		VeryReal::Vector3 rightDirection = forwardDirection.Cross(VeryReal::Vector3(0, 1, 0)).Normalize();
 
 		float moveX = 0.0f;
+		float moveY = 0.0f;
 		float moveZ = 0.0f;
 
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_W)) {
-			moveX += forwardDirection.GetX();
-			moveZ += forwardDirection.GetZ();
+			//moveX += forwardDirection.GetX();
+			moveY += forwardDirection.GetY();
 		}
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_S)) {
-			moveX -= forwardDirection.GetX();
-			moveZ -= forwardDirection.GetZ();
+			//moveX -= forwardDirection.GetX();
+			moveY -= forwardDirection.GetY();
 		}
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_A)) {
 			moveX -= rightDirection.GetX();
-			moveZ -= rightDirection.GetZ();
+			//moveZ -= rightDirection.GetZ();
 		}
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_D)) {
 			moveX += rightDirection.GetX();
-			moveZ += rightDirection.GetZ();
+			//moveZ += rightDirection.GetZ();
 		}
 
 		//cout << my_transform->GetRotation().GetX() << " " << my_transform->GetRotation().GetY() << " " << my_transform->GetRotation().GetZ() << endl;
@@ -57,6 +59,7 @@ void OvejaVegana::PlayerInputComponent::Update(const double& dt) {
 		cout << rightDirection.GetX() << " " << rightDirection.GetY() << " " << rightDirection.GetZ() << endl;
 
 		my_movement_component->SetMoventDirectionX(moveX * sprint);
+		my_movement_component->SetMoventDirectionY(moveY * sprint);
 		my_movement_component->SetMoventDirectionZ(moveZ * sprint);
 
 		//Camara con teclado y raton 
