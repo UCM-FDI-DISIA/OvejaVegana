@@ -1,5 +1,5 @@
 function sum(a, b)
     Probar()
-    --Arboles()
+    Arboles()
     return a + b
 end
