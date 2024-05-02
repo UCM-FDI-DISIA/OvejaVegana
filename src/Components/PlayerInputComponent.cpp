@@ -30,28 +30,27 @@ void OvejaVegana::PlayerInputComponent::Update(const double& dt) {
 			sprint = 1;
 		}
 
-		VeryReal::Vector3 forwardDirection = my_transform->getFacingDirection();
-		VeryReal::Vector3 rightDirection = forwardDirection.Cross(VeryReal::Vector3(0, 1, 0)).Normalize();
+		VeryReal::Vector3 forwardDirection = VeryReal::Vector3(0, 1, 0).Normalize();
+		VeryReal::Vector3 rightDirection = forwardDirection.Cross(VeryReal::Vector3(0, 0, 1)).Normalize();
+
 
 		float moveX = 0.0f;
 		float moveY = 0.0f;
 		float moveZ = 0.0f;
 
+
+
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_W)) {
-			//moveX += forwardDirection.GetX();
-			moveY += forwardDirection.GetY();
+			moveY += forwardDirection.GetY();  // Asegúrate de que GetY realmente refleje la dirección hacia adelante
 		}
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_S)) {
-			//moveX -= forwardDirection.GetX();
-			moveY -= forwardDirection.GetY();
+			moveY -= forwardDirection.GetY();  // Asegúrate de que GetY realmente refleje la dirección hacia atrás
 		}
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_A)) {
-			moveX -= rightDirection.GetX();
-			//moveZ -= rightDirection.GetZ();
+			moveX -= rightDirection.GetX();  // Movimiento lateral izquierdo
 		}
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_D)) {
-			moveX += rightDirection.GetX();
-			//moveZ += rightDirection.GetZ();
+			moveX += rightDirection.GetX();  // Movimiento lateral derecho
 		}
 
 		//cout << my_transform->GetRotation().GetX() << " " << my_transform->GetRotation().GetY() << " " << my_transform->GetRotation().GetZ() << endl;

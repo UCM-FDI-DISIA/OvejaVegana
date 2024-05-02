@@ -17,7 +17,9 @@ bool OvejaVegana::MovementComponent::InitComponent() {
 void OvejaVegana::MovementComponent::Update(const double& dt) {
 
 	std::cout << my_rigidbody->GetVelocity().Magnitude() << std::endl;
-	std::cout << IsMoving() << "mmmmmmmmmmmmmmmmmmmmmmmmmm" << std::endl;
+	std::cout << IsMoving() << "mmmmmmmmmmmmmmmmmmmmmmmmmm\n" << std::endl;
+	std::cout << movementDirection.GetX()<<", " << movementDirection.GetY() << ", " << movementDirection.GetZ() << ", " << "\n" << std::endl;
+
 	if (IsMoving()) {
 		my_rigidbody->SetVelocityLinear(movementDirection * (float)(speed/**dt*/));
 		//my_rigidbody->SetVelocityLinear(VeryReal::Vector3(1000,0,0));

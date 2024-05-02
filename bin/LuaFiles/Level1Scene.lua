@@ -24,7 +24,7 @@ Entities={
                     mass = 10.0,
                     friction = 0.5,
                     restitution = 0.0,
-                    trigger = false,
+                    trigger = true,
                     mask = 2,
                     group = 1
                 }
@@ -84,7 +84,7 @@ Entities={
                     nearclipdist = 0.1,
                     shdws = true
                 }
-	        }  
+	        } 
         }
     },
     {
