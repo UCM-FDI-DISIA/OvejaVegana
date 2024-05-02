@@ -11,7 +11,7 @@ bool OvejaVegana::EnemyChaseComponent::InitComponent() {
 	my_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 	my_movement_component = this->GetEntity()->GetComponent<OvejaVegana::MovementComponent>();
 
-	VeryReal::Scene* currScene = VeryReal::SceneManager::Instance()->GetScene("OvejaVegana"); // Nombre de escena o currentScene
+	VeryReal::Scene* currScene = VeryReal::SceneManager::Instance()->GetScene("Level1Scene"); // Nombre de escena o currentScene
 
 	if (currScene != nullptr) 
 		player_transform = currScene->GetEntity("Player")->GetComponent<VeryReal::TransformComponent>(); // Nombre Player

@@ -31,7 +31,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         //CREACION DE TODOS LOS COMPONENETES DEL JUEGO
         OvejaVegana::GameManager::Init();
         //-----//
-        VeryReal::Creator::Instance()->AddCreator("EnemyIA", new OvejaVegana::CreatorEnemyChaseComponent());
+        VeryReal::Creator::Instance()->AddCreator("EnemyChaseComponent", new OvejaVegana::CreatorEnemyChaseComponent());
         VeryReal::Creator::Instance()->AddCreator("ExitButtonComponent", new OvejaVegana::CreatorExitButtonComponent());
         VeryReal::Creator::Instance()->AddCreator("MovementComponent", new OvejaVegana::CreatorMovementComponent());
         VeryReal::Creator::Instance()->AddCreator("MusicComponent", new OvejaVegana::CreatorMusicButtonComponent());

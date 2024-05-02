@@ -28,7 +28,7 @@ namespace OvejaVegana
 
 	private:
 		float speed = 15;
-		VeryReal::Vector3 movementDirection = VeryReal::Vector3(1, 0, 0);
+		VeryReal::Vector3 movementDirection = VeryReal::Vector3(0, 0, 0);
 		VeryReal::TransformComponent* my_transform = nullptr;
 		VeryReal::RigidBodyComponent* my_rigidbody = nullptr;
 	};
