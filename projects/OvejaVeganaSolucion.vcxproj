@@ -28,13 +28,13 @@
     <ClCompile Include="..\src\Components\CreatorPlayerInputComponent.cpp" />
     <ClCompile Include="..\src\Components\EnemyChaseComponent.cpp" />
     <ClCompile Include="..\src\Components\ExitButtonComponent.cpp" />
-    <ClCompile Include="..\src\Components\GameManager.cpp" />
     <ClCompile Include="..\src\Components\HealComponent.cpp" />
     <ClCompile Include="..\src\Components\LifeComponent.cpp" />
     <ClCompile Include="..\src\Components\MovementComponent.cpp" />
     <ClCompile Include="..\src\Components\MusicButtonComponent.cpp" />
     <ClCompile Include="..\src\Components\PlayButtonComponent.cpp" />
     <ClCompile Include="..\src\Components\PlayerInputComponent.cpp" />
+    <ClCompile Include="..\src\GameManager.cpp" />
     <ClCompile Include="..\src\OvejaVeganaSolucion\OvejaVeganaSolucion.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -47,7 +47,6 @@
     <ClInclude Include="..\src\Components\CreatorPlayerInputComponent.h" />
     <ClInclude Include="..\src\Components\EnemyChaseComponent.h" />
     <ClInclude Include="..\src\Components\ExitButtonComponent.h" />
-    <ClInclude Include="..\src\Components\GameManager.h" />
     <ClInclude Include="..\src\Components\HealComponent.h" />
     <ClInclude Include="..\src\Components\LifeComponent.h" />
     <ClInclude Include="..\src\Components\MovementComponent.h" />
@@ -55,6 +54,7 @@
     <ClInclude Include="..\src\Components\PlayButtonComponent.h" />
     <ClInclude Include="..\src\Components\PlayerInputComponent.h" />
     <ClInclude Include="..\src\Export.h" />
+    <ClInclude Include="..\src\GameManager.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -154,7 +154,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(SolutionDir)VeryReal\VeryRealSolucion\src\PedroBullet;$(SolutionDir)VeryReal\VeryRealSolucion\src\AudioLeon;$(SolutionDir)VeryReal\VeryRealSolucion\src\TonInput;$(SolutionDir)VeryReal\VeryRealSolucion\src\LuaLuengo;$(SolutionDir)VeryReal\VeryRealSolucion\src\RomeRender;$(SolutionDir)VeryReal\VeryRealSolucion\src\GuilleElArquitecto</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)VeryReal\VeryRealSolucion\src\PedroBullet;$(SolutionDir)VeryReal\VeryRealSolucion\src\AudioLeon;$(SolutionDir)VeryReal\VeryRealSolucion\src\TonInput;$(SolutionDir)VeryReal\VeryRealSolucion\src\LuaLuengo;$(SolutionDir)VeryReal\VeryRealSolucion\src\RomeRender;$(SolutionDir)VeryReal\VeryRealSolucion\src\GuilleElArquitecto;$(SolutionDir)src;$(SolutionDir)src/Components</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -173,7 +173,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(SolutionDir)VeryReal\VeryRealSolucion\src\PedroBullet;$(SolutionDir)VeryReal\VeryRealSolucion\src\AudioLeon;$(SolutionDir)VeryReal\VeryRealSolucion\src\TonInput;$(SolutionDir)VeryReal\VeryRealSolucion\src\LuaLuengo;$(SolutionDir)VeryReal\VeryRealSolucion\src\RomeRender;$(SolutionDir)VeryReal\VeryRealSolucion\src\GuilleElArquitecto</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)VeryReal\VeryRealSolucion\src\PedroBullet;$(SolutionDir)VeryReal\VeryRealSolucion\src\AudioLeon;$(SolutionDir)VeryReal\VeryRealSolucion\src\TonInput;$(SolutionDir)VeryReal\VeryRealSolucion\src\LuaLuengo;$(SolutionDir)VeryReal\VeryRealSolucion\src\RomeRender;$(SolutionDir)VeryReal\VeryRealSolucion\src\GuilleElArquitecto;$(SolutionDir)src;$(SolutionDir)src/Components</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

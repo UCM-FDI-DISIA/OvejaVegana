@@ -1,5 +1,6 @@
 #include "GameManager.h"
 #include "Scene.h"
+#include <iostream>
 using namespace OvejaVegana;
 GameManager::~GameManager() {
 
@@ -39,4 +40,8 @@ void GameManager::Win() {
 void GameManager::Loose() {
 	VeryReal::SceneManager::Instance()->ActivationScene("LoseScene", true);
 	VeryReal::SceneManager::Instance()->ActivationScene("PlayScene", false);
+}
+
+void GameManager::CreateRandomTrees() {
+	std::cout << "I create all the trees\n";
 }

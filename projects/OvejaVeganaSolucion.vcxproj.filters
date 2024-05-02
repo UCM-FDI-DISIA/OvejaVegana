@@ -63,7 +63,7 @@
     <ClCompile Include="..\src\Components\MusicButtonComponent.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Components\GameManager.cpp">
+    <ClCompile Include="..\src\GameManager.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
@@ -116,7 +116,7 @@
     <ClInclude Include="..\src\Components\MusicButtonComponent.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Components\GameManager.h">
+    <ClInclude Include="..\src\GameManager.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

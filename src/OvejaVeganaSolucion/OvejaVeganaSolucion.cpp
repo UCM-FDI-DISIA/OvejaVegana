@@ -11,13 +11,14 @@
 #include "Vector3.h"
 #include "SceneManager.h"
 #include "ScriptManager.h"
-#include "../Components/CreatorMovementComponent.h"
-#include "../Components/CreatorPlayerInputComponent.h"
+#include "GameManager.h"
+#include "CreatorMovementComponent.h"
+#include "CreatorPlayerInputComponent.h"
 #include "PhysicsManager.h"
-#include "../Components/PlayButtonComponent.h"
-#include "../Components/ExitButtonComponent.h"
-#include "../Components/CreatorExitButtonComponent.h"
-#include "../Components/CreatorPlayButtonComponent.h"
+#include "PlayButtonComponent.h"
+#include "ExitButtonComponent.h"
+#include "CreatorExitButtonComponent.h"
+#include "CreatorPlayButtonComponent.h"
 
 
 using namespace VeryReal;
@@ -31,6 +32,8 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
 
         ScriptManager::Instance()->ReadScene("Level1Scene");
         VeryReal::SceneManager::Instance()->GetScene("Level1Scene")->SetActive(true);
+        //VeryReal::ScriptManager::Instance()->ExposeFunctionsToLua("Arboles", OvejaVegana::GameManager::Instance()->CreateRandomTrees);
+        VeryReal::ScriptManager::Instance()->ReadFunction();
         return true;
     }
 

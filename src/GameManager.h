@@ -11,15 +11,6 @@ namespace OvejaVegana {
 	private:
 		GameManager() {}
 	public:
-		
-		virtual ~GameManager();
-		void Start();
-		void Update(const double& dt);
-		void Win();
-		void Loose();
-		void Menu();
-		void Play();
-		void Pause();
 		static bool Init() {
 			GameManager* a = new GameManager();
 			if (a != nullptr) {
@@ -29,6 +20,15 @@ namespace OvejaVegana {
 			return false;
 
 		}
+		virtual ~GameManager();
+		void Start();
+		void Update(const double& dt);
+		void Win();
+		void Loose();
+		void Menu();
+		void Play();
+		void Pause();
+		static void CreateRandomTrees();
 
 
 	};
