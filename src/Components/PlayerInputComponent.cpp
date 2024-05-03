@@ -6,9 +6,6 @@
 #include "RigidBodyComponent.h"
 #include "Entity.h"
 
-#include "SceneManager.h"
-#include "Scene.h"
-
 using namespace std;
 
 bool OvejaVegana::PlayerInputComponent::InitComponent() {
@@ -48,15 +45,11 @@ void OvejaVegana::PlayerInputComponent::Update(const double& dt) {
 			moveX += rightDirection.GetX(); moveY += rightDirection.GetY();
 		}
 
-		/*cout << moveX << " " << moveZ << endl;*/
+		// cout << moveX << " " << moveZ << endl;
 
-		/*cout << my_rigidbody->GetPosition().GetX() << " " <<
-			my_rigidbody->GetPosition().GetY() << " " <<
-			my_rigidbody->GetPosition().GetZ() << endl;*/
+		// cout << my_rigidbody->GetPosition().GetX() << " " << my_rigidbody->GetPosition().GetY() << " " << my_rigidbody->GetPosition().GetZ() << endl;
 
-		/*cout << my_transform->GetPosition().GetX() << " " << 
-			my_transform->GetPosition().GetY() << " " << 
-			my_transform->GetPosition().GetZ() << endl;*/
+		// cout << my_transform->GetPosition().GetX() << " " << my_transform->GetPosition().GetY() << " " <<  my_transform->GetPosition().GetZ() << endl;
 
 		my_movement_component->SetMoventDirectionX(moveX * sprint);
 		my_movement_component->SetMoventDirectionY(moveY * sprint);

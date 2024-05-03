@@ -56,6 +56,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
     }
 
     __declspec(dllexport) void loop() {
+        OvejaVegana::EnemyWaveManager::Instance()->Update(0.01);
         /*  std::cout << "Pepa" << std::endl;*/
     }
 }
