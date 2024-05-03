@@ -7,7 +7,7 @@
 #include "../Export.h"
 
 namespace VeryReal {
-	
+	class UITextComponent;
 }
 
 #pragma warning(disable : 4251)
@@ -17,9 +17,17 @@ namespace OvejaVegana {
 	public:
 		virtual bool InitComponent();
 		virtual void Update(const double& dt);
-
+		void GetTimeInMinutesSeconds(int& minutes, int& seconds, float currentTime);
+		void SetTimerCaption(const std::string& minutes, const std::string& seconds);
 	private:
+		VeryReal::UITextComponent* time_text = nullptr;
 		
+		//Variable que almacena el tiempo pasado desde el inicio de la ronda en segundos y milisgeundos
+		float current_time = 0;
+		//Variable que almacena el tiempo máximo de ronda en segundos.
+		int max_round_time;
+		//Variable que marca si la ronda ha sido completada
+		bool round_completed = false;
 	};
 }
 
