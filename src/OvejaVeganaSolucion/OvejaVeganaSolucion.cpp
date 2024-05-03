@@ -22,6 +22,7 @@
 #include "CreatorEnemyChaseComponent.h"
 #include "CreatorMusicButtonComponent.h"
 #include "CreatorTimerComponent.h"
+#include "EnemyWaveManager.h"
 using namespace VeryReal;
 
 extern "C"  //Para que al exportar la función de las DLLs los nombres no se contaminen (name mangling), esto es usado por el compilador para permitir la sobrecarga de funciones
@@ -31,6 +32,8 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
     __declspec(dllexport) bool start() {
         //CREACION DE TODOS LOS COMPONENETES DEL JUEGO
         OvejaVegana::GameManager::Init();
+        OvejaVegana::EnemyWaveManager::Init();
+        PhysicsManager::Instance()->SetWorldGravity(Vector3(0, 0, 0));
         //-----//
         VeryReal::Creator::Instance()->AddCreator("EnemyChaseComponent", new OvejaVegana::CreatorEnemyChaseComponent());
         VeryReal::Creator::Instance()->AddCreator("ExitButtonComponent", new OvejaVegana::CreatorExitButtonComponent());
@@ -41,14 +44,17 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         VeryReal::Creator::Instance()->AddCreator("TimerComponent", new OvejaVegana::CreatorTimerComponent());
         
         ScriptManager::Instance()->ReadScene("Level1Scene", true);
-        //VeryReal::SceneManager::Instance()->GetScene("Level1Scene")->SetActive(true);
+        ScriptManager::Instance()->ReadPrefabs();
+
+        OvejaVegana::EnemyWaveManager::Instance()->InitManager();
+
+
         //VeryReal::ScriptManager::Instance()->ExposeFunctionsToLua("Arboles", OvejaVegana::GameManager::Instance()->CreateRandomTrees);
         //VeryReal::ScriptManager::Instance()->ReadFunction();
         return true;
     }
 
-    __declspec(dllexport) void loop()
-    {
+    __declspec(dllexport) void loop() {
         /*  std::cout << "Pepa" << std::endl;*/
     }
 }
