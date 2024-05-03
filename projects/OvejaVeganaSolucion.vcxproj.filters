@@ -132,10 +132,10 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Components\CreatorTimerComponent.h">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Components\TimerComponent.h">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
