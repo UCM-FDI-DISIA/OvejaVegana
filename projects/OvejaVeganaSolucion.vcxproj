@@ -26,6 +26,7 @@
     <ClCompile Include="..\src\Components\CreatorMusicButtonComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorPlayButtonComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorPlayerInputComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorTimerComponent.cpp" />
     <ClCompile Include="..\src\Components\EnemyChaseComponent.cpp" />
     <ClCompile Include="..\src\Components\EnemyWaveManager.cpp" />
     <ClCompile Include="..\src\Components\ExitButtonComponent.cpp" />
@@ -35,6 +36,7 @@
     <ClCompile Include="..\src\Components\MusicButtonComponent.cpp" />
     <ClCompile Include="..\src\Components\PlayButtonComponent.cpp" />
     <ClCompile Include="..\src\Components\PlayerInputComponent.cpp" />
+    <ClCompile Include="..\src\Components\TimerComponent.cpp" />
     <ClCompile Include="..\src\GameManager.cpp" />
     <ClCompile Include="..\src\OvejaVeganaSolucion\OvejaVeganaSolucion.cpp" />
   </ItemGroup>
@@ -46,6 +48,7 @@
     <ClInclude Include="..\src\Components\CreatorMusicButtonComponent.h" />
     <ClInclude Include="..\src\Components\CreatorPlayButtonComponent.h" />
     <ClInclude Include="..\src\Components\CreatorPlayerInputComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorTimerComponent.h" />
     <ClInclude Include="..\src\Components\EnemyChaseComponent.h" />
     <ClInclude Include="..\src\Components\EnemyWaveManager.h" />
     <ClInclude Include="..\src\Components\ExitButtonComponent.h" />
@@ -55,6 +58,7 @@
     <ClInclude Include="..\src\Components\MusicButtonComponent.h" />
     <ClInclude Include="..\src\Components\PlayButtonComponent.h" />
     <ClInclude Include="..\src\Components\PlayerInputComponent.h" />
+    <ClInclude Include="..\src\Components\TimerComponent.h" />
     <ClInclude Include="..\src\Export.h" />
     <ClInclude Include="..\src\GameManager.h" />
   </ItemGroup>
