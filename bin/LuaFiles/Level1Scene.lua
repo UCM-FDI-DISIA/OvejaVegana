@@ -233,16 +233,16 @@ Entities={
                     mask = 1,
                     group = 1
                 }
+            },
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "mapa1.mesh",
+                    entityname= "Mundo",
+                    materialname = ""
+                }
             }
-            -- {
-            --     name = "MeshRenderComponent",
-            --     parameters = {                  
-            --         isstatic = false,
-            --         modelname = "mapa1.mesh",
-            --         entityname= "Mundo",
-            --         materialname = ""
-            --     }
-            -- }
         }
     },
     {
@@ -252,9 +252,9 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     a = 0,
-                    position = {0, 245, 5},
+                    position = {-12, 245, 5},
                     rotation = {0, 0, 0},
-                    scale = {10, 0.25, 1}                   
+                    scale = {6.5, 0.25, 1}                   
                 }
             },
             {
@@ -272,15 +272,15 @@ Entities={
                     group = 1
                 }
             },
-            -- {para debug
-            --     name = "MeshRenderComponent",
-            --     parameters = {                  
-            --         isstatic = false,
-            --         modelname = "mapa1.mesh",
-            --         entityname= "Mundo",
-            --         materialname = "Black"
-            --     }
-            -- }
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "mapa1.mesh",
+                    entityname= "Mundo",
+                    materialname = "Black"
+                }
+            }
         }
     },
     {
@@ -290,9 +290,9 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     a = 0,
-                    position = {0, 0, 5},
+                    position = {-12, 0, 5},
                     rotation = {0, 0, 0},
-                    scale = {10, 0.25, 1}                   
+                    scale = {6.5, 0.25, 1}                   
                 }
             },
             {
@@ -309,16 +309,16 @@ Entities={
                     mask = 1,
                     group = 1
                 }
+            },
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "mapa1.mesh",
+                    entityname= "Mundo",
+                    materialname = "Black"
+                }
             }
-            -- {para debug
-            --     name = "MeshRenderComponent",
-            --     parameters = {                  
-            --         isstatic = false,
-            --         modelname = "mapa1.mesh",
-            --         entityname= "Mundo",
-            --         materialname = "Black"
-            --     }
-            -- }
         }
     },
     {
@@ -328,9 +328,9 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     a = 0,
-                    position = {95, 250, 5},
+                    position = {90, 200, 5},
                     rotation = {0, 0, 0},
-                    scale = {0.25, 10, 1}                   
+                    scale = {0.25, 6.6, 1}                   
                 }
             },
             {
@@ -347,16 +347,16 @@ Entities={
                     mask = 1,
                     group = 1
                 }
+            },
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "mapa1.mesh",
+                    entityname= "Mundo",
+                    materialname = "Black"
+                }
             }
-            -- { para debug
-            --     name = "MeshRenderComponent",
-            --     parameters = {                  
-            --         isstatic = false,
-            --         modelname = "mapa1.mesh",
-            --         entityname= "Mundo",
-            --         materialname = "Black"
-            --     }
-            -- }
         }
     },
     {
@@ -366,9 +366,9 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     a = 0,
-                    position = {-150, 250, 5},
+                    position = {-150, 200, 5},
                     rotation = {0, 0, 0},
-                    scale = {0.25, 10, 1}                   
+                    scale = {0.25, 6.6, 1}                   
                 }
             },
             {
@@ -385,16 +385,16 @@ Entities={
                     mask = 1,
                     group = 1
                 }
+            },
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "mapa1.mesh",
+                    entityname= "Mundo",
+                    materialname = "Black"
+                }
             }
-            -- { para debug
-            --     name = "MeshRenderComponent",
-            --     parameters = {                  
-            --         isstatic = false,
-            --         modelname = "mapa1.mesh",
-            --         entityname= "Mundo",
-            --         materialname = "Black"
-            --     }
-            -- }
         }
     },
     {
