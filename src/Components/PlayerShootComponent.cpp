@@ -40,14 +40,14 @@ OvejaVegana::PlayerShootComponent::PlayerShootComponent()
 
         // Calcula la dirección de disparo, esto podría ser hacia donde apunta el ratón o la mira del jugador
         VeryReal::Vector3 shootDirection = GetMouseDirection();
-
+        shootDirection.SetZ(0);
         // Asume que tienes un método para reproducir sonidos en AudioManager
         //VeryReal::AudioManager::Instance().PlaySound("shoot_sound");
 
         // Crea un prefab de la bala desde el Scene Manager
         VeryReal::Entity* bala = VeryReal::SceneManager::Instance()->GetActiveScene()->CreatePrefab("PrefabBala", "bala"+ std::to_string(numB) );
 
-        if (!bala) std::cout << " nop\n";; // Asegúrate de que la bala se ha creado correctamente
+        if (!bala) std::cout << " nop\n"; // Asegúrate de que la bala se ha creado correctamente
 
         // Obtén el componente transform de la bala
         bala_transform = bala->GetComponent<VeryReal::TransformComponent>();
@@ -57,16 +57,18 @@ OvejaVegana::PlayerShootComponent::PlayerShootComponent()
         bala_transform->SetPosition(my_transform->GetPosition());
 
         // Configura la velocidad de la bala
-        float velocidadInicial = 100.0f; // Define la velocidad inicial de la bala
+        float velocidadInicial = 1.0f; // Define la velocidad inicial de la bala
         VeryReal::Vector3 velocidadBala = shootDirection.Normalize() * velocidadInicial;
         bala_transform->SetVelocity(velocidadBala);
 
         // Si tu juego maneja físicas, quizás necesites añadir un RigidBodyComponent
         auto bala_rigidbody = bala->GetComponent<VeryReal::RigidBodyComponent>();
+        bala_rigidbody->SetPosition(my_rigidbody->GetPosition());
         if (bala_rigidbody) {
             bala_rigidbody->SetVelocityLinear(velocidadBala);
         }
 
+        std::cout << bala->GetName() + std::to_string(numB) << " " << bala_rigidbody->GetPosition().GetX() << " " << bala_rigidbody->GetPosition().GetY() << " " << bala_rigidbody->GetPosition().GetZ() << "\n";
     }
 
     VeryReal::Vector3 OvejaVegana::PlayerShootComponent::GetMouseDirection() {

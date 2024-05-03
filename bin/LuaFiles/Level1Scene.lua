@@ -118,7 +118,7 @@ Entities={
                     mass = 10.0,
                     friction = 0.5,
                     restitution = 0.0,
-                    trigger = true,
+                    trigger = false,
                     mask = 2,
                     group = 1
                 }
@@ -233,16 +233,16 @@ Entities={
                     mask = 1,
                     group = 1
                 }
-            },
-            {
-                name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = false,
-                    modelname = "mapa1.mesh",
-                    entityname= "Mundo",
-                    materialname = ""
-                }
             }
+            -- {
+            --     name = "MeshRenderComponent",
+            --     parameters = {                  
+            --         isstatic = false,
+            --         modelname = "mapa1.mesh",
+            --         entityname= "Mundo",
+            --         materialname = ""
+            --     }
+            -- }
         }
     },
     {

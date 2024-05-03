@@ -22,12 +22,29 @@ Prefabs={
                 parameters = {
                 }
             },
-            name = "MeshRenderComponent",
-            parameters = {                  
-                isstatic = true,
-                modelname = "Crate.mesh",
-                materialname = "crate/CrateDarkWood"
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "Crate.mesh",
+                    materialname = "crate/CrateDarkWood"
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 0,
+                    size = {1, 1, 1},
+                    mass = 10.0,
+                    friction = 0.5,
+                    restitution = 0.0,
+                    trigger = false,
+                    mask = 8,
+                    group = 8
+                }
             }
+            
         }
     }, 
     {  name = "PrefabCaja",
