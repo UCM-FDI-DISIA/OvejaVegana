@@ -4,10 +4,10 @@
 #include <SceneManager.h>
 #include <Scene.h>
 
-bool OvejaVegana::TimerComponent::InitComponent()
+bool OvejaVegana::TimerComponent::InitComponent(int maxTime)
 {
 	time_text = this->GetEntity()->GetComponent<VeryReal::UITextComponent>();
-	max_round_time = 180;
+	max_round_time = maxTime;
 	if (time_text != nullptr) {
 		return true;
 	}

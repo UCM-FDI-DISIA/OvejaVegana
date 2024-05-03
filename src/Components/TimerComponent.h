@@ -15,7 +15,7 @@ namespace VeryReal {
 namespace OvejaVegana {
 	class OVEJAVEGANA_API TimerComponent : public VeryReal::Component {
 	public:
-		virtual bool InitComponent();
+		virtual bool InitComponent(int maxTime);
 		virtual void Update(const double& dt);
 		void GetTimeInMinutesSeconds(int& minutes, int& seconds, float currentTime);
 		void SetTimerCaption(const std::string& minutes, const std::string& seconds);
