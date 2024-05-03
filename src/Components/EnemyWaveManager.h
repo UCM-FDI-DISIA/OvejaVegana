@@ -16,9 +16,18 @@ namespace OvejaVegana {
 		float TIME_BETWEEN_WAVES = 5;
 
 		float safe_generation_distance = 10;
-		VeryReal::TransformComponent* player_transform;
+		VeryReal::TransformComponent* player_transform = nullptr;
 
 	public:
+		static bool Init() {
+			EnemyWaveManager* a = new EnemyWaveManager();
+			if (a != nullptr) {
+				instance_pointer.reset(a);
+				return true;
+			}
+			return false;
+		}
+		bool InitManager();
 		void Update(const double& dt);
 		void GenerateNextWave();
 		void EnemyDefeated() { nEnemies--; }

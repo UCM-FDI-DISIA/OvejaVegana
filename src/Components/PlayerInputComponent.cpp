@@ -6,6 +6,9 @@
 #include "RigidBodyComponent.h"
 #include "Entity.h"
 
+#include "SceneManager.h"
+#include "Scene.h"
+
 using namespace std;
 
 bool OvejaVegana::PlayerInputComponent::InitComponent() {
