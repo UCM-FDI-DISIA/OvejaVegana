@@ -1,11 +1,46 @@
 Entities={ 
     {
+        name = "Camera",
+        components = {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    position = {-25, 125, 350},
+                    rotation ={0, 0, 0},
+                    scale = {1, 1, 1}                   
+                }
+            },
+            {
+                name = "CameraComponent",
+                parameters = {                  
+                    name = "anim",
+                    color = {0, 0, 0},
+                    alfa = 0.0,
+                    offset = {0, 0, 0}
+                }
+            },
+            {
+                name = "LightComponent",
+                parameters = {
+                    type = 1,
+                    diffusecolour = {10, 10, 10},
+                    shadowfardist = 25.0,
+                    shadowdist = 100.0,
+                    ineerangle = 90.0,
+                    outerangle = 180.0,
+                    nearclipdist = 0.1,
+                    shdws = true
+                }
+	        }  
+        }
+    },
+    {
         name = "Player",
         components = {
             {
                 name = "TransformComponent",
                 parameters = {  
-                    position = {0, 0, 50},
+                    position = {-25, 125, 50},
                     rotation ={0, 0, 90},
                     scale = {10, 10, 10}                   
                 }
@@ -48,6 +83,12 @@ Entities={
                     modelname = "oveja.mesh",
                     entityname= "Player",
                     materialname = "oveja"
+                }
+            },
+            {
+                name = "PlayerShootComponent",
+                parameters ={
+
                 }
             }         
         }
@@ -105,41 +146,7 @@ Entities={
             }         
         }
     }, 
-    {
-        name = "Camera",
-        components = {
-            {
-                name = "TransformComponent",
-                parameters = {  
-                    position = {0, 0, 200},
-                    rotation ={0, 0, 90},
-                    scale = {1, 1, 1}                   
-                }
-            },
-            {
-                name = "CameraComponent",
-                parameters = {                  
-                    name = "anim",
-                    color = {0, 0, 0},
-                    alfa = 0.0,
-                    offset = {0, 0, 0}
-                }
-            },
-            {
-                name = "LightComponent",
-                parameters = {
-                    type = 1,
-                    diffusecolour = {10, 10, 10},
-                    shadowfardist = 25.0,
-                    shadowdist = 100.0,
-                    ineerangle = 90.0,
-                    outerangle = 180.0,
-                    nearclipdist = 0.1,
-                    shdws = true
-                }
-	        }  
-        }
-    },
+    
     {
         name = "Ogreman5",
         components = {

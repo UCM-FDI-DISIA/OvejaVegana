@@ -3,8 +3,8 @@ Prefabs={
         name = "PrefabBala",
         components = {
             {
-                name = "Transform",
-                parameters = {                  
+                name = "TransformComponent",
+                parameters = {          
                     position = {0, 0, 0},
                     rotation = {0, 0, 0},
                     scale = {1, 1, 1}     
@@ -21,13 +21,19 @@ Prefabs={
                 name = "ColliderComponent",
                 parameters = {
                 }
-            }       
+            },
+            name = "MeshRenderComponent",
+            parameters = {                  
+                isstatic = true,
+                modelname = "Crate.mesh",
+                materialname = "crate/CrateDarkWood"
+            }
         }
     }, 
     {  name = "PrefabCaja",
         components = {
 	        {
-                name = "Transform",
+                name = "TransformComponent",
                 parameters = {
                     position = {0, 0, 0},
                     rotation = {0, 0, 0},
@@ -39,7 +45,7 @@ Prefabs={
                 isstatic = true,
                 modelname = "Crate.mesh",
                 materialname = "crate/CrateDarkWood"
-            }
+            },
             {
                 name = "ColliderComponent",
                 parameters = {
