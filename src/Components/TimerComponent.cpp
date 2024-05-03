@@ -21,9 +21,12 @@ void OvejaVegana::TimerComponent::Update(const double& dt)
 	int minutes, seconds;
 	current_time += dt;
 	GetTimeInMinutesSeconds(minutes, seconds, current_time);
-	SetTimerCaption(std::to_string(minutes), std::to_string(seconds));
+	SetTimerCaption(minutes, seconds);
 	if (current_time >= max_round_time) {
 		round_completed = true;
+#ifdef _DEBUG
+		std::cout << "Round completed  \n";
+#endif
 	}
 }
 
@@ -35,8 +38,21 @@ void OvejaVegana::TimerComponent::GetTimeInMinutesSeconds(int& minutes, int& sec
 	seconds = time % 60;
 }
 
-void OvejaVegana::TimerComponent::SetTimerCaption(const std::string& minutes, const std::string& seconds)
-{
-	std::string newCaption = " " + minutes + " : " + seconds;
+void OvejaVegana::TimerComponent::SetTimerCaption(const int& minutes, const int& seconds)
+{	
+	std::string minutesWord, secondsWord;
+	if (minutes < 10) {
+		minutesWord = "0" + std::to_string(minutes);
+	}
+	else if (minutes <= 0) {
+		minutesWord = std::to_string(minutes);
+	}
+	if (seconds < 10) {
+		secondsWord = "0" + std::to_string(seconds);
+	}
+	else {
+		secondsWord = std::to_string(seconds);
+	}
+	std::string newCaption = " " + minutesWord + " : " + secondsWord;
 	time_text->setCaption(newCaption);
 }

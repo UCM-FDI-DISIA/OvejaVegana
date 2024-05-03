@@ -389,5 +389,44 @@ Entities={
             --     }
             -- }
         }
+    },
+    {
+        name = "Timer_Prueba",
+        components = {
+            {
+                name = "UITransformComponent",
+                parameters = {  
+                    hidden = false,
+                    position = {0.5, 0.5},
+                    scale = {0.5, 0.5}                   
+                }
+            },
+            {
+                name = "UITextComponent",
+                parameters = {   
+                    name = "pruebaTimer",
+                    font = "Mario",
+                    caption = "hola",
+                    zOrder = 7,
+                    charHeight = 0.1,
+                    color = {1, 0, 0}
+                }
+            },
+            {
+                name = "TimerComponent",
+                parameters = {    
+                    maxTime = 180
+                }
+            }
+            -- {para debug
+            --     name = "MeshRenderComponent",
+            --     parameters = {                  
+            --         isstatic = false,
+            --         modelname = "mapa1.mesh",
+            --         entityname= "Mundo",
+            --         materialname = "Black"
+            --     }
+            -- }
+        }
     }
 }

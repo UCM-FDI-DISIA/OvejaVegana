@@ -18,7 +18,7 @@ namespace OvejaVegana {
 		virtual bool InitComponent(int maxTime);
 		virtual void Update(const double& dt);
 		void GetTimeInMinutesSeconds(int& minutes, int& seconds, float currentTime);
-		void SetTimerCaption(const std::string& minutes, const std::string& seconds);
+		void SetTimerCaption(const int& minutes, const int& seconds);
 	private:
 		VeryReal::UITextComponent* time_text = nullptr;
 		

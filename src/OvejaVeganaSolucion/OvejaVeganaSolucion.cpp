@@ -38,7 +38,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         VeryReal::Creator::Instance()->AddCreator("MusicComponent", new OvejaVegana::CreatorMusicButtonComponent());
         VeryReal::Creator::Instance()->AddCreator("PlayButtonComponent", new OvejaVegana::CreatorPlayButtonComponent());
         VeryReal::Creator::Instance()->AddCreator("PlayerInputComponent", new OvejaVegana::CreatorPlayerInputComponent());
-        VeryReal::Creator::Instance()->AddCreator("CreatorTimerComponent", new OvejaVegana::CreatorTimerComponent());
+        VeryReal::Creator::Instance()->AddCreator("TimerComponent", new OvejaVegana::CreatorTimerComponent());
         
         ScriptManager::Instance()->ReadScene("Level1Scene", true);
         //VeryReal::SceneManager::Instance()->GetScene("Level1Scene")->SetActive(true);
