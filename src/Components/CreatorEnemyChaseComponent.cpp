@@ -12,3 +12,7 @@ void OvejaVegana::CreatorEnemyChaseComponent::SpecificInitComponent(VeryReal::Co
         // Gestion de error
     }
 }
+
+void OvejaVegana::CreatorEnemyChaseComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+    
+}

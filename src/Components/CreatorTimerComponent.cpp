@@ -33,3 +33,7 @@ void OvejaVegana::CreatorTimerComponent::SpecificInitComponent(VeryReal::Compone
         // Gestion de error
     }
 }
+
+void OvejaVegana::CreatorTimerComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+
+}

@@ -14,3 +14,7 @@ void OvejaVegana::CreatorExitButtonComponent::SpecificInitComponent(VeryReal::Co
 
     }
 }
+
+void OvejaVegana::CreatorExitButtonComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+
+}

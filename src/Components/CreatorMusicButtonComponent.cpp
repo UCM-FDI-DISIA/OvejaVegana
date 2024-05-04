@@ -14,3 +14,7 @@ void OvejaVegana::CreatorMusicButtonComponent::SpecificInitComponent(VeryReal::C
         // Manejar la inicialización fallida aquí
     }
 }
+
+void OvejaVegana::CreatorMusicButtonComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+
+}

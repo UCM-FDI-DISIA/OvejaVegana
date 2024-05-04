@@ -12,3 +12,7 @@ void OvejaVegana::CreatorMovementComponent::SpecificInitComponent(VeryReal::Comp
         // Gestion de error
     }
 }
+
+void OvejaVegana::CreatorMovementComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+
+}

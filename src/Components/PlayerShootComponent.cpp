@@ -68,7 +68,7 @@ OvejaVegana::PlayerShootComponent::PlayerShootComponent()
             bala_rigidbody->SetVelocityLinear(velocidadBala);
         }
 
-        std::cout << bala->GetName() + std::to_string(numB) << " " << bala_rigidbody->GetPosition().GetX() << " " << bala_rigidbody->GetPosition().GetY() << " " << bala_rigidbody->GetPosition().GetZ() << "\n";
+        //std::cout << bala->GetName() + std::to_string(numB) << " " << bala_rigidbody->GetPosition().GetX() << " " << bala_rigidbody->GetPosition().GetY() << " " << bala_rigidbody->GetPosition().GetZ() << "\n";
     }
 
     VeryReal::Vector3 OvejaVegana::PlayerShootComponent::GetMouseDirection() {

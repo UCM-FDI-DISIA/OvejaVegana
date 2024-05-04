@@ -14,3 +14,7 @@ void OvejaVegana::CreatorPlayButtonComponent::SpecificInitComponent(VeryReal::Co
 
     }
 }
+
+void OvejaVegana::CreatorPlayButtonComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+
+}

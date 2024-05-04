@@ -14,3 +14,6 @@ void OvejaVegana::CreatorPlayerShootComponent::SpecificInitComponent(VeryReal::C
     }
 }
 
+void OvejaVegana::CreatorPlayerShootComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+
+}

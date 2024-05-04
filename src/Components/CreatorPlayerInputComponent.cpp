@@ -12,3 +12,7 @@ void OvejaVegana::CreatorPlayerInputComponent::SpecificInitComponent(VeryReal::C
         // Gestion de error
     }
 }
+
+void OvejaVegana::CreatorPlayerInputComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+
+}
