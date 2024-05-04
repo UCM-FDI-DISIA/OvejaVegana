@@ -16,7 +16,8 @@ Entities={
                     name = "anim",
                     color = {0, 0, 0},
                     alfa = 0.0,
-                    offset = {0, 0, 0}
+                    offset = {0, 0, 0},
+                    zOrder = 1
                 }
             },
             {

@@ -42,7 +42,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         VeryReal::Creator::Instance()->AddCreator("EnemyChaseComponent", new OvejaVegana::CreatorEnemyChaseComponent());
         VeryReal::Creator::Instance()->AddCreator("ExitButtonComponent", new OvejaVegana::CreatorExitButtonComponent());
         VeryReal::Creator::Instance()->AddCreator("MovementComponent", new OvejaVegana::CreatorMovementComponent());
-        VeryReal::Creator::Instance()->AddCreator("MusicComponent", new OvejaVegana::CreatorMusicButtonComponent());
+        VeryReal::Creator::Instance()->AddCreator("MusicButtonComponent", new OvejaVegana::CreatorMusicButtonComponent());
         VeryReal::Creator::Instance()->AddCreator("PlayButtonComponent", new OvejaVegana::CreatorPlayButtonComponent());
         VeryReal::Creator::Instance()->AddCreator("PlayerInputComponent", new OvejaVegana::CreatorPlayerInputComponent());
         VeryReal::Creator::Instance()->AddCreator("PlayerShootComponent", new OvejaVegana::CreatorPlayerShootComponent());
@@ -51,10 +51,11 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         VeryReal::Creator::Instance()->AddCreator("HealComponent", new OvejaVegana::CreatorHealComponent());
         VeryReal::Creator::Instance()->AddCreator("Bullet", new OvejaVegana::CreatorBulletComponent());
 
-        ScriptManager::Instance()->ReadScene("Level1Scene", true);
+        OvejaVegana::GameManager::Instance()->Start();
+        /*ScriptManager::Instance()->ReadScene("Level1Scene", true);
         ScriptManager::Instance()->ReadPrefabs();
 
-        OvejaVegana::EnemyWaveManager::Instance()->InitManager();
+        OvejaVegana::EnemyWaveManager::Instance()->InitManager();*/
 
         //VeryReal::ScriptManager::Instance()->ExposeFunctionsToLua("Arboles", OvejaVegana::GameManager::Instance()->CreateRandomTrees);
         //VeryReal::ScriptManager::Instance()->ReadFunction();
@@ -62,7 +63,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
     }
 
     __declspec(dllexport) void loop() {
-        OvejaVegana::EnemyWaveManager::Instance()->Update(0.01);
+        //OvejaVegana::EnemyWaveManager::Instance()->Update(0.01);
         /*  std::cout << "Pepa" << std::endl;*/
     }
 }

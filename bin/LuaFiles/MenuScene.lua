@@ -14,11 +14,11 @@ Entities={
                 name = "UITextComponent",
                 parameters = {                  
                     name = "playbutton",
-                    font = "OvejaVegana",
+                    font = "Mario",
                     caption = "PLAY",
                     zOrder = 3,
                     charHeight = 0.1,
-                    color = {1.0,1.0,1.0} 
+                    color = {1.0,0.0,0.0} 
                 }
             },
             {
@@ -44,11 +44,11 @@ Entities={
                 name = "UITextComponent",
                 parameters = {                  
                     name = "exitbutton",
-                    font = "OvejaVegana",
+                    font = "Mario",
                     caption = "EXIT",
                     zOrder = 3,
                     charHeight = 0.1,
-                    color = {1.0,1.0,1.0} 
+                    color = {1.0,0.0,0.0} 
                 }
             },
             {
@@ -65,8 +65,8 @@ Entities={
             {
                 name = "UITransformComponent",
                 parameters = {                  
-                    position = {0.9, 0.1},
-                    scale = {0.1, 0.1},
+                    position = {0.8, 0.1},
+                    scale = {0.05, 0.05},
                     hidden = false     
                 }
             },
@@ -74,10 +74,10 @@ Entities={
                 name = "UITextComponent",
                 parameters = {                  
                     name = "mute",
-                    font = "OvejaVegana",
+                    font = "Mario",
                     caption = "MUTE",
                     zOrder = 3,
-                    charHeight = 0.1,
+                    charHeight = 0.05,
                     color = {1.0,1.0,1.0} 
                 }
             },
@@ -105,8 +105,9 @@ Entities={
                 name = "CameraComponent",
                 parameters = {
                     name = "menu",
-                    color = {0.0, 0.0, 0.0},
-                    offset = {0.0, 0.0, 0.0}
+                    color = {0.1, 1.0, 0.1},
+                    offset = {0.0, 0.0, 0.0},
+                    zOrder = 0
                 }
             }
         }

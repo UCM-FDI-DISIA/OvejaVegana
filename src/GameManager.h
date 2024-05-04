@@ -24,7 +24,7 @@ namespace OvejaVegana {
 		void Start();
 		void Update(const double& dt);
 		void Win();
-		void Loose();
+		void Lose();
 		void Menu();
 		void Play();
 		void Pause();

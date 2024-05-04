@@ -1,6 +1,8 @@
 #include "GameManager.h"
 #include "Scene.h"
 #include <iostream>
+#include "ScriptManager.h"
+#include "EnemyWaveManager.h"
 using namespace OvejaVegana;
 
 GameManager::~GameManager() {
@@ -8,13 +10,7 @@ GameManager::~GameManager() {
 }
 
 void GameManager::Start() {
-	//aquí añadiremos todas las escena del juego(Menu, Pausa, Juego,Win , Loose) y dejaremos activa la del Menu Inicial
-	VeryReal::SceneManager::Instance()->AddScene("MenuScene", false);
-	VeryReal::SceneManager::Instance()->AddScene("PlayScene", false);
-	VeryReal::SceneManager::Instance()->AddScene("PauseScene", false);
-	VeryReal::SceneManager::Instance()->AddScene("WinScene", false);
-	VeryReal::SceneManager::Instance()->AddScene("LoseScene", false);
-	
+	VeryReal::ScriptManager::Instance()->ReadScene("MenuScene", true);
 }
 
 void GameManager::Update(const double& dt) {
@@ -22,28 +18,24 @@ void GameManager::Update(const double& dt) {
 }
 
 void GameManager::Menu() {
-	VeryReal::SceneManager::Instance()->ActivationScene("MenuScene", true);
-	VeryReal::SceneManager::Instance()->ActivationScene("PlayScene", false);
-	VeryReal::SceneManager::Instance()->ActivationScene("PauseScene", false);
-	VeryReal::SceneManager::Instance()->ActivationScene("WinScene", false);
-	VeryReal::SceneManager::Instance()->ActivationScene("LoseScene", false);
+	VeryReal::ScriptManager::Instance()->ReadScene("MenuScene", true);
 }
 void GameManager::Pause() {
-	VeryReal::SceneManager::Instance()->ActivationScene("PauseScene", true);
-	VeryReal::SceneManager::Instance()->ActivationScene("PlayScene", false);
+
 }
 void GameManager::Play() {
-	VeryReal::SceneManager::Instance()->ActivationScene("PlayScene", true);
-	VeryReal::SceneManager::Instance()->ActivationScene("PauseScene", false);
 	VeryReal::SceneManager::Instance()->ActivationScene("MenuScene", false);
+	VeryReal::SceneManager::Instance()->EliminationScene("MenuScene", true);
+	VeryReal::ScriptManager::Instance()->ReadScene("Level1Scene", true);
+	VeryReal::ScriptManager::Instance()->ReadPrefabs();
+
+	OvejaVegana::EnemyWaveManager::Instance()->InitManager();
 }
 void GameManager::Win() {
-	VeryReal::SceneManager::Instance()->ActivationScene("WinScene", true);
-	VeryReal::SceneManager::Instance()->ActivationScene("PlayScene", false);
+	VeryReal::ScriptManager::Instance()->ReadScene("WinScene", true);
 }
-void GameManager::Loose() {
-	VeryReal::SceneManager::Instance()->ActivationScene("LoseScene", true);
-	VeryReal::SceneManager::Instance()->ActivationScene("PlayScene", false);
+void GameManager::Lose() {
+	VeryReal::ScriptManager::Instance()->ReadScene("LoseScene", true);
 }
 
 void GameManager::CreateRandomTrees() {
