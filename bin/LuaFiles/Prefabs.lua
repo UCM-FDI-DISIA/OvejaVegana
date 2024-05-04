@@ -13,8 +13,6 @@ Prefabs={
             {
                 name = "BulletComponent",
                 parameters = {
-                    speed = 10,
-                    direction = {1, 0, 0}
                 }
             },
             {
@@ -122,5 +120,26 @@ Prefabs={
                 }
             }         
         }
-    }
+    },  
+    {  name = "PrefabCuracion",
+        components = {
+	        {
+                name = "HealComponent",
+                parameters = {
+                    amount = 2
+                }
+	        },
+            name = "MeshRenderComponent",
+            parameters = {                  
+                isstatic = true,
+                modelname = "botiquin.mesh",
+                materialname = "botiquin/botiquinMat"
+            },
+            {
+                name = "ColliderComponent",
+                parameters = {
+                }
+            }
+        }
+    },
 }

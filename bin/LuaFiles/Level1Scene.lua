@@ -90,7 +90,13 @@ Entities={
                 parameters ={
 
                 }
-            }         
+            },
+            {
+                name = "LifeComponent",
+                parameters ={
+                    health = 3
+                }
+            }      
         }
     }, 
     {

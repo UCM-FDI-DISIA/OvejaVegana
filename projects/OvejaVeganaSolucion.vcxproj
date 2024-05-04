@@ -20,8 +20,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Components\BulletComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorBulletComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorEnemyChaseComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorExitButtonComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorHealComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorLifeComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorMovementComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorMusicButtonComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorPlayButtonComponent.cpp" />
@@ -44,8 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Components\BulletComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorBulletComponent.h" />
     <ClInclude Include="..\src\Components\CreatorEnemyChaseComponent.h" />
     <ClInclude Include="..\src\Components\CreatorExitButtonComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorHealComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorLifeComponent.h" />
     <ClInclude Include="..\src\Components\CreatorMovementComponent.h" />
     <ClInclude Include="..\src\Components\CreatorMusicButtonComponent.h" />
     <ClInclude Include="..\src\Components\CreatorPlayButtonComponent.h" />

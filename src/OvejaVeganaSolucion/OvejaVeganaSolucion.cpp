@@ -23,6 +23,9 @@
 #include "CreatorMusicButtonComponent.h"
 #include "CreatorTimerComponent.h"
 #include "CreatorPlayerShootComponent.h"
+#include "CreatorLifeComponent.h"
+#include "CreatorHealComponent.h"
+#include "CreatorBulletComponent.h"
 #include "EnemyWaveManager.h"
 using namespace VeryReal;
 
@@ -44,6 +47,9 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         VeryReal::Creator::Instance()->AddCreator("PlayerInputComponent", new OvejaVegana::CreatorPlayerInputComponent());
         VeryReal::Creator::Instance()->AddCreator("PlayerShootComponent", new OvejaVegana::CreatorPlayerShootComponent());
         VeryReal::Creator::Instance()->AddCreator("TimerComponent", new OvejaVegana::CreatorTimerComponent());
+        VeryReal::Creator::Instance()->AddCreator("LifeComponent", new OvejaVegana::CreatorLifeComponent());
+        VeryReal::Creator::Instance()->AddCreator("HealComponent", new OvejaVegana::CreatorHealComponent());
+        VeryReal::Creator::Instance()->AddCreator("Bullet", new OvejaVegana::CreatorBulletComponent());
 
         ScriptManager::Instance()->ReadScene("Level1Scene", true);
         ScriptManager::Instance()->ReadPrefabs();

@@ -7,18 +7,19 @@
 #include "../Export.h"
 
 namespace OvejaVegana {
-    class HealComponent : public VeryReal::Component {
+    class LifeComponent;
+    class OVEJAVEGANA_API HealComponent : public VeryReal::Component {
     public:
         HealComponent();
         virtual ~HealComponent();
-
-        bool InitComponent(float healAmount);
+        virtual bool InitComponent(int amount);
         void OnCollisionEnter(VeryReal::Entity* other) override;
+        int getAmount() { return amount; };
 
-    private:
-        float healAmount; // Cantidad de vida que el componente proporcionará al jugador al colisionar.
+    protected:
+        int amount;
+        LifeComponent* life_comp = nullptr;
     };
-
 }
 
 #endif

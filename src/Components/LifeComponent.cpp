@@ -2,20 +2,15 @@
 #include <UI/UIProgressBarComponent.h>
 #include <Entity.h>
 
-using namespace OvejaVegana;
-
-LifeComponent::LifeComponent() {
-	currentlife = 1;
-	maxlife = 10;
-	progressbar = false;
+OvejaVegana::LifeComponent::LifeComponent() {
 }
 
-LifeComponent::~LifeComponent() {
+OvejaVegana::LifeComponent::~LifeComponent() {
 
 }
 
-bool LifeComponent::InitComponent(float max, float initial) {
-	currentlife = initial;
+bool OvejaVegana::LifeComponent::InitComponent(float max) {
+	currentlife = max;
 	maxlife = max;
 	if (this->GetEntity()->GetComponent<VeryReal::UIProgressBarComponent>() == nullptr) {
 		progressbar = false;
@@ -28,14 +23,14 @@ bool LifeComponent::InitComponent(float max, float initial) {
 	return true;
 }
 
-void LifeComponent::addlife(float toadd) {
+void OvejaVegana::LifeComponent::addlife(float toadd) {
 	currentlife += toadd;
 	if (currentlife > maxlife) currentlife = maxlife;
 	if (progressbar) {
 		this->GetEntity()->GetComponent<VeryReal::UIProgressBarComponent>()->setProgress(currentlife);
 	}
 }
-bool LifeComponent::decreaselife(float todescrease) {
+bool OvejaVegana::LifeComponent::decreaselife(float todescrease) {
 	currentlife -= todescrease;
 	if (progressbar)this->GetEntity()->GetComponent<VeryReal::UIProgressBarComponent>()->setProgress(currentlife);
 	if (currentlife < 1) {

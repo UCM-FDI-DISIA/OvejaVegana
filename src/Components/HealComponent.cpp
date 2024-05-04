@@ -1,22 +1,22 @@
 #include "HealComponent.h"
 #include "LifeComponent.h" 
 
+OvejaVegana::HealComponent::HealComponent() {}
 
-using namespace OvejaVegana;
+OvejaVegana::HealComponent::~HealComponent() {}
 
-HealComponent::HealComponent() : healAmount(0) {}
-
-HealComponent::~HealComponent() {}
-
-bool HealComponent::InitComponent(float healAmount) {
-    this->healAmount = healAmount;
+bool OvejaVegana::HealComponent::InitComponent(int amount) {
+    this->amount = amount;
+    life_comp = this->GetEntity()->GetComponent<OvejaVegana::LifeComponent>();
+    if (this->life_comp != nullptr)
+        return false;
     return true;
 }
 
-void HealComponent::OnCollisionEnter(VeryReal::Entity* other) {
+void OvejaVegana::HealComponent::OnCollisionEnter(VeryReal::Entity* other) {
     // Asumimos que 'other' puede tener un componente de vida
-    auto lifeComp = other->GetComponent<LifeComponent>();
-    if (lifeComp) {
-        lifeComp->addlife(healAmount);  // Incrementa la vida del componente de vida encontrado
+    auto life_comp = other->GetComponent<OvejaVegana::LifeComponent>();
+    if (life_comp) {
+        life_comp->addlife(amount);  // Incrementa la vida del componente de vida encontrado
     }
 }
