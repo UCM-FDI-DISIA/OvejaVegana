@@ -404,8 +404,8 @@ Entities={
                 name = "UITransformComponent",
                 parameters = {  
                     hidden = false,
-                    position = {0.5, 0.5},
-                    scale = {0.5, 0.5}                   
+                    position = {0.1, 0},
+                    scale = {0.6, 0.6}                   
                 }
             },
             {
@@ -415,7 +415,7 @@ Entities={
                     font = "Mario",
                     caption = "hola",
                     zOrder = 7,
-                    charHeight = 0.1,
+                    charHeight = 0.08,
                     color = {1, 0, 0}
                 }
             },
