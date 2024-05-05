@@ -411,7 +411,7 @@ Entities={
                 name = "UITransformComponent",
                 parameters = {  
                     hidden = false,
-                    position = {0.1, 0},
+                    position = {0.0, 0.0},
                     scale = {0.6, 0.6}                   
                 }
             },
