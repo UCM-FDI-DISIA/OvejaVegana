@@ -14,5 +14,9 @@ void OvejaVegana::CreatorMovementComponent::SpecificInitComponent(VeryReal::Comp
 }
 
 void OvejaVegana::CreatorMovementComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+    OvejaVegana::MovementComponent* mc = static_cast<OvejaVegana::MovementComponent*>(c);
 
+    if (!mc->InitComponent()) {
+        // Gestion de error
+    }
 }

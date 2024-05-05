@@ -1,5 +1,6 @@
 #pragma once
 #include <Manager.h>
+#include "Vector2.h"
 
 namespace VeryReal {
 	class TransformComponent;
@@ -9,13 +10,17 @@ namespace OvejaVegana {
 	class EnemyWaveManager :public VeryReal::Manager<EnemyWaveManager> {
 	private:
 		int nEnemies = 0;
-		int nGenerateEnemies = 5;
-		int nIncreaseGenerationEnemies = 1;
-		int nWaves = 3;
 		float time_until_next_wave = 0;
-		float TIME_BETWEEN_WAVES = 5;
 
-		float safe_generation_distance = 10;
+		int nGenerateEnemies = 5;
+		float safe_generation_distance = 30;
+		VeryReal::Vector2 scene_topleft_corner;
+		float scene_side_lenght = 1;
+
+		int nWaves = 3;
+		int nIncreaseGenerationEnemies = 1;
+		float TIME_BETWEEN_WAVES = 2;
+
 		VeryReal::TransformComponent* player_transform = nullptr;
 
 	public:
@@ -32,5 +37,6 @@ namespace OvejaVegana {
 		void GenerateNextWave();
 		void EnemyDefeated() { nEnemies--; }
 		bool IsWaveCompleated() { return nEnemies <= 0; }
+		VeryReal::Vector2 GetRandomPositionAwayFromPlayer();
 	};
 }

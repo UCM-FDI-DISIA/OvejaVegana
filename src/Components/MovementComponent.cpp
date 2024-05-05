@@ -18,9 +18,6 @@ void OvejaVegana::MovementComponent::Update(const double& dt) {
 	if (IsMoving()) {
 		my_rigidbody->SetPosition(my_rigidbody->GetPosition() + movementDirection * (float)(speed * dt));
 	}
-	else {
-		my_rigidbody->Decelerate(4);
-	}
 }
 
 bool OvejaVegana::MovementComponent::IsMoving() {

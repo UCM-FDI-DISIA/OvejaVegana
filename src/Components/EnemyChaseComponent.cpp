@@ -3,7 +3,6 @@
 #include "TransformComponent.h"
 #include "MovementComponent.h"
 #include "Vector3.h"
-
 #include "SceneManager.h"
 #include "Scene.h"
 
@@ -11,10 +10,14 @@ bool OvejaVegana::EnemyChaseComponent::InitComponent() {
 	my_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 	my_movement_component = this->GetEntity()->GetComponent<OvejaVegana::MovementComponent>();
 
-	VeryReal::Scene* currScene = VeryReal::SceneManager::Instance()->GetScene("Level1Scene"); // Nombre de escena o currentScene
+	VeryReal::Scene* currScene = VeryReal::SceneManager::Instance()->GetActiveScene();
 
-	if (currScene != nullptr) 
-		player_transform = currScene->GetEntity("Player")->GetComponent<VeryReal::TransformComponent>(); // Nombre Player
+	if (currScene != nullptr) {
+		VeryReal::Entity* player = currScene->GetEntity("Player");
+		if (player != nullptr) {
+			player_transform = player->GetComponent<VeryReal::TransformComponent>(); 
+		}
+	}
 
 	if (this->my_movement_component != nullptr && this->my_transform != nullptr && this->player_transform != nullptr)
 		return true;
