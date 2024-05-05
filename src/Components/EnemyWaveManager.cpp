@@ -17,8 +17,8 @@ bool OvejaVegana::EnemyWaveManager::InitManager() {
 		if (player_transform != nullptr) {
 			srand(static_cast<unsigned int>(time(nullptr))); // Semilla de numeros aleatorios
 			time_until_next_wave = TIME_BETWEEN_WAVES;
-			scene_topleft_corner = Vector2(-12, 245);
-			scene_side_lenght = 90 + 12;
+			scene_topleft_corner = Vector2(-120, 215);
+			scene_side_lenght = 215 - 65;
 			return true;
 		}
 	}
@@ -26,11 +26,10 @@ bool OvejaVegana::EnemyWaveManager::InitManager() {
 }
 
 void OvejaVegana::EnemyWaveManager::Update(const double& dt) {
-	/*cout << "TIEMPO: " << time_until_next_wave << " "
-		<< "ENEMIGOS RESTANTES: " << nEnemies << endl;*/
+	//cout << "TIEMPO: " << time_until_next_wave << " " << "ENEMIGOS RESTANTES: " << nEnemies << endl;
 	if (IsWaveCompleated()) {
 		if ((time_until_next_wave -= dt) <= 0 && nWaves > 0) {
-			//GenerateNextWave();
+			GenerateNextWave();
 		}
 	}
 }
@@ -54,8 +53,8 @@ VeryReal::Vector2 OvejaVegana::EnemyWaveManager::GetRandomPositionAwayFromPlayer
 	VeryReal::Vector2 playerPosition = VeryReal::Vector2(player_transform->GetPosition().GetX(), player_transform->GetPosition().GetY());
 	VeryReal::Vector2 randomPosition;
 	do {
-		randomPosition.SetX(scene_topleft_corner.GetX() + static_cast<float>(rand()) / static_cast<float>(RAND_MAX / scene_side_lenght));
-		randomPosition.SetY(scene_topleft_corner.GetY() + static_cast<float>(rand()) / static_cast<float>(RAND_MAX / scene_side_lenght));
+		randomPosition.SetX(scene_topleft_corner.GetX() + static_cast<float>(rand()) / static_cast<float>(RAND_MAX) * scene_side_lenght);
+		randomPosition.SetY(scene_topleft_corner.GetY() - static_cast<float>(rand()) / static_cast<float>(RAND_MAX) * scene_side_lenght);
 	} while ((randomPosition - playerPosition).Magnitude() < safe_generation_distance);
 
 	return randomPosition;

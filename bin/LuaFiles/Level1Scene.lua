@@ -86,12 +86,12 @@ Entities={
                     materialname = "oveja"
                 }
             },
-            {
-                name = "PlayerShootComponent",
-                parameters ={
+            --{
+                --name = "PlayerShootComponent",
+                --parameters ={
 
-                }
-            },
+               -- }
+            --},
             {
                 name = "LifeComponent",
                 parameters ={

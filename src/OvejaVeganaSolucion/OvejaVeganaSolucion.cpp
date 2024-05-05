@@ -36,7 +36,6 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
     __declspec(dllexport) bool start() {
         //CREACION DE TODOS LOS COMPONENETES DEL JUEGO
         OvejaVegana::GameManager::Init();
-        OvejaVegana::EnemyWaveManager::Init();
         PhysicsManager::Instance()->SetWorldGravity(Vector3(0, 0, 0));
         //-----//
         VeryReal::Creator::Instance()->AddCreator("EnemyChaseComponent", new OvejaVegana::CreatorEnemyChaseComponent());
@@ -55,7 +54,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         /*ScriptManager::Instance()->ReadScene("Level1Scene", true);
         ScriptManager::Instance()->ReadPrefabs();
 
-        OvejaVegana::EnemyWaveManager::Instance()->InitManager();*/
+        */
 
         //VeryReal::ScriptManager::Instance()->ExposeFunctionsToLua("Arboles", OvejaVegana::GameManager::Instance()->CreateRandomTrees);
         //VeryReal::ScriptManager::Instance()->ReadFunction();
@@ -63,7 +62,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
     }
 
     __declspec(dllexport) void loop() {
-        //OvejaVegana::EnemyWaveManager::Instance()->Update(0.01);
+        OvejaVegana::GameManager::Instance()->Update(0.01);
         /*  std::cout << "Pepa" << std::endl;*/
     }
 }

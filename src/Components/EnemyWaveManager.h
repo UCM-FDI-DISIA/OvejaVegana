@@ -13,7 +13,7 @@ namespace OvejaVegana {
 		float time_until_next_wave = 0;
 
 		int nGenerateEnemies = 5;
-		float safe_generation_distance = 30;
+		float safe_generation_distance = 35;
 		VeryReal::Vector2 scene_topleft_corner;
 		float scene_side_lenght = 1;
 
