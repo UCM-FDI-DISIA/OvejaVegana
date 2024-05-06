@@ -26,10 +26,9 @@ void GameManager::Update(const double& dt) {
 
 void GameManager::Menu() {
 	VeryReal::ScriptManager::Instance()->ReadScene("MenuScene", true);
+	VeryReal::ScriptManager::Instance()->ReadPrefabs();
 }
-void GameManager::Pause() {
 
-}
 void GameManager::Play() {
 	VeryReal::SceneManager::Instance()->ActivationScene("MenuScene", false);
 	VeryReal::SceneManager::Instance()->EliminationScene("MenuScene", true);
@@ -38,12 +37,42 @@ void GameManager::Play() {
 	OvejaVegana::EnemyWaveManager::Instance()->InitManager();
 }
 void GameManager::Win() {
+	if (level == 0) {
+		VeryReal::SceneManager::Instance()->ActivationScene("Level1Scene", false);
+		VeryReal::SceneManager::Instance()->EliminationScene("Level1Scene", true);
+	}
+	else if (level == 1) {
+		VeryReal::SceneManager::Instance()->ActivationScene("Level2Scene", false);
+		VeryReal::SceneManager::Instance()->EliminationScene("Level2Scene", true);
+	}
 	VeryReal::ScriptManager::Instance()->ReadScene("WinScene", true);
+	VeryReal::ScriptManager::Instance()->ReadPrefabs();
 }
+void GameManager::NextLevel() {
+	level++;
+	VeryReal::SceneManager::Instance()->ActivationScene("Level1Scene", false);
+	VeryReal::SceneManager::Instance()->EliminationScene("Level1Scene", true);
+	VeryReal::ScriptManager::Instance()->ReadScene("Level2Scene", true);
+	VeryReal::ScriptManager::Instance()->ReadPrefabs();
+}
+
 void GameManager::Lose() {
+	if (level == 0) {
+		VeryReal::SceneManager::Instance()->ActivationScene("Level1Scene", false);
+		VeryReal::SceneManager::Instance()->EliminationScene("Level1Scene", true);
+	}
+	else if (level == 1) {
+		VeryReal::SceneManager::Instance()->ActivationScene("Level2Scene", false);
+		VeryReal::SceneManager::Instance()->EliminationScene("Level2Scene", true);
+	}
 	VeryReal::ScriptManager::Instance()->ReadScene("LoseScene", true);
+	VeryReal::ScriptManager::Instance()->ReadPrefabs();
 }
 
 void GameManager::CreateRandomTrees() {
 	std::cout << "I create all the trees\n";
+}
+
+int GameManager::GetLevel() {
+	return level;
 }
