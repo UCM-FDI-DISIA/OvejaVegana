@@ -116,7 +116,7 @@ Prefabs={
                     isstatic = false,
                     modelname = "enemigo.mesh",
                     entityname= "Enemy",
-                    materialname = "enemigo"
+                    materialname = "EnemigoMat"
                 }
             }         
         }

@@ -17,6 +17,8 @@ void OvejaVegana::HealComponent::OnCollisionEnter(VeryReal::Entity* other) {
     // Asumimos que 'other' puede tener un componente de vida
     auto life_comp = other->GetComponent<OvejaVegana::LifeComponent>();
     if (life_comp) {
+        std::cout << "Curacion cogida y tiene life_comp. Cura: " + amount << std::endl;
+
         life_comp->addlife(amount);  // Incrementa la vida del componente de vida encontrado
     }
 }

@@ -42,7 +42,7 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     position = {-25, 125, 50},
-                    rotation ={0, 0, 90},
+                    rotation ={180, 0, 90},
                     scale = {10, 10, 10}                   
                 }
             },
@@ -83,7 +83,7 @@ Entities={
                     isstatic = false,
                     modelname = "oveja.mesh",
                     entityname= "Player",
-                    materialname = "oveja"
+                    materialname = "OvejaMat"
                 }
             },
             --{
@@ -97,7 +97,27 @@ Entities={
                 parameters ={
                     health = 3
                 }
-            }      
+            },
+            {
+                name = "UITransformComponent",
+                parameters = {    
+                    position = { 0.5,0.0},   
+                    scale = { 0.11,0.1},   
+                    hidden = false   
+         
+                }
+            },
+            {
+                name = "UIProgressBarComponent",
+                parameters = {             
+                    maximo = 3.0,
+                    progres = 0.0,
+                    progressBarName = "l",
+                    frameMaterial = "botiquinMat",
+                    contentMaterial = "botiquinMat",
+                    zOrder = 1                   
+                }
+            }
         }
     }, 
     {
@@ -107,7 +127,7 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     position = {0, 15, 50},
-                    rotation ={0, 0, 90},
+                    rotation ={180, 0, 90},
                     scale = {10, 10, 10}                   
                 }
             },
@@ -148,72 +168,11 @@ Entities={
                     isstatic = false,
                     modelname = "enemigo.mesh",
                     entityname= "Enemy",
-                    materialname = "enemigo"
+                    materialname = "EnemigoMat"
                 }
             }         
         }
     }, 
-    
-    {
-        name = "Ogreman5",
-        components = {
-            {
-                name = "TransformComponent",
-                parameters = {  
-                    a = 0,
-                    position = {10, 0, -10},
-                    rotation = {0, 0, 0},
-                    scale = {1, 1, 1}                   
-                }
-            },
-            {
-                name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = false,
-                    modelname = "Sinbad.mesh",
-                    entityname= "node",
-
-                }
-            },
-            {
-                name = "ColliderComponent",
-                parameters = {
-                }
-            },
-            {
-                name = "RigidBodyComponent",
-                parameters = {
-                    shapeType = 1,
-                    movementType = 2,
-                    size = {2, 2, 2},
-                    mass = 1,
-                    friction =1,
-                    restitution=1,
-                    trigger = false,
-                    mask = 1,
-                    group = 2
-                }
-            },
-            {
-                name="NodeComponent",
-                parameters={
-                    ispatrol=true,
-                    cost=1.8,
-                    hcost=1.8,
-                    iswalkable=true,
-                    id=3
-
-                }
-
-            },
-            {
-                name = "MovementComponent",
-                parameters = {                  
-                    
-                }
-            } 
-        }
-    },
     {
         name = "World",
         components = {
@@ -234,9 +193,13 @@ Entities={
             {
                 name = "RigidbodyComponent",
                 parameters = {    
-                    shapeType = SHAPES_BOX,
-                    movementType = MOVEMENT_TYPE_STATIC,
+                    shapeType = 1,
+                    movementType = 1,
                     size = {100, 1, 100},
+                    mass = 10.0,
+                    friction = 0.5,
+                    restitution = 0.0,
+                    trigger = true,
                     mask = 1,
                     group = 1
                 }
@@ -270,14 +233,19 @@ Entities={
                 }
             },
             {
-                name = "RigidbodyComponent",
-                parameters = {    
-                    shapeType = SHAPES_BOX,
-                    movementType = MOVEMENT_TYPE_STATIC,
-                    size = {100, 5, 1},
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {130, 5, 50},
+                    mass = 1,
+                    friction =1,
+                    restitution=1,
+                    trigger = false,
                     mask = 1,
                     group = 1
                 }
+                
             },
             {
                 name = "MeshRenderComponent",
@@ -308,11 +276,15 @@ Entities={
                 }
             },
             {
-                name = "RigidbodyComponent",
-                parameters = {    
-                    shapeType = SHAPES_BOX,
-                    movementType = MOVEMENT_TYPE_STATIC,
-                    size = {200, 5, 1},
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {130, 5, 50},
+                    mass = 1,
+                    friction =1,
+                    restitution=1,
+                    trigger = false,
                     mask = 1,
                     group = 1
                 }
@@ -346,11 +318,15 @@ Entities={
                 }
             },
             {
-                name = "RigidbodyComponent",
-                parameters = {    
-                    shapeType = SHAPES_BOX,
-                    movementType = MOVEMENT_TYPE_STATIC,
-                    size = {1, 5, 200},
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {5, 130, 50},
+                    mass = 1,
+                    friction =1,
+                    restitution=1,
+                    trigger = false,
                     mask = 1,
                     group = 1
                 }
@@ -384,11 +360,15 @@ Entities={
                 }
             },
             {
-                name = "RigidbodyComponent",
-                parameters = {    
-                    shapeType = SHAPES_BOX,
-                    movementType = MOVEMENT_TYPE_STATIC,
-                    size = {1, 5, 200},
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {5, 130, 50},
+                    mass = 1,
+                    friction =1,
+                    restitution=1,
+                    trigger = false,
                     mask = 1,
                     group = 1
                 }
@@ -441,6 +421,27 @@ Entities={
             --         materialname = "Black"
             --     }
             -- }
+        }
+    },
+    {  name = "Curacion",
+        components = {
+            {
+                name = "HealComponent",
+                parameters = {
+                    amount = 2
+                }
+            },
+            name = "MeshRenderComponent",
+            parameters = {                  
+                isstatic = true,
+                modelname = "botiquin.mesh",
+                materialname = "botiquinMat"
+            },
+            {
+                name = "ColliderComponent",
+                parameters = {
+                }
+            }
         }
     }
 }
