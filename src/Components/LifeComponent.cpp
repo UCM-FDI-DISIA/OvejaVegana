@@ -9,8 +9,8 @@ OvejaVegana::LifeComponent::~LifeComponent() {
 
 }
 
-bool OvejaVegana::LifeComponent::InitComponent(float max) {
-	currentlife = max;
+bool OvejaVegana::LifeComponent::InitComponent(float max, float ini) {
+	currentlife = ini;
 	maxlife = max;
 	if (this->GetEntity()->GetComponent<VeryReal::UIProgressBarComponent>() == nullptr) {
 		progressbar = false;
@@ -24,8 +24,12 @@ bool OvejaVegana::LifeComponent::InitComponent(float max) {
 }
 
 void OvejaVegana::LifeComponent::addlife(float toadd) {
+	std::cout << "vida max: " << std::to_string(maxlife) << std::endl;
+	std::cout << "vida antes: " << std::to_string(currentlife) << std::endl;
 	currentlife += toadd;
 	if (currentlife > maxlife) currentlife = maxlife;
+	std::cout << "vida despues: " << std::to_string(currentlife) << std::endl;
+
 	if (progressbar) {
 		this->GetEntity()->GetComponent<VeryReal::UIProgressBarComponent>()->setProgress(currentlife);
 	}

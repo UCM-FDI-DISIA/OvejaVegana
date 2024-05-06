@@ -16,7 +16,7 @@ namespace OvejaVegana{
 		LifeComponent();
 		//destructora
 		virtual ~LifeComponent();
-		bool InitComponent(float max);
+		bool InitComponent(float max, float ini);
 		//metodo que añade vida y actualiza la progress bar si es que la tiene la entidad
 		void addlife(float toadd);
 		//metodo que decrementa vidas e indica si el personaje sigue vivo

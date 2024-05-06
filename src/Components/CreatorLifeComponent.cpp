@@ -10,6 +10,7 @@ void OvejaVegana::CreatorLifeComponent::SpecificInitComponent(VeryReal::Componen
 {
     OvejaVegana::LifeComponent* life_comp = static_cast<OvejaVegana::LifeComponent*>(c);
     float maxlife;
+    float inilife;
 
 #pragma region Position
 
@@ -26,8 +27,9 @@ void OvejaVegana::CreatorLifeComponent::SpecificInitComponent(VeryReal::Componen
         std::cout << "No existe ningun parametro health este sera seteado por defecto" << std::endl;
         maxlife = 3;
     }
+    inilife = 1;
 #pragma endregion
-    bool b = life_comp->InitComponent(maxlife);
+    bool b = life_comp->InitComponent(maxlife, inilife);
     if (!b) {
     }
 }
@@ -36,7 +38,7 @@ void OvejaVegana::CreatorLifeComponent::SpecificInitComponentByCopy(VeryReal::Co
     int a = 0;
     LifeComponent* t = static_cast<LifeComponent*>(c);
     LifeComponent* copia = static_cast<LifeComponent*>(other);
-    bool b = t->InitComponent(copia->getMaxLife());
+    bool b = t->InitComponent(copia->getMaxLife(), copia->getMaxLife());
     if (!b) {
     }
 }

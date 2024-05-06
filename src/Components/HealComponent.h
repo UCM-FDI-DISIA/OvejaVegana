@@ -13,11 +13,13 @@ namespace OvejaVegana {
         HealComponent();
         virtual ~HealComponent();
         virtual bool InitComponent(int amount);
+        virtual void Update(const double& dt);
         void OnCollisionEnter(VeryReal::Entity* other) override;
         int getAmount() { return amount; };
 
     protected:
         int amount;
+        bool pickedUp;
         LifeComponent* life_comp = nullptr;
     };
 }

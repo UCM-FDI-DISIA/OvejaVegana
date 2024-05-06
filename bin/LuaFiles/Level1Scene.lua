@@ -238,9 +238,9 @@ Entities={
                     shapeType = 1,
                     movementType = 1,
                     size = {130, 5, 50},
-                    mass = 1,
-                    friction =1,
-                    restitution=1,
+                    mass = 1.0,
+                    friction =1.0,
+                    restitution=1.0,
                     trigger = false,
                     mask = 1,
                     group = 1
@@ -281,9 +281,9 @@ Entities={
                     shapeType = 1,
                     movementType = 1,
                     size = {130, 5, 50},
-                    mass = 1,
-                    friction =1,
-                    restitution=1,
+                    mass = 1.0,
+                    friction =1.0,
+                    restitution=1.0,
                     trigger = false,
                     mask = 1,
                     group = 1
@@ -323,9 +323,9 @@ Entities={
                     shapeType = 1,
                     movementType = 1,
                     size = {5, 130, 50},
-                    mass = 1,
-                    friction =1,
-                    restitution=1,
+                    mass = 1.0,
+                    friction =1.0,
+                    restitution=1.0,
                     trigger = false,
                     mask = 1,
                     group = 1
@@ -365,9 +365,9 @@ Entities={
                     shapeType = 1,
                     movementType = 1,
                     size = {5, 130, 50},
-                    mass = 1,
-                    friction =1,
-                    restitution=1,
+                    mass = 1.0,
+                    friction =1.0,
+                    restitution=1.0,
                     trigger = false,
                     mask = 1,
                     group = 1
@@ -423,23 +423,96 @@ Entities={
             -- }
         }
     },
-    {  name = "Curacion",
+    {   name = "Curacion",
         components = {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = { 0, 100, 20},
+                    rotation = {0, 0, 0},
+                    scale = {20, 20, 20}                    
+                }
+            },
             {
                 name = "HealComponent",
                 parameters = {
-                    amount = 2
+                    amount = 1
                 }
-            },
-            name = "MeshRenderComponent",
-            parameters = {                  
-                isstatic = true,
-                modelname = "botiquin.mesh",
-                materialname = "botiquinMat"
             },
             {
                 name = "ColliderComponent",
                 parameters = {
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {10, 10, 10},
+                    mass = 1.0,
+                    friction = 1.0,
+                    restitution = 1.0,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    modelname = "botiquin.mesh",
+                    entityname= "cura",
+                    materialname = "botiquinMat",
+                    isstatic = false
+                }
+            }
+        }
+    },
+    {   name = "Curacion",
+        components = {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = { 50, 100, 20},
+                    rotation = {0, 0, 0},
+                    scale = {20, 20, 20}                    
+                }
+            },
+            {
+                name = "HealComponent",
+                parameters = {
+                    amount = 1
+                }
+            },
+            {
+                name = "ColliderComponent",
+                parameters = {
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {10, 10, 10},
+                    mass = 1.0,
+                    friction = 1.0,
+                    restitution = 1.0,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    modelname = "botiquin.mesh",
+                    entityname= "cura",
+                    materialname = "botiquinMat",
+                    isstatic = false
                 }
             }
         }
