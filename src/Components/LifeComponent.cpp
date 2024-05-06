@@ -1,6 +1,7 @@
 #include "LifeComponent.h"
 #include <UI/UIProgressBarComponent.h>
 #include <Entity.h>
+#include "GameManager.h"
 
 OvejaVegana::LifeComponent::LifeComponent() {
 }
@@ -38,6 +39,7 @@ bool OvejaVegana::LifeComponent::decreaselife(float todescrease) {
 	currentlife -= todescrease;
 	if (progressbar)this->GetEntity()->GetComponent<VeryReal::UIProgressBarComponent>()->setProgress(currentlife);
 	if (currentlife < 1) {
+		OvejaVegana::GameManager::Instance()->Lose();
 		return false; 
 	}
 	else {

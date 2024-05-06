@@ -1,6 +1,7 @@
 #include "TimerComponent.h"
 #include "UI/UITextComponent.h"
 #include "Entity.h"
+#include "GameManager.h"
 #include <SceneManager.h>
 #include <Scene.h>
 
@@ -24,6 +25,13 @@ void OvejaVegana::TimerComponent::Update(const double& dt)
 	SetTimerCaption(minutes, seconds);
 	if (current_time >= max_round_time) {
 		round_completed = true;
+		if (OvejaVegana::GameManager::Instance()->GetLevel() == 0) {
+			OvejaVegana::GameManager::Instance()->NextLevel();
+		}
+		else {
+			OvejaVegana::GameManager::Instance()->Win();
+		}
+		
 #ifdef _DEBUG
 		std::cout << "Round completed  \n";
 #endif

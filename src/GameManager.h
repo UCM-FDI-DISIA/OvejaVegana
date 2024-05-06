@@ -10,6 +10,7 @@ namespace OvejaVegana {
 	{
 	private:
 		GameManager() {}
+		int level = 0;
 	public:
 		static bool Init() {
 			GameManager* a = new GameManager();
@@ -24,13 +25,14 @@ namespace OvejaVegana {
 		void Start();
 		void Update(const double& dt);
 		void Win();
+		void NextLevel();
 		void Lose();
 		void Menu();
 		void Play();
-		void Pause();
+
+		int GetLevel();
+
 		static void CreateRandomTrees();
-
-
 	};
 }
 
