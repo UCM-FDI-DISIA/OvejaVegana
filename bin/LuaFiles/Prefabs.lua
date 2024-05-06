@@ -98,18 +98,18 @@ Prefabs={
                     group = 1
                 }
             },
-            --{
-                --name = "MovementComponent",
-                --parameters = {                  
+            {
+                name = "MovementComponent",
+                parameters = {                  
                     
-                --}
-            --}, 
-            --{
-                --name = "EnemyChaseComponent",
-                --parameters = {                  
+                }
+            }, 
+            {
+                name = "EnemyChaseComponent",
+                parameters = {                  
                     
-               --}
-            --},
+               }
+            },
             {
                 name = "MeshRenderComponent",
                 parameters = {                  

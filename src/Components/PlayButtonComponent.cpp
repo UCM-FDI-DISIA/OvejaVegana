@@ -3,7 +3,6 @@
 #include "ScriptManager.h"
 #include "GameManager.h"
 
-void OvejaVegana::PlayButtonComponent::accion()
-{
+void OvejaVegana::PlayButtonComponent::accion() {
 	OvejaVegana::GameManager::Instance()->Play();
 }
