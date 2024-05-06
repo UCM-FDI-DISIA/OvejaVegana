@@ -14,17 +14,6 @@ bool OvejaVegana::HealComponent::InitComponent(int amount) {
     return true;
 }
 
-void OvejaVegana::HealComponent::Update(const double& dt)
-{
-    if (!pickedUp)
-    {
-        this->SetActive(false);
-        this->GetEntity()->SetActive(false);
-        std::cout << "Curacion borrada" << std::endl;
-
-    }
-
-}
 
 void OvejaVegana::HealComponent::OnCollisionEnter(VeryReal::Entity* other) {
     // Asumimos que 'other' puede tener un componente de vida
@@ -38,4 +27,14 @@ void OvejaVegana::HealComponent::OnCollisionEnter(VeryReal::Entity* other) {
 
     }
 
+}
+void OvejaVegana::HealComponent::OnCollisionExit(VeryReal::Entity* other)
+{
+    if (!pickedUp)
+    {
+        this->SetActive(false);
+        this->GetEntity()->SetActive(false);
+        std::cout << "Curacion borrada" << std::endl;
+
+    }
 }

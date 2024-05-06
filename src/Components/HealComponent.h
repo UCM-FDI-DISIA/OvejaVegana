@@ -13,8 +13,9 @@ namespace OvejaVegana {
         HealComponent();
         virtual ~HealComponent();
         virtual bool InitComponent(int amount);
-        virtual void Update(const double& dt);
         void OnCollisionEnter(VeryReal::Entity* other) override;
+        void OnCollisionExit(VeryReal::Entity* other) override;
+
         int getAmount() { return amount; };
 
     protected:
