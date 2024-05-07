@@ -41,7 +41,7 @@ Entities={
             {
                 name = "TransformComponent",
                 parameters = {  
-                    position = {-25, 125, 50},
+                    position = {-25, 125, 5},
                     rotation ={180, 0, 90},
                     scale = {10, 10, 10}                   
                 }
@@ -56,7 +56,7 @@ Entities={
                 parameters = {
                     shapeType = 0,
                     movementType = 0,
-                    size = {10, 10, 10},
+                    size = {9, 9, 9},
                     mass = 10.0,
                     friction = 0.5,
                     restitution = 0.0,
@@ -118,59 +118,6 @@ Entities={
                     zOrder = 1                   
                 }
             }
-        }
-    }, 
-    {
-        name = "Enemy",
-        components = {
-            {
-                name = "TransformComponent",
-                parameters = {  
-                    position = {0, 15, 50},
-                    rotation ={180, 0, 90},
-                    scale = {10, 10, 10}                   
-                }
-            },
-            {
-                name = "ColliderComponent",
-                parameters = {
-                }
-            },
-            {
-                name = "RigidBodyComponent",
-                parameters = {
-                    shapeType = 1,
-                    movementType = 0,
-                    size = {2, 2, 2},
-                    mass = 10.0,
-                    friction = 0.5,
-                    restitution = 0.0,
-                    trigger = false,
-                    mask = 2,
-                    group = 1
-                }
-            },
-            {
-                name = "MovementComponent",
-                parameters = {                  
-                    
-                }
-            }, 
-            {
-                name = "EnemyChaseComponent",
-                parameters = {                  
-                    
-                }
-            },
-            {
-                name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = false,
-                    modelname = "enemigo.mesh",
-                    entityname= "Enemy",
-                    materialname = "EnemigoMat"
-                }
-            }         
         }
     }, 
     {

@@ -61,8 +61,8 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         return true;
     }
 
-    __declspec(dllexport) void loop() {
-        OvejaVegana::GameManager::Instance()->Update(0.01);
+    __declspec(dllexport) void loop(float dt) {
+        OvejaVegana::GameManager::Instance()->Update(dt);
         /*  std::cout << "Pepa" << std::endl;*/
     }
 }
