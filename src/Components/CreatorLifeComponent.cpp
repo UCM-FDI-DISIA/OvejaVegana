@@ -6,7 +6,7 @@ VeryReal::Component* OvejaVegana::CreatorLifeComponent::CreatorSpecificComponent
     return new LifeComponent();
 }
 
-void OvejaVegana::CreatorLifeComponent::SpecificInitComponent(VeryReal::Component* c)
+std::pair<bool, std::string> OvejaVegana::CreatorLifeComponent::SpecificInitComponent(VeryReal::Component* c)
 {
     OvejaVegana::LifeComponent* life_comp = static_cast<OvejaVegana::LifeComponent*>(c);
     float maxlife;
@@ -34,7 +34,7 @@ void OvejaVegana::CreatorLifeComponent::SpecificInitComponent(VeryReal::Componen
     }
 }
 
-void OvejaVegana::CreatorLifeComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+std::pair<bool, std::string> OvejaVegana::CreatorLifeComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
     int a = 0;
     LifeComponent* t = static_cast<LifeComponent*>(c);
     LifeComponent* copia = static_cast<LifeComponent*>(other);

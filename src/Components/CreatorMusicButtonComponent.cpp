@@ -6,7 +6,7 @@ VeryReal::Component* OvejaVegana::CreatorMusicButtonComponent::CreatorSpecificCo
     return new MusicButtonComponent();
 }
 
-void OvejaVegana::CreatorMusicButtonComponent::SpecificInitComponent(VeryReal::Component* c)
+std::pair<bool, std::string> OvejaVegana::CreatorMusicButtonComponent::SpecificInitComponent(VeryReal::Component* c)
 {
     OvejaVegana::MusicButtonComponent* musicbutton_comp = static_cast<OvejaVegana::MusicButtonComponent*>(c);
 
@@ -15,6 +15,6 @@ void OvejaVegana::CreatorMusicButtonComponent::SpecificInitComponent(VeryReal::C
     }
 }
 
-void OvejaVegana::CreatorMusicButtonComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+std::pair<bool, std::string> OvejaVegana::CreatorMusicButtonComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
 
 }

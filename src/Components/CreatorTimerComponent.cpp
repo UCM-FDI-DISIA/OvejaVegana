@@ -6,7 +6,7 @@ VeryReal::Component* OvejaVegana::CreatorTimerComponent::CreatorSpecificComponen
 	return new TimerComponent();
 }
 
-void OvejaVegana::CreatorTimerComponent::SpecificInitComponent(VeryReal::Component* c)
+std::pair<bool, std::string> OvejaVegana::CreatorTimerComponent::SpecificInitComponent(VeryReal::Component* c)
 {
     int maxTime;
     
@@ -29,11 +29,11 @@ void OvejaVegana::CreatorTimerComponent::SpecificInitComponent(VeryReal::Compone
     }
 #pragma endregion
 
-    if (!tc->InitComponent(maxTime)) {
-        // Gestion de error
-    }
+
+    return tc->InitComponent(maxTime);
+    
 }
 
-void OvejaVegana::CreatorTimerComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+std::pair<bool, std::string> OvejaVegana::CreatorTimerComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
 
 }

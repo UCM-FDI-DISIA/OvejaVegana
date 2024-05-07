@@ -6,7 +6,7 @@ VeryReal::Component* OvejaVegana::CreatorBulletComponent::CreatorSpecificCompone
     return new BulletComponent();
 }
 
-void OvejaVegana::CreatorBulletComponent::SpecificInitComponent(VeryReal::Component* c)
+std::pair<bool, std::string> OvejaVegana::CreatorBulletComponent::SpecificInitComponent(VeryReal::Component* c)
 {
     OvejaVegana::BulletComponent* bullet_comp = static_cast<OvejaVegana::BulletComponent*>(c);
 
@@ -15,7 +15,7 @@ void OvejaVegana::CreatorBulletComponent::SpecificInitComponent(VeryReal::Compon
     }
 }
 
-void OvejaVegana::CreatorBulletComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+std::pair<bool, std::string> OvejaVegana::CreatorBulletComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
     int a = 0;
     BulletComponent* t = static_cast<BulletComponent*>(c);
     BulletComponent* copia = static_cast<BulletComponent*>(other);

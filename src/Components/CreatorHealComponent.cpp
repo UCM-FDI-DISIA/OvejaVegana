@@ -6,7 +6,7 @@ VeryReal::Component* OvejaVegana::CreatorHealComponent::CreatorSpecificComponent
     return new HealComponent();
 }
 
-void OvejaVegana::CreatorHealComponent::SpecificInitComponent(VeryReal::Component* c)
+std::pair<bool, std::string> OvejaVegana::CreatorHealComponent::SpecificInitComponent(VeryReal::Component* c)
 {
     OvejaVegana::HealComponent* heal_comp = static_cast<OvejaVegana::HealComponent*>(c);
     int amount;
@@ -32,7 +32,7 @@ void OvejaVegana::CreatorHealComponent::SpecificInitComponent(VeryReal::Componen
         }
 }
 
-void OvejaVegana::CreatorHealComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+std::pair<bool, std::string> OvejaVegana::CreatorHealComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
     int a = 0;
     HealComponent* t = static_cast<HealComponent*>(c);
     HealComponent* copia = static_cast<HealComponent*>(other);

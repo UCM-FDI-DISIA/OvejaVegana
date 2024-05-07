@@ -8,7 +8,7 @@
 
 using namespace std;
 
-bool OvejaVegana::PlayerInputComponent::InitComponent() {
+std::pair<bool, std::string> OvejaVegana::PlayerInputComponent::InitComponent() {
 	my_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 	my_movement_component = this->GetEntity()->GetComponent<OvejaVegana::MovementComponent>();;
 	my_rigidbody = this->GetEntity()->GetComponent<VeryReal::RigidBodyComponent>();

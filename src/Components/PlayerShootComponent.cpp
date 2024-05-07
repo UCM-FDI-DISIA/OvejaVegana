@@ -13,7 +13,7 @@ OvejaVegana::PlayerShootComponent::PlayerShootComponent()
 
     }
 
-    bool OvejaVegana::PlayerShootComponent::InitComponent() {
+std::pair<bool, std::string> OvejaVegana::PlayerShootComponent::InitComponent() {
         my_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
         my_movement_component = this->GetEntity()->GetComponent<OvejaVegana::MovementComponent>();
         my_camera_component = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Camera")->GetComponent<VeryReal::CameraComponent>();

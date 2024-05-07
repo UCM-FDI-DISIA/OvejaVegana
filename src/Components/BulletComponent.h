@@ -20,7 +20,7 @@ namespace OvejaVegana
 {
 	class OVEJAVEGANA_API BulletComponent : public VeryReal::Component {
 	public:
-		virtual bool InitComponent();
+		virtual std::pair<bool, std::string> InitComponent();
 		virtual void Update(const double& dt) {}
 		virtual void OnCollisionEnter(VeryReal::Entity* other);
 	private:

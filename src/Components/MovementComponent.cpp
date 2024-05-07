@@ -5,7 +5,7 @@
 #include "RigidBodyComponent.h"
 using namespace std;
 
-bool OvejaVegana::MovementComponent::InitComponent() {
+std::pair<bool, std::string> OvejaVegana::MovementComponent::InitComponent() {
 	my_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 	my_rigidbody = this->GetEntity()->GetComponent<VeryReal::RigidBodyComponent>();
 	if (this->my_transform != nullptr && this->my_rigidbody != nullptr)

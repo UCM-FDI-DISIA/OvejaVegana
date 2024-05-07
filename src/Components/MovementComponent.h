@@ -16,7 +16,7 @@ namespace OvejaVegana
 {
 	class OVEJAVEGANA_API MovementComponent : public VeryReal::Component {
 	public:
-		virtual bool InitComponent();
+		virtual std::pair<bool, std::string> InitComponent();
 		virtual void Update(const double& dt);
 
 		bool IsMoving();

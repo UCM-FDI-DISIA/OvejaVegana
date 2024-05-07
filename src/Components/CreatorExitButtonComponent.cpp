@@ -6,7 +6,7 @@ VeryReal::Component* OvejaVegana::CreatorExitButtonComponent::CreatorSpecificCom
     return new ExitButtonComponent();
 }
 
-void OvejaVegana::CreatorExitButtonComponent::SpecificInitComponent(VeryReal::Component* c)
+std::pair<bool, std::string> OvejaVegana::CreatorExitButtonComponent::SpecificInitComponent(VeryReal::Component* c)
 {
     OvejaVegana::ExitButtonComponent* exitbutton_comp = static_cast<OvejaVegana::ExitButtonComponent*>(c);
 
@@ -15,6 +15,6 @@ void OvejaVegana::CreatorExitButtonComponent::SpecificInitComponent(VeryReal::Co
     }
 }
 
-void OvejaVegana::CreatorExitButtonComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+std::pair<bool, std::string> OvejaVegana::CreatorExitButtonComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
 
 }

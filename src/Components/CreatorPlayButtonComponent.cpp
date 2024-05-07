@@ -6,7 +6,7 @@ VeryReal::Component* OvejaVegana::CreatorPlayButtonComponent::CreatorSpecificCom
     return new PlayButtonComponent();
 }
 
-void OvejaVegana::CreatorPlayButtonComponent::SpecificInitComponent(VeryReal::Component* c)
+std::pair<bool, std::string> OvejaVegana::CreatorPlayButtonComponent::SpecificInitComponent(VeryReal::Component* c)
 {
     OvejaVegana::PlayButtonComponent* playbutton_comp = static_cast<OvejaVegana::PlayButtonComponent*>(c);
 
@@ -15,6 +15,6 @@ void OvejaVegana::CreatorPlayButtonComponent::SpecificInitComponent(VeryReal::Co
     }
 }
 
-void OvejaVegana::CreatorPlayButtonComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+std::pair<bool, std::string> OvejaVegana::CreatorPlayButtonComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
 
 }

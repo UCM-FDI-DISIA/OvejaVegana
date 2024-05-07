@@ -5,7 +5,7 @@
 #include <SceneManager.h>
 #include <Scene.h>
 
-bool OvejaVegana::TimerComponent::InitComponent(int maxTime)
+std::pair<bool, std::string> OvejaVegana::TimerComponent::InitComponent(int maxTime)
 {
 	time_text = this->GetEntity()->GetComponent<VeryReal::UITextComponent>();
 	max_round_time = maxTime;

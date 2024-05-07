@@ -5,7 +5,7 @@ VeryReal::Component* OvejaVegana::CreatorPlayerInputComponent::CreatorSpecificCo
     return new PlayerInputComponent();
 }
 
-void OvejaVegana::CreatorPlayerInputComponent::SpecificInitComponent(VeryReal::Component* c) {
+std::pair<bool, std::string> OvejaVegana::CreatorPlayerInputComponent::SpecificInitComponent(VeryReal::Component* c) {
     OvejaVegana::PlayerInputComponent* pi = static_cast<OvejaVegana::PlayerInputComponent*>(c);
 
     if (!pi->InitComponent()) {
@@ -13,6 +13,6 @@ void OvejaVegana::CreatorPlayerInputComponent::SpecificInitComponent(VeryReal::C
     }
 }
 
-void OvejaVegana::CreatorPlayerInputComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
+std::pair<bool, std::string> OvejaVegana::CreatorPlayerInputComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
 
 }

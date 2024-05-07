@@ -13,7 +13,7 @@ OvejaVegana::LifeComponent::~LifeComponent() {
 
 }
 
-bool OvejaVegana::LifeComponent::InitComponent(float max, float ini) {
+std::pair<bool, std::string> OvejaVegana::LifeComponent::InitComponent(float max, float ini) {
 	currentlife = ini;
 	maxlife = max;
 	my_progress_bar = this->GetEntity()->GetComponent<VeryReal::UIProgressBarComponent>();

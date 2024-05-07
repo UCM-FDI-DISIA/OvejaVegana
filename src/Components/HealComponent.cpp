@@ -5,13 +5,13 @@ OvejaVegana::HealComponent::HealComponent() {}
 
 OvejaVegana::HealComponent::~HealComponent() {}
 
-bool OvejaVegana::HealComponent::InitComponent(int amount) {
+std::pair<bool, std::string> OvejaVegana::HealComponent::InitComponent(int amount) {
     pickedUp = false;
     this->amount = amount;
     life_comp = this->GetEntity()->GetComponent<OvejaVegana::LifeComponent>();
     if (this->life_comp != nullptr)
-        return false;
-    return true;
+        return { false, "LifeComponent isn't in this entity, ERROR from HealComponent" };
+    return { true, "HealComponent created correctly" };
 }
 
 

@@ -38,7 +38,7 @@ namespace OvejaVegana {
         int numB = 0;
     public:
         PlayerShootComponent();
-        virtual bool InitComponent();
+        virtual std::pair<bool, std::string> InitComponent();
         virtual void Update(const double& dt);
         void Shoot();
         VeryReal::Vector3 GetMouseDirection();

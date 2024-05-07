@@ -3,7 +3,7 @@
 #include "Entity.h"
 #include "LifeComponent.h"
 #include "ColliderComponent.h"
-bool OvejaVegana::BulletComponent::InitComponent()
+std::pair<bool, std::string> OvejaVegana::BulletComponent::InitComponent()
 {
 	my_collider = this->GetEntity()->GetComponent<VeryReal::ColliderComponent>();
 	if (my_collider == nullptr) 
