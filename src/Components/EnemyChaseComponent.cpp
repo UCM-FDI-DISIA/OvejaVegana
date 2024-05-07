@@ -2,6 +2,7 @@
 #include "Entity.h"
 #include "TransformComponent.h"
 #include "MovementComponent.h"
+#include "ColliderComponent.h"
 #include "Vector3.h"
 #include "SceneManager.h"
 #include "Scene.h"
@@ -38,4 +39,14 @@ void OvejaVegana::EnemyChaseComponent::Update(const double& dt) {
     else
         my_movement_component->SetSpeed(speed);
     my_movement_component->SetMoventDirection(dir);
+
+	if (!this->GetEntity()->GetComponent<VeryReal::ColliderComponent>()->GetActive())
+		destroy();
+
+}
+
+void OvejaVegana::EnemyChaseComponent::destroy()
+{
+	this->SetActive(false);
+	this->GetEntity()->SetActive(false);
 }

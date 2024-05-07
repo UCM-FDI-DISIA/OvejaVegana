@@ -12,8 +12,10 @@ namespace OvejaVegana {
 namespace OvejaVegana {
 	class EnemyChaseComponent : public VeryReal::Component {
 	public:
+
 		virtual bool InitComponent();
 		virtual void Update(const double& dt);
+		 void destroy();
 
 	private:
 		VeryReal::TransformComponent* player_transform = nullptr;

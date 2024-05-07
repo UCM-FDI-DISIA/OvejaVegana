@@ -1,8 +1,10 @@
 #include "LifeComponent.h"
 #include "EnemyChaseComponent.h"
 #include <UI/UIProgressBarComponent.h>
-#include <Entity.h>
+#include "ColliderComponent.h"
+#include "Entity.h"
 #include "GameManager.h"
+
 
 OvejaVegana::LifeComponent::LifeComponent() {
 }
@@ -50,7 +52,8 @@ void OvejaVegana::LifeComponent::OnCollisionEnter(VeryReal::Entity* other) {
 
 	if (life_comp) {
 		//std::cout << "colision con enemigo " << std::to_string(currentlife) << std::endl;
-
+		//enemy->destroy();
+		other->GetComponent<VeryReal::ColliderComponent>()->SetActive(false);
 		//life_comp->decreaselife(1.0);
 		//this->GetEntity()->SetActive(false);
 	}

@@ -87,13 +87,13 @@ Prefabs={
             {
                 name = "RigidBodyComponent",
                 parameters = {
-                    shapeType = 0,
+                    shapeType = 1,
                     movementType = 0,
-                    size = {10, 10, 10},
+                    size = {8, 8, 8},
                     mass = 10.0,
                     friction = 0.5,
                     restitution = 0.0,
-                    trigger = false,
+                    trigger = true,
                     mask = 1,
                     group = 2
                 }
@@ -152,7 +152,7 @@ Prefabs={
                     mass = 1.0,
                     friction = 1.0,
                     restitution = 1.0,
-                    trigger = false,
+                    trigger = true,
                     mask = 1,
                     group = 2
                 }

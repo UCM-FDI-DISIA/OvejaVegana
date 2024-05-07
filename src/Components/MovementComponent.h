@@ -27,7 +27,7 @@ namespace OvejaVegana
 		inline void SetSpeed(float Speed) { this->speed = Speed; }
 
 	private:
-		float speed = 150;
+		float speed = 15;
 		VeryReal::Vector3 movementDirection = VeryReal::Vector3(0, 0, 0);
 		VeryReal::TransformComponent* my_transform = nullptr;
 		VeryReal::RigidBodyComponent* my_rigidbody = nullptr;
