@@ -11,12 +11,12 @@ Prefabs={
                 }
             },
             {
-                name = "BulletComponent",
+                name = "ColliderComponent",
                 parameters = {
                 }
             },
             {
-                name = "ColliderComponent",
+                name = "BulletComponent",
                 parameters = {
                 }
             },

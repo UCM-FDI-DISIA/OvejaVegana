@@ -48,7 +48,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         VeryReal::Creator::Instance()->AddCreator("TimerComponent", new OvejaVegana::CreatorTimerComponent());
         VeryReal::Creator::Instance()->AddCreator("LifeComponent", new OvejaVegana::CreatorLifeComponent());
         VeryReal::Creator::Instance()->AddCreator("HealComponent", new OvejaVegana::CreatorHealComponent());
-        VeryReal::Creator::Instance()->AddCreator("Bullet", new OvejaVegana::CreatorBulletComponent());
+        VeryReal::Creator::Instance()->AddCreator("BulletComponent", new OvejaVegana::CreatorBulletComponent());
 
         //VeryReal::ScriptManager::Instance()->ExposeFunctionsToLua("Arboles", OvejaVegana::GameManager::Instance()->CreateRandomTrees);
         //VeryReal::ScriptManager::Instance()->ReadFunction();
