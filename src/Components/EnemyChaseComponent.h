@@ -2,6 +2,7 @@
 #ifndef ENEMYCHASECOMPONENT
 #define ENEMYCHASECOMPONENT
 #include "Component.h"
+#include <iostream>
 
 namespace VeryReal {
 	class TransformComponent;
@@ -17,7 +18,7 @@ namespace OvejaVegana {
 
 		virtual std::pair<bool, std::string> InitComponent();
 		virtual void Update(const double& dt);
-		 void destroy();
+		void destroy();
 
 	private:
 		VeryReal::TransformComponent* player_transform = nullptr;
