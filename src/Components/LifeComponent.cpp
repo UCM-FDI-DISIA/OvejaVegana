@@ -49,9 +49,9 @@ void OvejaVegana::LifeComponent::OnCollisionEnter(VeryReal::Entity* other) {
 	auto enemy = other->GetComponent<OvejaVegana::EnemyChaseComponent>();
 
 	if (life_comp) {
-		std::cout << "colision con enemigo " << std::to_string(currentlife) << std::endl;
+		//std::cout << "colision con enemigo " << std::to_string(currentlife) << std::endl;
 
-		life_comp->decreaselife(1.0);  // Incrementa la vida del componente de vida encontrado
+		//life_comp->decreaselife(1.0);
 		//this->GetEntity()->SetActive(false);
 	}
 

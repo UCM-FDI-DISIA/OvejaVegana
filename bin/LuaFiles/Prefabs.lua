@@ -75,7 +75,7 @@ Prefabs={
                 name = "TransformComponent",
                 parameters = {  
                     position = {0, 15, 50},
-                    rotation ={180, 0, 90},
+                    rotation ={0, 0, 90},
                     scale = {10, 10, 10}                   
                 }
             },
@@ -121,7 +121,7 @@ Prefabs={
             }         
         }
     },  
-    {   name = "Curacion",
+    {   name = "PrefabCuracion",
         components = {
             {
                 name = "TransformComponent",
@@ -130,6 +130,17 @@ Prefabs={
                     position = { 0, 100, 40},
                     rotation = {0, 0, 0},
                     scale = {20, 20, 20}                    
+                }
+            },
+            {
+                name = "HealComponent",
+                parameters = {
+                    amount = 1
+                }
+            },
+            {
+                name = "ColliderComponent",
+                parameters = {
                 }
             },
             {
@@ -153,17 +164,6 @@ Prefabs={
                     entityname= "cura",
                     materialname = "botiquinMat",
                     isstatic = false
-                }
-            },          
-            {
-                name = "ColliderComponent",
-                parameters = {
-                }
-            },
-            {
-                name = "HealComponent",
-                parameters = {
-                    amount = 1
                 }
             }
         }
