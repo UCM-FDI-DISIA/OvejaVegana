@@ -22,6 +22,7 @@ namespace OvejaVegana{
 		//metodo que decrementa vidas e indica si el personaje sigue vivo
 		bool decreaselife(float todecrease);
 		int getMaxLife() {return maxlife; };
+		void OnCollisionEnter(VeryReal::Entity* other) override;
 
 	protected:
 		float maxlife;

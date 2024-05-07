@@ -1,4 +1,5 @@
 #include "LifeComponent.h"
+#include "EnemyChaseComponent.h"
 #include <UI/UIProgressBarComponent.h>
 #include <Entity.h>
 #include "GameManager.h"
@@ -41,4 +42,17 @@ bool OvejaVegana::LifeComponent::decreaselife(float todescrease) {
 	else {
 		return true;
 	}
+}
+void OvejaVegana::LifeComponent::OnCollisionEnter(VeryReal::Entity* other) {
+	// Asumimos que 'other' puede tener un componente de vida
+	auto life_comp = this->GetEntity()->GetComponent<OvejaVegana::LifeComponent>();
+	auto enemy = other->GetComponent<OvejaVegana::EnemyChaseComponent>();
+
+	if (life_comp) {
+		std::cout << "colision con enemigo " << std::to_string(currentlife) << std::endl;
+
+		life_comp->decreaselife(1.0);  // Incrementa la vida del componente de vida encontrado
+		//this->GetEntity()->SetActive(false);
+	}
+
 }

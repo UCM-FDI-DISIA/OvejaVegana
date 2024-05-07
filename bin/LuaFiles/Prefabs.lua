@@ -80,17 +80,22 @@ Prefabs={
                 }
             },
             {
+                name = "ColliderComponent",
+                parameters = {
+                }
+            },
+            {
                 name = "RigidBodyComponent",
                 parameters = {
-                    shapeType = 1,
+                    shapeType = 0,
                     movementType = 0,
-                    size = {9, 9, 9},
+                    size = {10, 10, 10},
                     mass = 10.0,
                     friction = 0.5,
                     restitution = 0.0,
                     trigger = false,
-                    mask = 2,
-                    group = 1
+                    mask = 1,
+                    group = 2
                 }
             },
             {
@@ -128,11 +133,6 @@ Prefabs={
                 }
             },
             {
-                name = "ColliderComponent",
-                parameters = {
-                }
-            },
-            {
                 name = "RigidBodyComponent",
                 parameters = {
                     shapeType = 1,
@@ -155,6 +155,11 @@ Prefabs={
                     isstatic = false
                 }
             },          
+            {
+                name = "ColliderComponent",
+                parameters = {
+                }
+            },
             {
                 name = "HealComponent",
                 parameters = {
