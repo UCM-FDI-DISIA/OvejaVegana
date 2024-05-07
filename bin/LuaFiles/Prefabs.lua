@@ -80,11 +80,6 @@ Prefabs={
                 }
             },
             {
-                name = "ColliderComponent",
-                parameters = {
-                }
-            },
-            {
                 name = "RigidBodyComponent",
                 parameters = {
                     shapeType = 1,
@@ -116,7 +111,7 @@ Prefabs={
                     isstatic = false,
                     modelname = "enemigo.mesh",
                     entityname= "Enemy",
-                    materialname = "enemigo"
+                    materialname = "enemigoMat"
                 }
             }         
         }
@@ -130,12 +125,6 @@ Prefabs={
                     position = { 0, 100, 40},
                     rotation = {0, 0, 0},
                     scale = {20, 20, 20}                    
-                }
-            },
-            {
-                name = "HealComponent",
-                parameters = {
-                    amount = 1
                 }
             },
             {
@@ -164,6 +153,12 @@ Prefabs={
                     entityname= "cura",
                     materialname = "botiquinMat",
                     isstatic = false
+                }
+            },          
+            {
+                name = "HealComponent",
+                parameters = {
+                    amount = 1
                 }
             }
         }
