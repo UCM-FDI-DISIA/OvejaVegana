@@ -10,9 +10,9 @@ GameManager::~GameManager() {
 
 }
 
-void GameManager::Start() {
+std::pair<bool, std::string> GameManager::Start() {
 	OvejaVegana::EnemyWaveManager::Init();
-	VeryReal::ScriptManager::Instance()->ReadScene("MenuScene", true);
+	return VeryReal::ScriptManager::Instance()->ReadScene("MenuScene", true);
 }
 
 void GameManager::Update(const double& dt) {

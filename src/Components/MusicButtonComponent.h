@@ -9,7 +9,7 @@
 namespace OvejaVegana {
     class OVEJAVEGANA_API MusicButtonComponent : public VeryReal::UIButtonComponent {
     public:      
-        virtual void accion(); // Método para alternar el estado de la música entre mutear y desmutear
+        virtual void Action(); // Método para alternar el estado de la música entre mutear y desmutear
     private:
         bool mute = false;
     };

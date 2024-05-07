@@ -15,8 +15,8 @@ std::pair<bool, std::string> OvejaVegana::CreatorLifeComponent::SpecificInitComp
 #pragma region Position
 
     if (parameters_map.find("health") != parameters_map.end()) {
-        if (std::holds_alternative<int>(parameters_map.at("health")->GetVariant())) {
-            maxlife = std::get<int>(parameters_map.at("health")->GetVariant());
+        if (std::holds_alternative<int>(parameters_map.at("health").GetVariant())) {
+            maxlife = std::get<int>(parameters_map.at("health").GetVariant());
         }
         else {
             std::cout << "No se ha especificado ningun valor para la vida maxima este sera seteado por defecto" << std::endl;

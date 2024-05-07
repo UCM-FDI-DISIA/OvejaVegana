@@ -22,7 +22,7 @@ namespace OvejaVegana {
 
 		}
 		virtual ~GameManager();
-		void Start();
+		std::pair<bool, std::string> Start();
 		void Update(const double& dt);
 		void Win();
 		void NextLevel();

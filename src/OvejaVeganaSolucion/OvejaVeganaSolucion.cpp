@@ -33,7 +33,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
 {
     // Declaración de la función que deseas exportar
 
-    __declspec(dllexport) bool start() {
+    __declspec(dllexport) std::pair<bool, std::string> start() {
         //CREACION DE TODOS LOS COMPONENETES DEL JUEGO
         OvejaVegana::GameManager::Init();
         PhysicsManager::Instance()->SetWorldGravity(Vector3(0, 0, 0));
@@ -50,20 +50,13 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         VeryReal::Creator::Instance()->AddCreator("HealComponent", new OvejaVegana::CreatorHealComponent());
         VeryReal::Creator::Instance()->AddCreator("Bullet", new OvejaVegana::CreatorBulletComponent());
 
-        OvejaVegana::GameManager::Instance()->Start();
-        /*ScriptManager::Instance()->ReadScene("Level1Scene", true);
-        ScriptManager::Instance()->ReadPrefabs();
-
-        */
-
         //VeryReal::ScriptManager::Instance()->ExposeFunctionsToLua("Arboles", OvejaVegana::GameManager::Instance()->CreateRandomTrees);
         //VeryReal::ScriptManager::Instance()->ReadFunction();
-        return true;
+        return OvejaVegana::GameManager::Instance()->Start();
     }
 
     __declspec(dllexport) void loop(float dt) {
         OvejaVegana::GameManager::Instance()->Update(dt);
-        /*  std::cout << "Pepa" << std::endl;*/
     }
 }
 

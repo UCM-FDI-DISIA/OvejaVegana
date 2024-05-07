@@ -9,7 +9,7 @@
 namespace OvejaVegana {
 	class OVEJAVEGANA_API ExitButtonComponent : public VeryReal::UIButtonComponent {
 	public:	
-		virtual void accion();
+		virtual void Action();
 	};
 }
 

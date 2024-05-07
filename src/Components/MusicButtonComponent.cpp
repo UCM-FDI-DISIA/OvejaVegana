@@ -1,7 +1,7 @@
 #include "MusicButtonComponent.h"
 #include "AudioManager.h"
 
-void OvejaVegana::MusicButtonComponent::accion() {
+void OvejaVegana::MusicButtonComponent::Action() {
 	if (!mute) {
 		VeryReal::AM().PauseEverySound();
 		VeryReal::AM().StopEverySound();

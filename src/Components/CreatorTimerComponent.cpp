@@ -15,8 +15,8 @@ std::pair<bool, std::string> OvejaVegana::CreatorTimerComponent::SpecificInitCom
 #pragma region Max Time
 
     if (parameters_map.find("maxTime") != parameters_map.end()) {
-        if (std::holds_alternative<int>(parameters_map.at("maxTime")->GetVariant())) {
-            maxTime = std::get<int>(parameters_map.at("maxTime")->GetVariant());
+        if (std::holds_alternative<int>(parameters_map.at("maxTime").GetVariant())) {
+            maxTime = std::get<int>(parameters_map.at("maxTime").GetVariant());
         }
         else {
             std::cout << "No se ha especificado ningun valor para maxTime, este sera seteado por defecto" << std::endl;

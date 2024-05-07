@@ -14,8 +14,8 @@ std::pair<bool, std::string> OvejaVegana::CreatorHealComponent::SpecificInitComp
 #pragma region Position
 
     if (parameters_map.find("amount") != parameters_map.end()) {
-        if (std::holds_alternative<int>(parameters_map.at("amount")->GetVariant())) {
-            amount = std::get<int>(parameters_map.at("amount")->GetVariant());
+        if (std::holds_alternative<int>(parameters_map.at("amount").GetVariant())) {
+            amount = std::get<int>(parameters_map.at("amount").GetVariant());
         }
         else {
             std::cout << "No se ha especificado ningun valor para cantidad de curacion este sera seteado por defecto" << std::endl;

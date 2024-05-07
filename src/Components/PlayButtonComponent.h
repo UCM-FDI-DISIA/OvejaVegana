@@ -9,7 +9,7 @@
 namespace OvejaVegana {
 	class OVEJAVEGANA_API PlayButtonComponent : public VeryReal::UIButtonComponent {
 	public:
-		virtual void accion();
+		virtual void Action();
 		PlayButtonComponent() {};
 		virtual ~PlayButtonComponent() {};
 	};
