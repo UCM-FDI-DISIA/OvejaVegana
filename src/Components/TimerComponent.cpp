@@ -10,10 +10,10 @@ std::pair<bool, std::string> OvejaVegana::TimerComponent::InitComponent(int maxT
 	time_text = this->GetEntity()->GetComponent<VeryReal::UITextComponent>();
 	max_round_time = maxTime;
 	if (time_text != nullptr) {
-		return true;
+		return { true, "TimerComponent created correctly" };
 	}
 	else {
-		return false;
+		return { false, "UITextComponent isn't in this entity, ERROR from TimerComponent" };
 	}
 }
 

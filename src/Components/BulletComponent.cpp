@@ -8,9 +8,9 @@ std::pair<bool, std::string> OvejaVegana::BulletComponent::InitComponent()
 	my_collider = this->GetEntity()->GetComponent<VeryReal::ColliderComponent>();
 	if (my_collider == nullptr) 
 	{
-		return false;
+		return { false, "ColliderComponent isn't in this entity, ERROR from BulletComponent" };
 	}
-	return true;
+	return { true, "BulletComponent created correctly" };
 }
 
 void OvejaVegana::BulletComponent::OnCollisionEnter(VeryReal::Entity* other) {

@@ -18,9 +18,9 @@ std::pair<bool, std::string> OvejaVegana::LifeComponent::InitComponent(float max
 	maxlife = max;
 	my_progress_bar = this->GetEntity()->GetComponent<VeryReal::UIProgressBarComponent>();
 	if (!my_progress_bar) {
-		return false;
+		return { false, "UIProgressBarComponent isn't in this entity, ERROR from LifeComponent" };
 	}
-	return true;
+	return { true, "LifeComponent created correctly" };
 }
 
 void OvejaVegana::LifeComponent::addlife(float toadd) {

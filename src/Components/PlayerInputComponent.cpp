@@ -13,10 +13,17 @@ std::pair<bool, std::string> OvejaVegana::PlayerInputComponent::InitComponent() 
 	my_movement_component = this->GetEntity()->GetComponent<OvejaVegana::MovementComponent>();;
 	my_rigidbody = this->GetEntity()->GetComponent<VeryReal::RigidBodyComponent>();
 
-	if (this->my_transform != nullptr && this->my_movement_component != nullptr && this->my_rigidbody != nullptr)
-		return true;
+	if (this->my_transform == nullptr) {
+		return { false, "Transform isn't in this entity, ERROR from PlayerInputComponent" };
+	}
+	else if (this->my_movement_component == nullptr) {
+		return { false, "MovementComponent isn't in this entity, ERROR from PlayerInputComponent" };
+	}
+	else if (this->my_rigidbody == nullptr) {
+		return { false, "RigidBodyComponent isn't in this entity, ERROR from PlayerInputComponent" };
+	}
 	else
-		return false;
+		return { true, "PlayerInputComponent created correctly" };
 }
 
 void OvejaVegana::PlayerInputComponent::Update(const double& dt) {
