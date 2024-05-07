@@ -89,7 +89,7 @@ Prefabs={
                 parameters = {
                     shapeType = 1,
                     movementType = 0,
-                    size = {2, 2, 2},
+                    size = {9, 9, 9},
                     mass = 10.0,
                     friction = 0.5,
                     restitution = 0.0,
@@ -116,7 +116,7 @@ Prefabs={
                     isstatic = false,
                     modelname = "enemigo.mesh",
                     entityname= "Enemy",
-                    materialname = "EnemigoMat"
+                    materialname = "enemigo"
                 }
             }         
         }
