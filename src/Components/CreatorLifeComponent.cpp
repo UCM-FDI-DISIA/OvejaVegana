@@ -29,16 +29,12 @@ std::pair<bool, std::string> OvejaVegana::CreatorLifeComponent::SpecificInitComp
     }
     inilife = 1;
 #pragma endregion
-    bool b = life_comp->InitComponent(maxlife, inilife);
-    if (!b) {
-    }
+    return life_comp->InitComponent(maxlife, inilife);
 }
 
 std::pair<bool, std::string> OvejaVegana::CreatorLifeComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
     int a = 0;
     LifeComponent* t = static_cast<LifeComponent*>(c);
     LifeComponent* copia = static_cast<LifeComponent*>(other);
-    bool b = t->InitComponent(copia->getMaxLife(), copia->getMaxLife());
-    if (!b) {
-    }
+    return t->InitComponent(copia->getMaxLife(), copia->getMaxLife());
 }

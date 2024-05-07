@@ -13,30 +13,23 @@ std::pair<bool, std::string> OvejaVegana::CreatorHealComponent::SpecificInitComp
 
 #pragma region Position
 
-        if (parameters_map.find("amount") != parameters_map.end()) {
-            if (std::holds_alternative<int>(parameters_map.at("amount")->GetVariant())) {
-                amount = std::get<int>(parameters_map.at("amount")->GetVariant());
-            }
-            else {
-                std::cout << "No se ha especificado ningun valor para cantidad de curacion este sera seteado por defecto" << std::endl;
-                amount = 1;
-            }
+    if (parameters_map.find("amount") != parameters_map.end()) {
+        if (std::holds_alternative<int>(parameters_map.at("amount")->GetVariant())) {
+            amount = std::get<int>(parameters_map.at("amount")->GetVariant());
         }
         else {
-            std::cout << "No existe ningun parametro amount este sera seteado por defecto" << std::endl;
+            std::cout << "No se ha especificado ningun valor para cantidad de curacion este sera seteado por defecto" << std::endl;
             amount = 1;
         }
-#pragma endregion
-        bool b = heal_comp->InitComponent(amount);
-        if (!b) {
-        }
-}
-
-std::pair<bool, std::string> OvejaVegana::CreatorHealComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
-    int a = 0;
-    HealComponent* t = static_cast<HealComponent*>(c);
-    HealComponent* copia = static_cast<HealComponent*>(other);
-    bool b = t->InitComponent(copia->getAmount());
-    if (!b) {
     }
+    else {
+        std::cout << "No existe ningun parametro amount este sera seteado por defecto" << std::endl;
+        amount = 1;
+    }
+#pragma endregion
+    return heal_comp->InitComponent(amount);
+}
+std::pair<bool, std::string> OvejaVegana::CreatorHealComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {    HealComponent* t = static_cast<HealComponent*>(c);
+    HealComponent* copia = static_cast<HealComponent*>(other);
+    return t->InitComponent(copia->getAmount());
 }

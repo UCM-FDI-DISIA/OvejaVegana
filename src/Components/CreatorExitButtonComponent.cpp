@@ -10,11 +10,9 @@ std::pair<bool, std::string> OvejaVegana::CreatorExitButtonComponent::SpecificIn
 {
     OvejaVegana::ExitButtonComponent* exitbutton_comp = static_cast<OvejaVegana::ExitButtonComponent*>(c);
 
-    if (!exitbutton_comp->InitComponent()) {
-
-    }
+    return exitbutton_comp->InitComponent();
 }
 
 std::pair<bool, std::string> OvejaVegana::CreatorExitButtonComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
-
+    return { true, "Nothing copied, need to be filled to be used by prefabs (CreatorExitButtonComponent)" };
 }

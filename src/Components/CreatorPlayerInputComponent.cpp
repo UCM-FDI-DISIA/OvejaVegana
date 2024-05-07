@@ -8,11 +8,9 @@ VeryReal::Component* OvejaVegana::CreatorPlayerInputComponent::CreatorSpecificCo
 std::pair<bool, std::string> OvejaVegana::CreatorPlayerInputComponent::SpecificInitComponent(VeryReal::Component* c) {
     OvejaVegana::PlayerInputComponent* pi = static_cast<OvejaVegana::PlayerInputComponent*>(c);
 
-    if (!pi->InitComponent()) {
-        // Gestion de error
-    }
+    return pi->InitComponent();
 }
 
 std::pair<bool, std::string> OvejaVegana::CreatorPlayerInputComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
-
+    return { true, "Nothing copied, need to be filled to be used by prefabs (CreatorPlayerInputComponent)" };
 }

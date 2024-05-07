@@ -1,4 +1,6 @@
 #pragma once
+#ifndef ENEMYCHASECOMPONENT
+#define ENEMYCHASECOMPONENT
 #include "Component.h"
 
 namespace VeryReal {
@@ -26,3 +28,4 @@ namespace OvejaVegana {
 		float slowdown_factor = 0.8f; // Disminucion de velocidad
 	};
 }
+#endif

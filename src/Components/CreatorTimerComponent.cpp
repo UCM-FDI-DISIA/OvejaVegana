@@ -35,5 +35,5 @@ std::pair<bool, std::string> OvejaVegana::CreatorTimerComponent::SpecificInitCom
 }
 
 std::pair<bool, std::string> OvejaVegana::CreatorTimerComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
-
+    return { true, "Nothing copied, need to be filled to be used by prefabs (CreatorTimerComponent)" };
 }

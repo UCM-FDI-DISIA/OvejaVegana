@@ -8,12 +8,9 @@ VeryReal::Component* OvejaVegana::CreatorPlayerShootComponent::CreatorSpecificCo
 
 std::pair<bool, std::string> OvejaVegana::CreatorPlayerShootComponent::SpecificInitComponent(VeryReal::Component* c) {
     PlayerShootComponent* psc = static_cast<OvejaVegana::PlayerShootComponent*>(c);
-    if (psc && !psc->InitComponent()) {
-        // Gestionar el error si la inicialización falla
-        std::cerr << "Failed to initialize PlayerShootComponent." << std::endl;
-    }
+    return psc->InitComponent();
 }
 
 std::pair<bool, std::string> OvejaVegana::CreatorPlayerShootComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
-
+    return { true, "Nothing copied, need to be filled to be used by prefabs (CreatorPlayerShootComponent)" };
 }

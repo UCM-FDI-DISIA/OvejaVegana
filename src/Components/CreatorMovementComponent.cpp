@@ -8,15 +8,11 @@ VeryReal::Component* OvejaVegana::CreatorMovementComponent::CreatorSpecificCompo
 std::pair<bool, std::string> OvejaVegana::CreatorMovementComponent::SpecificInitComponent(VeryReal::Component* c) {
     OvejaVegana::MovementComponent* mc = static_cast<OvejaVegana::MovementComponent*>(c);
 
-    if (!mc->InitComponent()) {
-        // Gestion de error
-    }
+    return mc->InitComponent();
 }
 
 std::pair<bool, std::string> OvejaVegana::CreatorMovementComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
     OvejaVegana::MovementComponent* mc = static_cast<OvejaVegana::MovementComponent*>(c);
 
-    if (!mc->InitComponent()) {
-        // Gestion de error
-    }
+    return mc->InitComponent();
 }

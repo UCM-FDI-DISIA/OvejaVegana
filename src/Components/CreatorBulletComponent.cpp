@@ -10,16 +10,12 @@ std::pair<bool, std::string> OvejaVegana::CreatorBulletComponent::SpecificInitCo
 {
     OvejaVegana::BulletComponent* bullet_comp = static_cast<OvejaVegana::BulletComponent*>(c);
 
-    if (!bullet_comp->InitComponent()) {
-
-    }
+    return bullet_comp->InitComponent();
 }
 
 std::pair<bool, std::string> OvejaVegana::CreatorBulletComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
     int a = 0;
     BulletComponent* t = static_cast<BulletComponent*>(c);
     BulletComponent* copia = static_cast<BulletComponent*>(other);
-    bool b = t->InitComponent();
-    if (!b) {
-    }
+    return t->InitComponent();
 }
