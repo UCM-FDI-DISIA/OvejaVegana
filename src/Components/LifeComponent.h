@@ -27,6 +27,7 @@ namespace OvejaVegana{
 		float maxlife;
 		float currentlife;
 		bool progressbar;
+		VeryReal::UIProgressBarComponent* my_progress_bar;
 	};
 }
 #endif

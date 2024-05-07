@@ -54,9 +54,9 @@ Entities={
             {
                 name = "RigidBodyComponent",
                 parameters = {
-                    shapeType = 1,
+                    shapeType = 0,
                     movementType = 0,
-                    size = {2, 2, 2},
+                    size = {10, 10, 10},
                     mass = 10.0,
                     friction = 0.5,
                     restitution = 0.0,
@@ -111,7 +111,7 @@ Entities={
                 name = "UIProgressBarComponent",
                 parameters = {             
                     maximo = 3.0,
-                    progres = 0.0,
+                    progres = 1.0,
                     progressBarName = "l",
                     frameMaterial = "botiquinMat",
                     contentMaterial = "botiquinMat",
@@ -429,54 +429,7 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     a = 0,
-                    position = { 0, 100, 20},
-                    rotation = {0, 0, 0},
-                    scale = {20, 20, 20}                    
-                }
-            },
-            {
-                name = "HealComponent",
-                parameters = {
-                    amount = 1
-                }
-            },
-            {
-                name = "ColliderComponent",
-                parameters = {
-                }
-            },
-            {
-                name = "RigidBodyComponent",
-                parameters = {
-                    shapeType = 1,
-                    movementType = 1,
-                    size = {10, 10, 10},
-                    mass = 1.0,
-                    friction = 1.0,
-                    restitution = 1.0,
-                    trigger = false,
-                    mask = 1,
-                    group = 2
-                }
-            },
-            {
-                name = "MeshRenderComponent",
-                parameters = {                  
-                    modelname = "botiquin.mesh",
-                    entityname= "cura",
-                    materialname = "botiquinMat",
-                    isstatic = false
-                }
-            }
-        }
-    },
-    {   name = "Curacion",
-        components = {
-            {
-                name = "TransformComponent",
-                parameters = {  
-                    a = 0,
-                    position = { 50, 100, 20},
+                    position = { 0, 100, 40},
                     rotation = {0, 0, 0},
                     scale = {20, 20, 20}                    
                 }

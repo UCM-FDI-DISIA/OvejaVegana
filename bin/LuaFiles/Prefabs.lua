@@ -74,8 +74,8 @@ Prefabs={
             {
                 name = "TransformComponent",
                 parameters = {  
-                    position = {0, 0, 0},
-                    rotation ={0, 0, 90},
+                    position = {0, 15, 50},
+                    rotation ={180, 0, 90},
                     scale = {10, 10, 10}                   
                 }
             },
@@ -93,7 +93,7 @@ Prefabs={
                     mass = 10.0,
                     friction = 0.5,
                     restitution = 0.0,
-                    trigger = true,
+                    trigger = false,
                     mask = 2,
                     group = 1
                 }
@@ -108,7 +108,7 @@ Prefabs={
                 name = "EnemyChaseComponent",
                 parameters = {                  
                     
-               }
+                }
             },
             {
                 name = "MeshRenderComponent",
@@ -121,25 +121,51 @@ Prefabs={
             }         
         }
     },  
-    {  name = "PrefabCuracion",
+    {   name = "Curacion",
         components = {
-	        {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = { 0, 100, 40},
+                    rotation = {0, 0, 0},
+                    scale = {20, 20, 20}                    
+                }
+            },
+            {
                 name = "HealComponent",
                 parameters = {
-                    amount = 2
+                    amount = 1
                 }
-	        },
-            name = "MeshRenderComponent",
-            parameters = {                  
-                isstatic = true,
-                modelname = "botiquin.mesh",
-                materialname = "botiquin/botiquinMat"
             },
             {
                 name = "ColliderComponent",
                 parameters = {
                 }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {10, 10, 10},
+                    mass = 1.0,
+                    friction = 1.0,
+                    restitution = 1.0,
+                    trigger = false,
+                    mask = 1,
+                    group = 2
+                }
+            },
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    modelname = "botiquin.mesh",
+                    entityname= "cura",
+                    materialname = "botiquinMat",
+                    isstatic = false
+                }
             }
         }
-    },
+    }
 }

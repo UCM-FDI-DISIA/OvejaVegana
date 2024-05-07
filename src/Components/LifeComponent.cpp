@@ -13,13 +13,9 @@ OvejaVegana::LifeComponent::~LifeComponent() {
 bool OvejaVegana::LifeComponent::InitComponent(float max, float ini) {
 	currentlife = ini;
 	maxlife = max;
-	if (this->GetEntity()->GetComponent<VeryReal::UIProgressBarComponent>() == nullptr) {
-		progressbar = false;
-	}
-	else {
-		progressbar = true;
-		this->GetEntity()->GetComponent<VeryReal::UIProgressBarComponent>()->setProgress(currentlife);
-		this->GetEntity()->GetComponent<VeryReal::UIProgressBarComponent>()->setMaximun(max);
+	my_progress_bar = this->GetEntity()->GetComponent<VeryReal::UIProgressBarComponent>();
+	if (!my_progress_bar) {
+		return false;
 	}
 	return true;
 }
