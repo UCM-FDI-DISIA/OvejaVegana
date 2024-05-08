@@ -13,11 +13,15 @@ namespace VeryReal {
 namespace OvejaVegana{
 	class OVEJAVEGANA_API LifeComponent : public VeryReal::Component {
 	public:
+		enum entityType {
+			player,
+			enemy
+		};
 	    //constructora
 		LifeComponent();
 		//destructora
 		virtual ~LifeComponent();
-		std::pair<bool, std::string> InitComponent(float max, float ini);
+		std::pair<bool, std::string> InitComponent(float max);
 		//metodo que añade vida y actualiza la progress bar si es que la tiene la entidad
 		void addlife(float toadd);
 		//metodo que decrementa vidas e indica si el personaje sigue vivo
@@ -26,6 +30,7 @@ namespace OvejaVegana{
 		void OnCollisionEnter(VeryReal::Entity* other) override;
 
 	protected:
+		entityType eType;
 		float maxlife;
 		float currentlife;
 		bool progressbar;

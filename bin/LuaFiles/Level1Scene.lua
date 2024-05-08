@@ -295,7 +295,7 @@ Entities={
             {
                 name = "TimerComponent",
                 parameters = {    
-                    maxTime = 10
+                    maxTime = 180
                 }
             }
             -- {para debug
