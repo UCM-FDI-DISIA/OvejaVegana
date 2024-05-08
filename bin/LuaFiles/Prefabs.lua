@@ -5,7 +5,7 @@ Prefabs={
             {
                 name = "TransformComponent",
                 parameters = {          
-                    position = {0, 0, 0},
+                    position = {0, 15, 50},
                     rotation = {0, 0, 0},
                     scale = {1, 1, 1}     
                 }
@@ -16,16 +16,12 @@ Prefabs={
                 }
             },
             {
-                name = "BulletComponent",
-                parameters = {
-                }
-            },
-            {
                 name = "MeshRenderComponent",
                 parameters = {                  
                     isstatic = false,
-                    modelname = "Crate.mesh",
-                    materialname = "crate/CrateDarkWood"
+                    modelname = "Bala.mesh",
+                    entityname= "Bala",
+                    materialname = "Bala_Gold"
                 }
             },
             {
@@ -33,13 +29,18 @@ Prefabs={
                 parameters = {
                     shapeType = 1,
                     movementType = 0,
-                    size = {1, 1, 1},
+                    size = {8, 8, 8},
                     mass = 10.0,
                     friction = 0.5,
                     restitution = 0.0,
                     trigger = false,
                     mask = 8,
                     group = 8
+                }
+            },
+            {
+                name = "BulletComponent",
+                parameters = {
                 }
             }
             

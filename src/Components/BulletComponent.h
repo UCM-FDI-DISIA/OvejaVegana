@@ -22,7 +22,7 @@ namespace OvejaVegana
 	public:
 		virtual std::pair<bool, std::string> InitComponent();
 		virtual void Update(const double& dt) {}
-		virtual void OnCollisionEnter(VeryReal::Entity* other);
+		void OnCollisionEnter(VeryReal::Entity* other) override;
 	private:
 		float damage = 1;
 		VeryReal::ColliderComponent* my_collider = nullptr;

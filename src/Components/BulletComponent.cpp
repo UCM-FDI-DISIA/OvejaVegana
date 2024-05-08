@@ -3,6 +3,7 @@
 #include "Entity.h"
 #include "LifeComponent.h"
 #include "ColliderComponent.h"
+#include <EnemyChaseComponent.h>
 std::pair<bool, std::string> OvejaVegana::BulletComponent::InitComponent()
 {
 	my_collider = this->GetEntity()->GetComponent<VeryReal::ColliderComponent>();
@@ -14,11 +15,13 @@ std::pair<bool, std::string> OvejaVegana::BulletComponent::InitComponent()
 }
 
 void OvejaVegana::BulletComponent::OnCollisionEnter(VeryReal::Entity* other) {
-	if(other->HasComponent("LifeComponent")) {
-		auto lifeComponent = other->GetComponent<OvejaVegana::LifeComponent>();
-		lifeComponent->decreaselife(damage);
-		this->GetEntity()->SetActive(false);
-	}
+	other->GetComponent<VeryReal::ColliderComponent>()->SetActive(false);
+	auto enemy = other->GetComponent<OvejaVegana::EnemyChaseComponent>();
+
+
+	other->GetComponent<VeryReal::ColliderComponent>()->SetActive(false);
+	this->GetEntity()->SetActive(false);
 }
+
 
 //void OvejaVegana::BulletComponent::Update(const double& dt)

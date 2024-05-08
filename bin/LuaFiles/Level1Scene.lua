@@ -5,7 +5,7 @@ Entities={
             {
                 name = "TransformComponent",
                 parameters = {  
-                    position = {-25, 125, 350},
+                    position = {-25, 125, 1350},
                     rotation ={0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
@@ -130,7 +130,7 @@ Entities={
                     a = 0,
                     position = {0, 0, 0},
                     rotation = {0, 0, 180},
-                    scale = {10, 10, 1}                   
+                    scale = {1000, 1000, 1000}                   
                 }
             },
             {

@@ -20,6 +20,7 @@ namespace VeryReal {
 
 namespace OvejaVegana {
     class MovementComponent;
+    class LifeComponent;
 
 }
 
