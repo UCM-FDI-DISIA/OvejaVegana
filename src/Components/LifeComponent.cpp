@@ -46,16 +46,10 @@ bool OvejaVegana::LifeComponent::decreaselife(float todescrease) {
 	}
 }
 void OvejaVegana::LifeComponent::OnCollisionEnter(VeryReal::Entity* other) {
-	// Asumimos que 'other' puede tener un componente de vida
-	auto life_comp = this->GetEntity()->GetComponent<OvejaVegana::LifeComponent>();
-	auto enemy = other->GetComponent<OvejaVegana::EnemyChaseComponent>();
 
-	if (life_comp) {
-		//std::cout << "colision con enemigo " << std::to_string(currentlife) << std::endl;
-		//enemy->destroy();
+	if (other->GetComponent<OvejaVegana::EnemyChaseComponent>()) {
 		other->GetComponent<VeryReal::ColliderComponent>()->SetActive(false);
 		//life_comp->decreaselife(1.0);
-		//this->GetEntity()->SetActive(false);
 	}
 
 }

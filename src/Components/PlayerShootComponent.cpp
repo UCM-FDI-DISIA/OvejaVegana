@@ -1,15 +1,12 @@
 #include "PlayerShootComponent.h"
-#include "InputManager.h"
-#include "AudioManager.h"
 #include <CameraComponent.h>
-#include "MovementComponent.h"
 #include "RigidBodyComponent.h"
+#include "TransformComponent.h"
 #include "SceneManager.h"
 #include "Scene.h"
-#include "ScriptManager.h"
-#include "RenderManager.h"
-#include "Window.h"
-#include "LifeComponent.h"
+#include "TransformComponent.h"
+#include "Entity.h"
+
 
 OvejaVegana::PlayerShootComponent::PlayerShootComponent()
         :shootRate(1.0f), timeSinceLastShot(0) {
@@ -18,24 +15,10 @@ OvejaVegana::PlayerShootComponent::PlayerShootComponent()
 
 std::pair<bool, std::string> OvejaVegana::PlayerShootComponent::InitComponent() {
     my_transform = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Player")->GetComponent<VeryReal::TransformComponent>();
-    my_movement_component = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Player")->GetComponent<OvejaVegana::MovementComponent>();
-    my_camera_component = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Camera")->GetComponent<VeryReal::CameraComponent>();
-    my_rigidbody = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Player")->GetComponent<VeryReal::RigidBodyComponent>();
     if (this->my_transform == nullptr) {
         return { false, "Transform isn't in this entity, ERROR from PlayerShootComponent" };
     }
-    else if (this->my_movement_component == nullptr){
-        return { false, "MovementComponent isn't in this entity, ERROR from PlayerShootComponent" };
-    }
-    else if (this->my_rigidbody == nullptr) {
-        return { false, "RigidBodyComponent isn't in this entity, ERROR from PlayerShootComponent" };
-    }
-    else if (this->my_camera_component == nullptr) {
-        return { false, "CameraComponent isn't in camera entity, ERROR from PlayerShootComponent" };
-    }
-    else {
-        return { true, "PlayerShootComponent created correctly" };
-    }
+    else return { true, "PlayerShootComponent created correctly" };
 }
 
 void OvejaVegana::PlayerShootComponent::Update(const double& dt) {
@@ -62,12 +45,11 @@ void OvejaVegana::PlayerShootComponent::Shoot(VeryReal::Vector3 shootDirection){
 
     // Configura la posición inicial y la velocidad de la bala
     VeryReal::TransformComponent* bala_transform = bala->GetComponent<VeryReal::TransformComponent>();
-    bala->GetComponent<OvejaVegana::LifeComponent>();
     if (bala_transform) {
 
         // Calcula la rotación basada en la dirección de disparo
         float angle = std::atan2(shootDirection.GetY(), shootDirection.GetX()); // Ángulo en radianes
-        angle = angle * (180.0 / M_PI); // Convertir a grados
+        angle = angle * (180.0 / 3.141592); // Convertir a grados
         //bala_transform->SetRotation({ angle, 0, 0, 1 });
         bala_transform->Rotate(VeryReal::Vector3(angle,0, 0));
 

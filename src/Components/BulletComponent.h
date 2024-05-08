@@ -3,7 +3,6 @@
 #define BULLETCOMPONENT
 #include "Component.h"
 #include "Vector3.h"
-#include "CreatorComponent.h"
 #include "../Export.h"
 namespace VeryReal {
 	class ColliderComponent;

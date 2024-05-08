@@ -48,13 +48,14 @@ void OvejaVegana::EnemyChaseComponent::Update(const double& dt) {
         my_movement_component->SetSpeed(speed);
     my_movement_component->SetMoventDirection(dir);
 
+
+	// Comprobar si se destruye
 	if (!this->GetEntity()->GetComponent<VeryReal::ColliderComponent>()->GetActive())
-		destroy();
+	{
+		this->SetActive(false);
+		this->GetEntity()->SetActive(false);
+		//VeryReal::Entity* botiquin = VeryReal::SceneManager::Instance()->GetActiveScene()->CreatePrefab("PrefabCuracion", "cura" + std::to_string(numB));
+		//this->GetEntity()->
+	}
 
-}
-
-void OvejaVegana::EnemyChaseComponent::destroy()
-{
-	this->SetActive(false);
-	this->GetEntity()->SetActive(false);
 }

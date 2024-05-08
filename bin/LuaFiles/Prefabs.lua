@@ -11,17 +11,17 @@ Prefabs={
                 }
             },
             {
-                name = "ColliderComponent",
-                parameters = {
-                }
-            },
-            {
                 name = "MeshRenderComponent",
                 parameters = {                  
                     isstatic = false,
                     modelname = "Bala.mesh",
                     entityname= "Bala",
                     materialname = "Bala_Gold"
+                }
+            },
+            {
+                name = "ColliderComponent",
+                parameters = {
                 }
             },
             {
@@ -34,8 +34,8 @@ Prefabs={
                     friction = 0.5,
                     restitution = 0.0,
                     trigger = false,
-                    mask = 8,
-                    group = 8
+                    mask = 4,
+                    group = 1
                 }
             },
             {
@@ -96,7 +96,7 @@ Prefabs={
                     restitution = 0.0,
                     trigger = true,
                     mask = 1,
-                    group = 2
+                    group = 6
                 }
             },
             {

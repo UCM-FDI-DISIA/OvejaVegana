@@ -8,6 +8,7 @@
 
 namespace VeryReal {
 	class UIProgressBarComponent;
+	class ColiderComponent;
 }
 namespace OvejaVegana{
 	class OVEJAVEGANA_API LifeComponent : public VeryReal::Component {

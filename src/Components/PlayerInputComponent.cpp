@@ -92,7 +92,7 @@ void OvejaVegana::PlayerInputComponent::Update(const double& dt) {
 
 
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_ESCAPE)) {
-			//VeryReal::InputManager::Instance()->Quit();
+			VeryReal::InputManager::Instance()->Quit();
 		}
 	}
 	else { // Movimiento Mando

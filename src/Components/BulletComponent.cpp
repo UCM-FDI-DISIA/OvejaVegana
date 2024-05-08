@@ -15,13 +15,7 @@ std::pair<bool, std::string> OvejaVegana::BulletComponent::InitComponent()
 }
 
 void OvejaVegana::BulletComponent::OnCollisionEnter(VeryReal::Entity* other) {
-	other->GetComponent<VeryReal::ColliderComponent>()->SetActive(false);
-	auto enemy = other->GetComponent<OvejaVegana::EnemyChaseComponent>();
-
-
-	other->GetComponent<VeryReal::ColliderComponent>()->SetActive(false);
-	this->GetEntity()->SetActive(false);
+	if (other->GetComponent<OvejaVegana::EnemyChaseComponent>()) {
+		other->GetComponent<VeryReal::ColliderComponent>()->SetActive(false);
+	}
 }
-
-
-//void OvejaVegana::BulletComponent::Update(const double& dt)

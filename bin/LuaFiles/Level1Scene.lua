@@ -41,7 +41,7 @@ Entities={
             {
                 name = "TransformComponent",
                 parameters = {  
-                    position = {75, 125, 40},
+                    position = {-25, 125, 40},
                     rotation ={180, 0, 90},
                     scale = {10, 10, 10}                   
                 }
@@ -164,18 +164,9 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     a = 0,
-                    position = {-12, 245, 5},
+                    position = {-25, 230, 40},
                     rotation = {0, 0, 0},
                     scale = {6.5, 0.25, 1}                   
-                }
-            },
-            {
-                name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = false,
-                    modelname = "mapa1.mesh",
-                    entityname= "Mundo",
-                    materialname = "Black"
                 }
             },
             {
@@ -183,7 +174,7 @@ Entities={
                 parameters = {
                     shapeType = 1,
                     movementType = 1,
-                    size = {130, 5, 50},
+                    size = {130, 5, 5},
                     mass = 100000.0,
                     friction =1.0,
                     restitution=1.0,
@@ -202,18 +193,9 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     a = 0,
-                    position = {-12, 0, 5},
+                    position = {-25, 10, 40},
                     rotation = {0, 0, 0},
                     scale = {6.5, 0.25, 1}                   
-                }
-            },
-            {
-                name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = false,
-                    modelname = "mapa1.mesh",
-                    entityname= "Mundo",
-                    materialname = "Black"
                 }
             },
             {
@@ -221,7 +203,7 @@ Entities={
                 parameters = {
                     shapeType = 1,
                     movementType = 1,
-                    size = {130, 5, 50},
+                    size = {130, 5, 5},
                     mass = 100000.0,
                     friction =1.0,
                     restitution=1.0,
@@ -239,18 +221,9 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     a = 0,
-                    position = {90, 200, 5},
+                    position = {80, 110, 40},
                     rotation = {0, 0, 0},
                     scale = {0.25, 6.6, 1}                   
-                }
-            },
-            {
-                name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = false,
-                    modelname = "mapa1.mesh",
-                    entityname= "Mundo",
-                    materialname = "Black"
                 }
             },
             {
@@ -258,7 +231,7 @@ Entities={
                 parameters = {
                     shapeType = 1,
                     movementType = 1,
-                    size = {5, 130, 50},
+                    size = {5, 130, 5},
                     mass = 100000.0,
                     friction =1.0,
                     restitution=1.0,
@@ -276,18 +249,9 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     a = 0,
-                    position = {-150, 200, 5},
+                    position = {-140, 110, 40},
                     rotation = {0, 0, 0},
                     scale = {0.25, 6.6, 1}                   
-                }
-            },
-            {
-                name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = false,
-                    modelname = "mapa1.mesh",
-                    entityname= "Mundo",
-                    materialname = "Black"
                 }
             },
             {
@@ -295,7 +259,7 @@ Entities={
                 parameters = {
                     shapeType = 1,
                     movementType = 1,
-                    size = {5, 130, 50},
+                    size = {5, 130, 5},
                     mass = 100000.0,
                     friction =1.0,
                     restitution=1.0,
@@ -345,51 +309,4 @@ Entities={
             -- }
         }
     },
-    {   name = "Curacion",
-        components = {
-            {
-                name = "TransformComponent",
-                parameters = {  
-                    a = 0,
-                    position = { 0, 100, 40},
-                    rotation = {0, 0, 0},
-                    scale = {20, 20, 20}                  
-                }
-            },
-            {
-                name = "RigidBodyComponent",
-                parameters = {
-                    shapeType = 1,
-                    movementType = 1,
-                    size = {10, 10, 10},
-                    mass = 1.0,
-                    friction = 1.0,
-                    restitution = 1.0,
-                    trigger = true,
-                    mask = 1,
-                    group = 2
-                }
-            },
-            {
-                name = "MeshRenderComponent",
-                parameters = {                  
-                    modelname = "botiquin.mesh",
-                    entityname= "cura",
-                    materialname = "botiquinMat",
-                    isstatic = false
-                }
-            },
-            {
-                name = "CollidersComponent",
-                parameters = {
-                }
-            },
-            {
-                name = "HealComponent",
-                parameters = {
-                    amount = 1
-                }
-            },
-        }
-    }
 }
