@@ -94,7 +94,7 @@ Entities={
                 parameters = {             
                     maximo = 3.0,
                     progres = 1.0,
-                    progressBarName = "l",
+                    progressBarName = "progBar1",
                     frameMaterial = "botiquinMat",
                     contentMaterial = "botiquinMat",
                     zOrder = 1                   
@@ -295,7 +295,7 @@ Entities={
             {
                 name = "TimerComponent",
                 parameters = {    
-                    maxTime = 180
+                    maxTime = 10
                 }
             }
             -- {para debug

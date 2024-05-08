@@ -46,14 +46,14 @@ void GameManager::Win() {
 		VeryReal::SceneManager::Instance()->EliminationScene("Level2Scene", true);
 	}
 	VeryReal::ScriptManager::Instance()->ReadScene("WinScene", true);
-	VeryReal::ScriptManager::Instance()->ReadPrefabs();
+	//VeryReal::ScriptManager::Instance()->ReadPrefabs();
 }
 void GameManager::NextLevel() {
 	level++;
 	VeryReal::SceneManager::Instance()->ActivationScene("Level1Scene", false);
 	VeryReal::SceneManager::Instance()->EliminationScene("Level1Scene", true);
 	VeryReal::ScriptManager::Instance()->ReadScene("Level2Scene", true);
-	VeryReal::ScriptManager::Instance()->ReadPrefabs();
+	//VeryReal::ScriptManager::Instance()->ReadPrefabs();
 }
 
 void GameManager::Lose() {

@@ -41,8 +41,8 @@ Entities={
             {
                 name = "TransformComponent",
                 parameters = {  
-                    position = {-25, 125, 50},
-                    rotation ={0, 0, 90},
+                    position = {-25, 125, 40},
+                    rotation ={180, 0, 90},
                     scale = {10, 10, 10}                   
                 }
             },
@@ -56,72 +56,7 @@ Entities={
                 parameters = {
                     shapeType = 1,
                     movementType = 0,
-                    size = {2, 2, 2},
-                    mass = 10.0,
-                    friction = 0.5,
-                    restitution = 0.0,
-                    trigger = true,
-                    mask = 2,
-                    group = 1
-                }
-            },
-            {
-                name = "MovementComponent",
-                parameters = {                  
-                    
-                }
-            },
-            {
-                name = "PlayerInputComponent",
-                parameters = {                  
-                    
-                }
-            },  
-            {
-                name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = false,
-                    modelname = "oveja.mesh",
-                    entityname= "Player",
-                    materialname = "oveja"
-                }
-            },
-            --{
-                --name = "PlayerShootComponent",
-                --parameters ={
-
-               -- }
-            --},
-            {
-                name = "LifeComponent",
-                parameters ={
-                    health = 3
-                }
-            }      
-        }
-    }, 
-    {
-        name = "Enemy",
-        components = {
-            {
-                name = "TransformComponent",
-                parameters = {  
-                    position = {0, 15, 50},
-                    rotation ={0, 0, 90},
-                    scale = {10, 10, 10}                   
-                }
-            },
-            {
-                name = "ColliderComponent",
-                parameters = {
-                }
-            },
-            {
-                name = "RigidBodyComponent",
-                parameters = {
-                    shapeType = 1,
-                    movementType = 0,
-                    size = {2, 2, 2},
+                    size = {8, 8, 8},
                     mass = 10.0,
                     friction = 0.5,
                     restitution = 0.0,
@@ -137,81 +72,53 @@ Entities={
                 }
             }, 
             {
-                name = "EnemyChaseComponent",
+                name = "MeshRenderComponent",
                 parameters = {                  
+                    isstatic = false,
+                    modelname = "oveja.mesh",
+                    entityname= "Player",
+                    materialname = "OvejaMat"
+                }
+            },
+            {
+                name = "UITransformComponent",
+                parameters = {    
+                    position = { 0.5,0.0},   
+                    scale = { 0.11,0.1},   
+                    hidden = false   
                     
                 }
             },
             {
-                name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = false,
-                    modelname = "enemigo.mesh",
-                    entityname= "Enemy",
-                    materialname = "enemigo"
-                }
-            }         
-        }
-    }, 
-    
-    {
-        name = "Ogreman5",
-        components = {
-            {
-                name = "TransformComponent",
-                parameters = {  
-                    a = 0,
-                    position = {10, 0, -10},
-                    rotation = {0, 0, 0},
-                    scale = {1, 1, 1}                   
+                name = "UIProgressBarComponent",
+                parameters = {             
+                    maximo = 3.0,
+                    progres = 1.0,
+                    progressBarName = "l",
+                    frameMaterial = "botiquinMat",
+                    contentMaterial = "botiquinMat",
+                    zOrder = 1                   
                 }
             },
             {
-                name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = false,
-                    modelname = "Sinbad.mesh",
-                    entityname= "node",
-
+                name = "LifeComponent",
+                parameters ={
+                    health = 3
                 }
             },
             {
-                name = "ColliderComponent",
-                parameters = {
-                }
+                name = "PlayerShootComponent",
+                parameters ={
+        
+               }
             },
             {
-                name = "RigidBodyComponent",
-                parameters = {
-                    shapeType = 1,
-                    movementType = 2,
-                    size = {2, 2, 2},
-                    mass = 1,
-                    friction =1,
-                    restitution=1,
-                    trigger = false,
-                    mask = 1,
-                    group = 2
-                }
-            },
-            {
-                name="NodeComponent",
-                parameters={
-                    ispatrol=true,
-                    cost=1.8,
-                    hcost=1.8,
-                    iswalkable=true,
-                    id=3
-
-                }
-
-            },
-            {
-                name = "MovementComponent",
+                name = "PlayerInputComponent",
                 parameters = {                  
                     
                 }
-            } 
+            }
+
         }
     },
     {
@@ -227,12 +134,7 @@ Entities={
                 }
             },
             {
-                name = "ColliderComponent",
-                parameters = {                
-                }
-            },
-            {
-                name = "RigidbodyComponent",
+                name = "RigidBodyComponent",
                 parameters = {    
                     shapeType = SHAPES_BOX,
                     movementType = MOVEMENT_TYPE_STATIC,
@@ -259,34 +161,25 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     a = 0,
-                    position = {-12, 245, 5},
+                    position = {-25, 230, 40},
                     rotation = {0, 0, 0},
                     scale = {6.5, 0.25, 1}                   
                 }
             },
             {
-                name = "ColliderComponent",
-                parameters = {                
-                }
-            },
-            {
-                name = "RigidbodyComponent",
-                parameters = {    
-                    shapeType = SHAPES_BOX,
-                    movementType = MOVEMENT_TYPE_STATIC,
-                    size = {100, 5, 1},
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {130, 5, 5},
+                    mass = 100000.0,
+                    friction =1.0,
+                    restitution=1.0,
+                    trigger = false,
                     mask = 1,
-                    group = 1
+                    group = 2
                 }
-            },
-            {
-                name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = false,
-                    modelname = "mapa1.mesh",
-                    entityname= "Mundo",
-                    materialname = "Black"
-                }
+                
             }
         }
     },
@@ -297,33 +190,23 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     a = 0,
-                    position = {-12, 0, 5},
+                    position = {-25, 10, 40},
                     rotation = {0, 0, 0},
                     scale = {6.5, 0.25, 1}                   
                 }
             },
             {
-                name = "ColliderComponent",
-                parameters = {                
-                }
-            },
-            {
-                name = "RigidbodyComponent",
-                parameters = {    
-                    shapeType = SHAPES_BOX,
-                    movementType = MOVEMENT_TYPE_STATIC,
-                    size = {200, 5, 1},
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {130, 5, 5},
+                    mass = 100000.0,
+                    friction =1.0,
+                    restitution=1.0,
+                    trigger = false,
                     mask = 1,
-                    group = 1
-                }
-            },
-            {
-                name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = false,
-                    modelname = "mapa1.mesh",
-                    entityname= "Mundo",
-                    materialname = "Black"
+                    group = 2
                 }
             }
         }
@@ -335,33 +218,23 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     a = 0,
-                    position = {90, 200, 5},
+                    position = {80, 110, 40},
                     rotation = {0, 0, 0},
                     scale = {0.25, 6.6, 1}                   
                 }
             },
             {
-                name = "ColliderComponent",
-                parameters = {                
-                }
-            },
-            {
-                name = "RigidbodyComponent",
-                parameters = {    
-                    shapeType = SHAPES_BOX,
-                    movementType = MOVEMENT_TYPE_STATIC,
-                    size = {1, 5, 200},
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {5, 130, 5},
+                    mass = 100000.0,
+                    friction =1.0,
+                    restitution=1.0,
+                    trigger = false,
                     mask = 1,
-                    group = 1
-                }
-            },
-            {
-                name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = false,
-                    modelname = "mapa1.mesh",
-                    entityname= "Mundo",
-                    materialname = "Black"
+                    group = 2
                 }
             }
         }
@@ -373,33 +246,23 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     a = 0,
-                    position = {-150, 200, 5},
+                    position = {-140, 110, 40},
                     rotation = {0, 0, 0},
                     scale = {0.25, 6.6, 1}                   
                 }
             },
             {
-                name = "ColliderComponent",
-                parameters = {                
-                }
-            },
-            {
-                name = "RigidbodyComponent",
-                parameters = {    
-                    shapeType = SHAPES_BOX,
-                    movementType = MOVEMENT_TYPE_STATIC,
-                    size = {1, 5, 200},
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {5, 130, 5},
+                    mass = 100000.0,
+                    friction =1.0,
+                    restitution=1.0,
+                    trigger = false,
                     mask = 1,
-                    group = 1
-                }
-            },
-            {
-                name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = false,
-                    modelname = "mapa1.mesh",
-                    entityname= "Mundo",
-                    materialname = "Black"
+                    group = 2
                 }
             }
         }
