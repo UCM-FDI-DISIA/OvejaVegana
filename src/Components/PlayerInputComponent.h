@@ -13,7 +13,6 @@ namespace VeryReal {
 
 namespace OvejaVegana {
 	class MovementComponent;
-	class PlayerShootComponent;
 
 }
 
@@ -28,12 +27,7 @@ namespace OvejaVegana {
 	private:
 		VeryReal::TransformComponent* my_transform = nullptr;
 		OvejaVegana::MovementComponent* my_movement_component = nullptr;
-		OvejaVegana::PlayerShootComponent* my_shoot_component = nullptr;
 		VeryReal::RigidBodyComponent* my_rigidbody = nullptr;
-
-		float shootRate = 1.0f;  // Velocidad de disparo en balas por segundo
-		double timeSinceLastShot;
-		int numB = 0;
 	};
 }
 

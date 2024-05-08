@@ -41,7 +41,7 @@ Entities={
             {
                 name = "TransformComponent",
                 parameters = {  
-                    position = {75, 125, 10},
+                    position = {75, 125, 40},
                     rotation ={180, 0, 90},
                     scale = {10, 10, 10}                   
                 }
@@ -70,7 +70,13 @@ Entities={
                 parameters = {                  
                     
                 }
-            }, 
+            },
+            {
+                name = "PlayerInputComponent",
+                parameters = {                  
+                    
+                }
+            },  
             {
                 name = "MeshRenderComponent",
                 parameters = {                  
@@ -105,19 +111,13 @@ Entities={
                 parameters ={
                     health = 3
                 }
-            },
-            {
-                name = "PlayerShootComponent",
-                parameters ={
-        
-               }
-            },
-            {
-                name = "PlayerInputComponent",
-                parameters = {                  
-                    
-                }
             }
+            --{
+                --name = "PlayerShootComponent",
+                --parameters ={
+        
+               -- }
+            --},
         }
     }, 
     -- {
