@@ -25,6 +25,7 @@
     <ClCompile Include="..\src\Components\CreatorExitButtonComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorHealComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorLifeComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorMenuButtonComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorMovementComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorMusicButtonComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorPlayButtonComponent.cpp" />
@@ -36,6 +37,7 @@
     <ClCompile Include="..\src\Components\ExitButtonComponent.cpp" />
     <ClCompile Include="..\src\Components\HealComponent.cpp" />
     <ClCompile Include="..\src\Components\LifeComponent.cpp" />
+    <ClCompile Include="..\src\Components\MenuButtonComponent.cpp" />
     <ClCompile Include="..\src\Components\MovementComponent.cpp" />
     <ClCompile Include="..\src\Components\MusicButtonComponent.cpp" />
     <ClCompile Include="..\src\Components\PlayButtonComponent.cpp" />
@@ -52,6 +54,7 @@
     <ClInclude Include="..\src\Components\CreatorExitButtonComponent.h" />
     <ClInclude Include="..\src\Components\CreatorHealComponent.h" />
     <ClInclude Include="..\src\Components\CreatorLifeComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorMenuButtonComponent.h" />
     <ClInclude Include="..\src\Components\CreatorMovementComponent.h" />
     <ClInclude Include="..\src\Components\CreatorMusicButtonComponent.h" />
     <ClInclude Include="..\src\Components\CreatorPlayButtonComponent.h" />
@@ -63,6 +66,7 @@
     <ClInclude Include="..\src\Components\ExitButtonComponent.h" />
     <ClInclude Include="..\src\Components\HealComponent.h" />
     <ClInclude Include="..\src\Components\LifeComponent.h" />
+    <ClInclude Include="..\src\Components\MenuButtonComponent.h" />
     <ClInclude Include="..\src\Components\MovementComponent.h" />
     <ClInclude Include="..\src\Components\MusicButtonComponent.h" />
     <ClInclude Include="..\src\Components\PlayButtonComponent.h" />

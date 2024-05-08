@@ -1,0 +1,89 @@
+material winner
+{
+	technique
+	{
+		pass
+		{
+			depth_check off
+			lighting off
+			scene_blend alpha_blend
+			texture_unit 
+			{
+				texture winner.png
+				colour_op replace
+			}
+		}
+	}
+}
+
+material gameover
+{
+	technique
+	{
+		pass
+		{
+			depth_check off
+			lighting off
+			scene_blend alpha_blend
+			texture_unit 
+			{
+				texture gameover.png
+				colour_op replace
+			}
+		}
+	}
+}
+
+material play
+{
+	technique
+	{
+		pass
+		{
+			depth_check off
+			lighting off
+			scene_blend alpha_blend
+			texture_unit 
+			{
+				texture play.png
+				colour_op replace
+			}
+		}
+	}
+}
+
+material exit
+{
+	technique
+	{
+		pass
+		{
+			depth_check off
+			lighting off
+			scene_blend alpha_blend
+			texture_unit 
+			{
+				texture exit.png
+				colour_op replace
+			}
+		}
+	}
+}
+
+material menu
+{
+	technique
+	{
+		pass
+		{
+			depth_check off
+			lighting off
+			scene_blend alpha_blend
+			texture_unit 
+			{
+				texture menu.png
+				colour_op replace
+			}
+		}
+	}
+}

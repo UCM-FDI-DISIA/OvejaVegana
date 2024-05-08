@@ -15,10 +15,9 @@
 #include "CreatorMovementComponent.h"
 #include "CreatorPlayerInputComponent.h"
 #include "PhysicsManager.h"
-#include "PlayButtonComponent.h"
-#include "ExitButtonComponent.h"
 #include "CreatorExitButtonComponent.h"
 #include "CreatorPlayButtonComponent.h"
+#include "CreatorMenuButtonComponent.h"
 #include "CreatorEnemyChaseComponent.h"
 #include "CreatorMusicButtonComponent.h"
 #include "CreatorTimerComponent.h"
@@ -43,6 +42,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         VeryReal::Creator::Instance()->AddCreator("MovementComponent", new OvejaVegana::CreatorMovementComponent());
         VeryReal::Creator::Instance()->AddCreator("MusicButtonComponent", new OvejaVegana::CreatorMusicButtonComponent());
         VeryReal::Creator::Instance()->AddCreator("PlayButtonComponent", new OvejaVegana::CreatorPlayButtonComponent());
+        VeryReal::Creator::Instance()->AddCreator("MenuButtonComponent", new OvejaVegana::CreatorMenuButtonComponent());
         VeryReal::Creator::Instance()->AddCreator("PlayerInputComponent", new OvejaVegana::CreatorPlayerInputComponent());
         VeryReal::Creator::Instance()->AddCreator("PlayerShootComponent", new OvejaVegana::CreatorPlayerShootComponent());
         VeryReal::Creator::Instance()->AddCreator("TimerComponent", new OvejaVegana::CreatorTimerComponent());
