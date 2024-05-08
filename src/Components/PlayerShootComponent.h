@@ -21,12 +21,8 @@ namespace OvejaVegana {
     class OVEJAVEGANA_API PlayerShootComponent : public VeryReal::Component {
     private:
         VeryReal::TransformComponent* my_transform = nullptr;
-        VeryReal::TransformComponent* bala_transform = nullptr;
-
         VeryReal::RigidBodyComponent* my_rigidbody = nullptr;
 
-        float shootRate;  // Velocidad de disparo en balas por segundo
-        double timeSinceLastShot;
         int numB = 0;
     public:
         PlayerShootComponent();

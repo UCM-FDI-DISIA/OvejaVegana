@@ -6,6 +6,7 @@
 #include "Vector3.h"
 #include "SceneManager.h"
 #include "Scene.h"
+#include "EnemyWaveManager.h"
 
 std::pair<bool, std::string> OvejaVegana::EnemyChaseComponent::InitComponent() {
 	my_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
@@ -50,12 +51,9 @@ void OvejaVegana::EnemyChaseComponent::Update(const double& dt) {
 
 
 	// Comprobar si se destruye
-	if (!this->GetEntity()->GetComponent<VeryReal::ColliderComponent>()->GetActive())
-	{
+	if (!this->GetEntity()->GetComponent<VeryReal::ColliderComponent>()->GetActive()) {
 		this->SetActive(false);
 		this->GetEntity()->SetActive(false);
-		//VeryReal::Entity* botiquin = VeryReal::SceneManager::Instance()->GetActiveScene()->CreatePrefab("PrefabCuracion", "cura" + std::to_string(numB));
-		//this->GetEntity()->
+		EnemyWaveManager::Instance()->EnemyDefeated();
 	}
-
 }
