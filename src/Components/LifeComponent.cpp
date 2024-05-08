@@ -30,13 +30,13 @@ void OvejaVegana::LifeComponent::addlife(float toadd) {
 	if (currentlife > maxlife) currentlife = maxlife;
 	std::cout << "vida despues: " << std::to_string(currentlife) << std::endl;
 
-	if (progressbar) {
-		this->GetEntity()->GetComponent<VeryReal::UIProgressBarComponent>()->setProgress(currentlife);
+	if (my_progress_bar) {
+		my_progress_bar->setProgress(currentlife);
 	}
 }
 bool OvejaVegana::LifeComponent::decreaselife(float todescrease) {
 	currentlife -= todescrease;
-	if (progressbar)this->GetEntity()->GetComponent<VeryReal::UIProgressBarComponent>()->setProgress(currentlife);
+	if (my_progress_bar)my_progress_bar->setProgress(currentlife);
 	if (currentlife < 1) {
 		OvejaVegana::GameManager::Instance()->Lose();
 		return false; 
