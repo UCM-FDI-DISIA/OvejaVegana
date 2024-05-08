@@ -20,3 +20,5 @@ void OvejaVegana::BulletComponent::OnCollisionEnter(VeryReal::Entity* other) {
 		this->GetEntity()->SetActive(false);
 	}
 }
+
+//void OvejaVegana::BulletComponent::Update(const double& dt)

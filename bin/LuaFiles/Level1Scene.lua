@@ -70,13 +70,7 @@ Entities={
                 parameters = {                  
                     
                 }
-            },
-            {
-                name = "PlayerInputComponent",
-                parameters = {                  
-                    
-                }
-            },  
+            }, 
             {
                 name = "MeshRenderComponent",
                 parameters = {                  
@@ -111,68 +105,22 @@ Entities={
                 parameters ={
                     health = 3
                 }
-            }
-            --{
-                --name = "PlayerShootComponent",
-                --parameters ={
+            },
+            {
+                name = "PlayerShootComponent",
+                parameters ={
         
-               -- }
-            --},
+               }
+            },
+            {
+                name = "PlayerInputComponent",
+                parameters = {                  
+                    
+                }
+            }
+
         }
     }, 
-    -- {
-    --     name = "Enemy",
-    --     components = {
-    --         {
-    --             name = "TransformComponent",
-    --             parameters = {  
-    --                 position = {0, 15, 50},
-    --                 rotation ={0, 0, 90},
-    --                 scale = {10, 10, 10}                   
-    --             }
-    --         },
-    --         {
-    --             name = "ColliderComponent",
-    --             parameters = {
-    --             }
-    --         },
-    --         {
-    --             name = "RigidBodyComponent",
-    --             parameters = {
-    --                 shapeType = 0,
-    --                 movementType = 0,
-    --                 size = {10, 10, 10},
-    --                 mass = 10.0,
-    --                 friction = 0.5,
-    --                 restitution = 0.0,
-    --                 trigger = false,
-    --                 mask = 1,
-    --                 group = 2
-    --             }
-    --         },
-    --         {
-    --             name = "MovementComponent",
-    --             parameters = {                  
-                    
-    --             }
-    --         }, 
-    --         {
-    --             name = "EnemyChaseComponent",
-    --             parameters = {                  
-                    
-    --             }
-    --         },
-    --         {
-    --             name = "MeshRenderComponent",
-    --             parameters = {                  
-    --                 isstatic = false,
-    --                 modelname = "enemigo.mesh",
-    --                 entityname= "Enemy",
-    --                 materialname = "enemigoMat"
-    --             }
-    --         }         
-    --     }
-    -- }, 
     {
         name = "World",
         components = {

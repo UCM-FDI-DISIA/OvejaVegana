@@ -14,6 +14,8 @@ namespace VeryReal {
     class RigidBodyComponent;
     class CameraComponent;
     class ScriptManager;
+    class RenderManager;
+    class Window;
 }
 
 namespace OvejaVegana {
@@ -30,18 +32,19 @@ namespace OvejaVegana {
         VeryReal::TransformComponent* my_transform = nullptr;
         VeryReal::TransformComponent* bala_transform = nullptr;
         OvejaVegana::MovementComponent* my_movement_component = nullptr;
+
         VeryReal::RigidBodyComponent* my_rigidbody = nullptr;
 
         VeryReal::CameraComponent* my_camera_component = nullptr;
         float shootRate;  // Velocidad de disparo en balas por segundo
         double timeSinceLastShot;
         int numB = 0;
+        VeryReal::Vector3 lastshootDirection = VeryReal::Vector3(1, 0, 0);
     public:
         PlayerShootComponent();
         virtual std::pair<bool, std::string> InitComponent();
         virtual void Update(const double& dt);
-        void Shoot();
-        VeryReal::Vector3 GetMouseDirection();
+        void Shoot(VeryReal::Vector3 shootDirection);
     };
 
 }
