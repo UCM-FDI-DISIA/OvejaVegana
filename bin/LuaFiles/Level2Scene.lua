@@ -93,17 +93,11 @@ Entities={
                 name = "UIProgressBarComponent",
                 parameters = {             
                     maximo = 3.0,
-                    progres = 1.0,
+                    progres = 3.0,
                     progressBarName = "progBar2",
                     frameMaterial = "",
                     contentMaterial = "UI/progressframe",
                     zOrder = 1                   
-                }
-            },
-            {
-                name = "LifeComponent",
-                parameters ={
-                    health = 3
                 }
             },
             {
@@ -116,6 +110,12 @@ Entities={
                 name = "PlayerInputComponent",
                 parameters = {                  
                     
+                }
+            },
+            {
+                name = "LifeComponent",
+                parameters ={
+                    health = 3
                 }
             }
 
