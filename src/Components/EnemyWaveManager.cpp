@@ -28,6 +28,8 @@ bool OvejaVegana::EnemyWaveManager::InitManager() {
 
 void OvejaVegana::EnemyWaveManager::Update(const double& dt) {
 	//cout << "TIEMPO: " << time_until_next_wave << " " << "ENEMIGOS RESTANTES: " << nEnemies << endl;
+	//cout << nWaves << " " << WAVES_PER_LEVEL << " " << currLevel << " " << N_LEVELS << endl;
+	//cout << time_until_next_wave << endl;
 	if (IsWaveCompleated()) {
 		if ((time_until_next_wave -= dt) <= 0 && nWaves > 0) {
 			GenerateNextWave();
@@ -36,8 +38,8 @@ void OvejaVegana::EnemyWaveManager::Update(const double& dt) {
 				nWaves = WAVES_PER_LEVEL;
 				if (currLevel < N_LEVELS) {
 					currLevel++;
-					cout << currLevel << endl;
 					OvejaVegana::GameManager::Instance()->NextLevel();
+					GenerateNextWave();
 				}
 				else {
 					OvejaVegana::GameManager::Instance()->Win();
