@@ -295,15 +295,101 @@ Entities={
                     maxTime = 240
                 }
             }
-            -- {para debug
-            --     name = "MeshRenderComponent",
-            --     parameters = {                  
-            --         isstatic = false,
-            --         modelname = "mapa1.mesh",
-            --         entityname= "Mundo",
-            --         materialname = "Black"
-            --     }
-            -- }
+
+        }
+    },
+    {   name = "Curacion1",
+        components = {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = { 55, 60, 40},
+                    rotation = {90, -90, 90},
+                    scale = {7, 7, 7}                    
+                }
+            },
+            {
+                name = "HealComponent",
+                parameters = {
+                    amount = 1
+                }
+            },
+            {
+                name = "ColliderComponent",
+                parameters = {
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {10, 10, 10},
+                    mass = 1.0,
+                    friction = 1.0,
+                    restitution = 1.0,
+                    trigger = true,
+                    mask = 1,
+                    group = 2
+                }
+            },
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    modelname = "Medkit.mesh",
+                    entityname= "cura",
+                    materialname = "MedkitMaterial",
+                    isstatic = false
+                }
+            }
+        }
+    },
+    {   name = "Curacion2",
+        components = {
+            {
+                name = "TransformComponent",
+                parameters = {  
+                    a = 0,
+                    position = { -60, 180, 40},
+                    rotation = {90, -90, 90},
+                    scale = {7, 7, 7}                    
+                }
+            },
+            {
+                name = "HealComponent",
+                parameters = {
+                    amount = 1
+                }
+            },
+            {
+                name = "ColliderComponent",
+                parameters = {
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {10, 10, 10},
+                    mass = 1.0,
+                    friction = 1.0,
+                    restitution = 1.0,
+                    trigger = true,
+                    mask = 1,
+                    group = 2
+                }
+            },
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    modelname = "Medkit.mesh",
+                    entityname= "cura",
+                    materialname = "MedkitMaterial",
+                    isstatic = false
+                }
+            }
         }
     }
 }
