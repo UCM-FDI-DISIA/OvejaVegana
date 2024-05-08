@@ -14,6 +14,8 @@ namespace VeryReal {
     class RigidBodyComponent;
     class CameraComponent;
     class ScriptManager;
+    class RenderManager;
+    class Window;
 }
 
 namespace OvejaVegana {
@@ -40,8 +42,7 @@ namespace OvejaVegana {
         PlayerShootComponent();
         virtual std::pair<bool, std::string> InitComponent();
         virtual void Update(const double& dt);
-        void Shoot();
-        VeryReal::Vector3 GetMouseDirection();
+        void Shoot(VeryReal::Vector3 shootDirection);
     };
 
 }

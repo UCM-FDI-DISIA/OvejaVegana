@@ -7,6 +7,8 @@
 #include "SceneManager.h"
 #include "Scene.h"
 #include "ScriptManager.h"
+#include "RenderManager.h"
+#include "Window.h"
 
 OvejaVegana::PlayerShootComponent::PlayerShootComponent()
         :shootRate(1.0f), timeSinceLastShot(0) {
@@ -94,3 +96,6 @@ VeryReal::Vector3 OvejaVegana::PlayerShootComponent::GetMouseDirection() {
 }
 
 
+//// Normalización de las coordenadas del ratón
+//float normalizedX = static_cast<float>(mousePosPair.first) / windowSize.second;
+//float normalizedY = static_cast<float>(mousePosPair.second) / windowSize.first;

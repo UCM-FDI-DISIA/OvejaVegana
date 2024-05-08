@@ -6,7 +6,7 @@ Entities={
                 name = "TransformComponent",
                 parameters = {  
                     position = {-25, 125, 350},
-                    rotation ={0, 0, 0},
+                    rotation ={0, 0, 180},
                     scale = {1, 1, 1}                   
                 }
             },
@@ -41,7 +41,7 @@ Entities={
             {
                 name = "TransformComponent",
                 parameters = {  
-                    position = {-25, 125, 50},
+                    position = {-25, 125, 10},
                     rotation ={0, 0, 90},
                     scale = {10, 10, 10}                   
                 }
@@ -86,12 +86,12 @@ Entities={
                     materialname = "oveja"
                 }
             },
-            --{
-                --name = "PlayerShootComponent",
-                --parameters ={
+            {
+                name = "PlayerShootComponent",
+                parameters ={
 
-               -- }
-            --},
+               }
+            },
             {
                 name = "LifeComponent",
                 parameters ={
@@ -153,7 +153,6 @@ Entities={
             }         
         }
     }, 
-    
     {
         name = "Ogreman5",
         components = {
