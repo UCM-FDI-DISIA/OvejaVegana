@@ -4,14 +4,22 @@
 #include "LifeComponent.h"
 #include "ColliderComponent.h"
 #include <EnemyChaseComponent.h>
-std::pair<bool, std::string> OvejaVegana::BulletComponent::InitComponent()
-{
+
+using namespace std;
+
+std::pair<bool, std::string> OvejaVegana::BulletComponent::InitComponent() {
 	my_collider = this->GetEntity()->GetComponent<VeryReal::ColliderComponent>();
-	if (my_collider == nullptr) 
-	{
+	if (my_collider == nullptr) {
 		return { false, "ColliderComponent isn't in this entity, ERROR from BulletComponent" };
 	}
 	return { true, "BulletComponent created correctly" };
+}
+
+void OvejaVegana::BulletComponent::Update(const double& dt) {
+	timeToLive -= dt;
+	if (timeToLive <= 0) {
+		this->GetEntity()->SetActive(false);
+	}
 }
 
 void OvejaVegana::BulletComponent::OnCollisionEnter(VeryReal::Entity* other) {

@@ -2,6 +2,7 @@
 #include "TransformComponent.h"
 #include "RigidBodyComponent.h"
 #include "SceneManager.h"
+#include "GameManager.h"
 #include "Scene.h"
 #include "Entity.h"
 #include <ctime>
@@ -30,6 +31,18 @@ void OvejaVegana::EnemyWaveManager::Update(const double& dt) {
 	if (IsWaveCompleated()) {
 		if ((time_until_next_wave -= dt) <= 0 && nWaves > 0) {
 			GenerateNextWave();
+			nWaves--;
+			if (nWaves == 0) {
+				nWaves = WAVES_PER_LEVEL;
+				if (currLevel < N_LEVELS) {
+					currLevel++;
+					cout << currLevel << endl;
+					OvejaVegana::GameManager::Instance()->NextLevel();
+				}
+				else {
+					OvejaVegana::GameManager::Instance()->Win();
+				}
+			}
 		}
 	}
 }

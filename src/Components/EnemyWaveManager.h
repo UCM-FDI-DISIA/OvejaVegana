@@ -12,12 +12,17 @@ namespace OvejaVegana {
 		int nEnemies = 0;
 		float time_until_next_wave = 0;
 
-		int nGenerateEnemies = 5;
+		int nGenerateEnemies = 3;
 		float safe_generation_distance = 35;
 		VeryReal::Vector2 scene_topleft_corner;
 		float scene_side_lenght = 1;
 
-		int nWaves = 3;
+		int WAVES_PER_LEVEL = 3;
+		int nWaves = WAVES_PER_LEVEL;
+
+		int N_LEVELS = 2;
+		int currLevel = 1;
+
 		int nIncreaseGenerationEnemies = 1;
 		float TIME_BETWEEN_WAVES = 2;
 

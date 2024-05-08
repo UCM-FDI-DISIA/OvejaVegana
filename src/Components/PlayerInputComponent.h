@@ -33,7 +33,6 @@ namespace OvejaVegana {
 
 		float shootRate = 1.0f;  // Velocidad de disparo en balas por segundo
 		double timeSinceLastShot;
-		int numB = 0;
 	};
 }
 

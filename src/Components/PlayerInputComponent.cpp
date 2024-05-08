@@ -15,7 +15,7 @@ std::pair<bool, std::string> OvejaVegana::PlayerInputComponent::InitComponent() 
 	my_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
 	my_movement_component = this->GetEntity()->GetComponent<OvejaVegana::MovementComponent>();
 	my_rigidbody = this->GetEntity()->GetComponent<VeryReal::RigidBodyComponent>();
-	my_shoot_component = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Player")->GetComponent<OvejaVegana::PlayerShootComponent>();
+	my_shoot_component = this->GetEntity()->GetComponent<OvejaVegana::PlayerShootComponent>();
 
 	if (this->my_transform == nullptr) {
 		return { false, "Transform isn't in this entity, ERROR from PlayerInputComponent" };
@@ -67,29 +67,32 @@ void OvejaVegana::PlayerInputComponent::Update(const double& dt) {
 
 
 		VeryReal::Vector3 shootDirection(0, 0, 0);
+		bool shoot = false;
 
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_UP)) {
 			shootDirection += VeryReal::Vector3(0, 1, 0); // Arriba
+			shoot = true;
 		}
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_DOWN)) {
 			shootDirection += VeryReal::Vector3(0, -1, 0); // Abajo
+			shoot = true;
 		}
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_LEFT)) {
 			shootDirection += VeryReal::Vector3(-1, 0, 0); // Izquierda
+			shoot = true;
 		}
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_RIGHT)) {
 			shootDirection += VeryReal::Vector3(1, 0, 0); // Derecha
+			shoot = true;
 		}
 
 		timeSinceLastShot += dt;
-		//std::cout << " vale\n";
-
-		if (timeSinceLastShot >= 1.0 / shootRate) {
-			my_shoot_component->Shoot(shootDirection);
-			numB++;
-			timeSinceLastShot = 0;
+		if (shoot) {
+			if (timeSinceLastShot >= 1.0 / shootRate) {
+				my_shoot_component->Shoot(shootDirection);
+				timeSinceLastShot = 0;
+			}
 		}
-
 
 		if (VeryReal::InputManager::Instance()->IsKeyDown(TI_SCANCODE_ESCAPE)) {
 			VeryReal::InputManager::Instance()->Quit();
