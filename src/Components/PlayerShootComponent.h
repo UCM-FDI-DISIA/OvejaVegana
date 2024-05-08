@@ -7,11 +7,9 @@
 #include "Entity.h"
 #include "../Export.h"
 
-
 namespace VeryReal {
     class TransformComponent;
     class RigidBodyComponent;
-
 }
 
 #pragma warning(disable : 4251)
@@ -22,8 +20,8 @@ namespace OvejaVegana {
     private:
         VeryReal::TransformComponent* my_transform = nullptr;
         VeryReal::RigidBodyComponent* my_rigidbody = nullptr;
-
         int numB = 0;
+
     public:
         PlayerShootComponent();
         virtual std::pair<bool, std::string> InitComponent();

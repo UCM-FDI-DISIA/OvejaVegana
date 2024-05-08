@@ -23,19 +23,14 @@ void OvejaVegana::TimerComponent::Update(const double& dt)
 	current_time += dt;
 	GetTimeInMinutesSeconds(minutes, seconds, current_time);
 	SetTimerCaption(minutes, seconds);
-	if (current_time >= max_round_time) {
-		round_completed = true;
-		if (OvejaVegana::GameManager::Instance()->GetLevel() == 0) {
-			OvejaVegana::GameManager::Instance()->NextLevel();
-		}
-		else {
-			OvejaVegana::GameManager::Instance()->Win();
-		}
-		
-#ifdef _DEBUG
-		std::cout << "Round completed  \n";
-#endif
-	}
+//	if (current_time >= max_round_time) {
+//		round_completed = true;
+//		
+//		
+//#ifdef _DEBUG
+//		std::cout << "Round completed  \n";
+//#endif
+//	}
 }
 
 void OvejaVegana::TimerComponent::GetTimeInMinutesSeconds(int& minutes, int& seconds, float currentTime)
