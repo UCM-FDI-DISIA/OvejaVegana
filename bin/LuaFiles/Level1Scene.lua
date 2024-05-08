@@ -5,7 +5,7 @@ Entities={
             {
                 name = "TransformComponent",
                 parameters = {  
-                    position = {-25, 125, 1350},
+                    position = {-25, 125, 350},
                     rotation ={0, 0, 0},
                     scale = {1, 1, 1}                   
                 }
@@ -127,24 +127,9 @@ Entities={
             {
                 name = "TransformComponent",
                 parameters = {  
-                    a = 0,
                     position = {0, 0, 0},
                     rotation = {0, 0, 180},
-                    scale = {1000, 1000, 1000}                   
-                }
-            },
-            {
-                name = "RigidbodyComponent",
-                parameters = {    
-                    shapeType = 1,
-                    movementType = 1,
-                    size = {100, 1, 100},
-                    mass = 100000.0,
-                    friction = 0.5,
-                    restitution = 0.0,
-                    trigger = true,
-                    mask = 1,
-                    group = 1
+                    scale = {10, 10, 10}                   
                 }
             },
             {
@@ -154,6 +139,20 @@ Entities={
                     modelname = "mapa1.mesh",
                     entityname= "Mundo",
                     materialname = ""
+                }
+            },
+            {
+                name = "RigidBodyComponent",
+                parameters = {    
+                    shapeType = 1,
+                    movementType = 1,
+                    size = {100, 1, 100},
+                    mass = 10.0,
+                    friction = 0.5,
+                    restitution = 0.0,
+                    trigger = true,
+                    mask = 1,
+                    group = 1
                 }
             }
         }
@@ -171,6 +170,15 @@ Entities={
                 }
             },
             {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "mapa1.mesh",
+                    entityname= "Mundo",
+                    materialname = "Black"
+                }
+            },
+            {
                 name = "RigidBodyComponent",
                 parameters = {
                     shapeType = 1,
@@ -184,15 +192,6 @@ Entities={
                     group = 2
                 }
                 
-            },
-            {
-                name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = false,
-                    modelname = "mapa1.mesh",
-                    entityname= "Mundo",
-                    materialname = "Black"
-                }
             }
         }
     },
@@ -209,6 +208,15 @@ Entities={
                 }
             },
             {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "mapa1.mesh",
+                    entityname= "Mundo",
+                    materialname = "Black"
+                }
+            },
+            {
                 name = "RigidBodyComponent",
                 parameters = {
                     shapeType = 1,
@@ -220,15 +228,6 @@ Entities={
                     trigger = false,
                     mask = 1,
                     group = 2
-                }
-            },
-            {
-                name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = false,
-                    modelname = "mapa1.mesh",
-                    entityname= "Mundo",
-                    materialname = "Black"
                 }
             }
         }
@@ -246,6 +245,15 @@ Entities={
                 }
             },
             {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "mapa1.mesh",
+                    entityname= "Mundo",
+                    materialname = "Black"
+                }
+            },
+            {
                 name = "RigidBodyComponent",
                 parameters = {
                     shapeType = 1,
@@ -257,15 +265,6 @@ Entities={
                     trigger = false,
                     mask = 1,
                     group = 2
-                }
-            },
-            {
-                name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = false,
-                    modelname = "mapa1.mesh",
-                    entityname= "Mundo",
-                    materialname = "Black"
                 }
             }
         }
@@ -283,6 +282,15 @@ Entities={
                 }
             },
             {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "mapa1.mesh",
+                    entityname= "Mundo",
+                    materialname = "Black"
+                }
+            },
+            {
                 name = "RigidBodyComponent",
                 parameters = {
                     shapeType = 1,
@@ -294,15 +302,6 @@ Entities={
                     trigger = false,
                     mask = 1,
                     group = 2
-                }
-            },
-            {
-                name = "MeshRenderComponent",
-                parameters = {                  
-                    isstatic = false,
-                    modelname = "mapa1.mesh",
-                    entityname= "Mundo",
-                    materialname = "Black"
                 }
             }
         }
