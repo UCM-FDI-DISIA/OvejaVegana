@@ -52,18 +52,16 @@ bool OvejaVegana::LifeComponent::decreaselife(float todescrease) {
 		if (my_progress_bar)
 			my_progress_bar->setProgress(currentlife);
 	}
-	else if(eType == enemy)
 
 
 	if (currentlife < 1) {
 		if (eType == player) 
-			//OvejaVegana::GameManager::Instance()->Lose();
-
-		else if (eType == enemy) 
+			OvejaVegana::GameManager::Instance()->Lose();
+		//else if (eType == enemy) 
 		{
-			//OvejaVegana::EnemyWaveManager::Instance()->EnemyDefeated();
-			//this->GetEntity()->GetComponent<VeryReal::ColliderComponent>()->SetActive(false);
-			//this->GetEntity()->SetActive(false);
+			OvejaVegana::EnemyWaveManager::Instance()->EnemyDefeated();
+			this->GetEntity()->GetComponent<VeryReal::ColliderComponent>()->SetActive(false);
+			this->GetEntity()->SetActive(false);
 		}
 		return false; 
 	}

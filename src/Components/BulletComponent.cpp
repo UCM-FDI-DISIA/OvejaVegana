@@ -14,6 +14,13 @@ std::pair<bool, std::string> OvejaVegana::BulletComponent::InitComponent()
 	return { true, "BulletComponent created correctly" };
 }
 
+void OvejaVegana::BulletComponent::Update(const double& dt) {
+	timeToLive -= dt;
+	if (timeToLive <= 0) {
+		this->GetEntity()->SetActive(false);
+	}
+}
+
 void OvejaVegana::BulletComponent::OnCollisionEnter(VeryReal::Entity* other) {
 	if (other->GetComponent<OvejaVegana::EnemyChaseComponent>()) {
 		other->GetComponent<OvejaVegana::LifeComponent>()->decreaselife(1.0);

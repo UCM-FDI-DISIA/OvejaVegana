@@ -16,7 +16,7 @@ Prefabs={
                     isstatic = false,
                     modelname = "Bala.mesh",
                     entityname= "Bala",
-                    materialname = "Bala_Gold"
+                    materialname = ""
                 }
             },
             {
@@ -29,7 +29,7 @@ Prefabs={
                 parameters = {
                     shapeType = 1,
                     movementType = 0,
-                    size = {8, 8, 8},
+                    size = {3, 3, 3},
                     mass = 10.0,
                     friction = 0.5,
                     restitution = 0.0,
@@ -44,29 +44,6 @@ Prefabs={
                 }
             }
             
-        }
-    }, 
-    {  name = "PrefabCaja",
-        components = {
-	        {
-                name = "TransformComponent",
-                parameters = {
-                    position = {0, 1000, 1000},
-                    rotation = {0, 0, 0},
-                    scale = {1, 1, 1}
-                }
-	        },
-            name = "MeshRenderComponent",
-            parameters = {                  
-                isstatic = true,
-                modelname = "Crate.mesh",
-                materialname = "crate/CrateDarkWood"
-            },
-            {
-                name = "ColliderComponent",
-                parameters = {
-                }
-            }
         }
     },
     {

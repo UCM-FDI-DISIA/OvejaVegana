@@ -14,7 +14,6 @@ namespace OvejaVegana {
         virtual ~HealComponent();
         virtual std::pair<bool, std::string> InitComponent(int amount);
         void OnCollisionEnter(VeryReal::Entity* other) override;
-        void OnCollisionExit(VeryReal::Entity* other) override;
 
         int getAmount() { return amount; };
 

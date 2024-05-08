@@ -19,14 +19,8 @@ void OvejaVegana::HealComponent::OnCollisionEnter(VeryReal::Entity* other) {
         std::cout << "Curacion cogida. Cura: " << std::to_string(amount) << std::endl;
         other->GetComponent<OvejaVegana::LifeComponent>()->addlife(amount);  // Incrementa la vida del componente de vida encontrado
         pickedUp = false;
-    }
-}
-void OvejaVegana::HealComponent::OnCollisionExit(VeryReal::Entity* other)
-{
-    if (!pickedUp)
-    {
         this->SetActive(false);
         this->GetEntity()->SetActive(false);
-        std::cout << "Curacion borrada" << std::endl;
     }
 }
+
