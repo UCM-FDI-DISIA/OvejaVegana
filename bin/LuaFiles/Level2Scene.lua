@@ -94,9 +94,9 @@ Entities={
                 parameters = {             
                     maximo = 3.0,
                     progres = 1.0,
-                    progressBarName = "l",
-                    frameMaterial = "botiquinMat",
-                    contentMaterial = "botiquinMat",
+                    progressBarName = "progBar2",
+                    frameMaterial = "",
+                    contentMaterial = "UI/progressframe",
                     zOrder = 1                   
                 }
             },

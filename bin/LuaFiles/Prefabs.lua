@@ -45,29 +45,6 @@ Prefabs={
             }
             
         }
-    }, 
-    {  name = "PrefabCaja",
-        components = {
-	        {
-                name = "TransformComponent",
-                parameters = {
-                    position = {0, 0, 0},
-                    rotation = {0, 0, 0},
-                    scale = {1, 1, 1}
-                }
-	        },
-            name = "MeshRenderComponent",
-            parameters = {                  
-                isstatic = true,
-                modelname = "Crate.mesh",
-                materialname = "crate/CrateDarkWood"
-            },
-            {
-                name = "ColliderComponent",
-                parameters = {
-                }
-            }
-        }
     },
     {
         name = "PrefabEnemy",
@@ -161,9 +138,9 @@ Prefabs={
             {
                 name = "MeshRenderComponent",
                 parameters = {                  
-                    modelname = "botiquin.mesh",
+                    modelname = "Medkit.mesh",
                     entityname= "cura",
-                    materialname = "botiquinMat",
+                    materialname = "MedkitMaterial",
                     isstatic = false
                 }
             }
