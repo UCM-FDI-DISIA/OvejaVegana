@@ -5,7 +5,7 @@ Prefabs={
             {
                 name = "TransformComponent",
                 parameters = {          
-                    position = {0, 15, 50},
+                    position = {0, 1500, 500},
                     rotation = {0, 0, 0},
                     scale = {1, 1, 1}     
                 }
@@ -45,6 +45,29 @@ Prefabs={
             }
             
         }
+    }, 
+    {  name = "PrefabCaja",
+        components = {
+	        {
+                name = "TransformComponent",
+                parameters = {
+                    position = {0, 1000, 1000},
+                    rotation = {0, 0, 0},
+                    scale = {1, 1, 1}
+                }
+	        },
+            name = "MeshRenderComponent",
+            parameters = {                  
+                isstatic = true,
+                modelname = "Crate.mesh",
+                materialname = "crate/CrateDarkWood"
+            },
+            {
+                name = "ColliderComponent",
+                parameters = {
+                }
+            }
+        }
     },
     {
         name = "PrefabEnemy",
@@ -52,7 +75,7 @@ Prefabs={
             {
                 name = "TransformComponent",
                 parameters = {  
-                    position = {0, 15, 50},
+                    position = {0, 500, 1500},
                     rotation ={0, 0, 90},
                     scale = {10, 10, 10}                   
                 }
@@ -96,7 +119,13 @@ Prefabs={
                     entityname= "Enemy",
                     materialname = "enemigoMat"
                 }
-            }         
+            },
+            {
+                name = "LifeComponent",
+                parameters ={
+                    health = 3
+                }
+            }        
         }
     },  
     {   name = "PrefabCuracion",
@@ -105,7 +134,7 @@ Prefabs={
                 name = "TransformComponent",
                 parameters = {  
                     a = 0,
-                    position = { 0, 100, 40},
+                    position = { 0, 1000, 400},
                     rotation = {0, 0, 0},
                     scale = {20, 20, 20}                    
                 }
