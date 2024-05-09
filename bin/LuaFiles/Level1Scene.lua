@@ -357,15 +357,16 @@ Entities={
                     rotation = {0, 0, 0},
                     scale = {1, 1, 1}                    
                 }
-            },
-            {
-                name = "AudioSourceComponent",
-                parameters = {                  
-                }
             }
+            -- {
+            --     name = "AudioSourceComponent",
+            --     parameters = {   
+
+            --     }
+            -- }
         }
         
-    }
+    },
     {
         name="EnemyWave",
         components={

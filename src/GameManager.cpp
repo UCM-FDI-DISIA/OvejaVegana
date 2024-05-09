@@ -4,6 +4,7 @@
 #include "ScriptManager.h"
 #include "EnemyWaveManager.h"
 #include "SceneManager.h"
+#include "ErrorManager.h"
 using namespace OvejaVegana;
 
 GameManager::~GameManager() {
@@ -12,6 +13,7 @@ GameManager::~GameManager() {
 
 std::pair<bool, std::string> GameManager::Start() {
 	return VeryReal::ScriptManager::Instance()->ReadScene("MenuScene", true);
+
 }
 
 
@@ -25,14 +27,14 @@ void GameManager::Menu() {
 		VeryReal::SceneManager::Instance()->ActivationScene("LoseScene", false);
 		VeryReal::SceneManager::Instance()->EliminationScene("LoseScene", true);
 	}
-	VeryReal::ScriptManager::Instance()->ReadScene("MenuScene", true);
+	VeryReal::ErrorManager::Instance()->canBeError(VeryReal::ScriptManager::Instance()->ReadScene("MenuScene", true));
 }
 
 void GameManager::Play() {
 	VeryReal::SceneManager::Instance()->ActivationScene("MenuScene", false);
 	VeryReal::SceneManager::Instance()->EliminationScene("MenuScene", true);
-	VeryReal::ScriptManager::Instance()->ReadScene("Level1Scene", true);
-	VeryReal::ScriptManager::Instance()->ReadPrefabs();
+	VeryReal::ErrorManager::Instance()->canBeError(VeryReal::ScriptManager::Instance()->ReadScene("Level1Scene", true));
+	VeryReal::ErrorManager::Instance()->canBeError(VeryReal::ScriptManager::Instance()->ReadPrefabs());
 }
 void GameManager::Win() {
 	if (level == 0) {
@@ -43,14 +45,15 @@ void GameManager::Win() {
 		VeryReal::SceneManager::Instance()->ActivationScene("Level2Scene", false);
 		VeryReal::SceneManager::Instance()->EliminationScene("Level2Scene", true);
 	}
-	VeryReal::ScriptManager::Instance()->ReadScene("WinScene", true);
+	VeryReal::ErrorManager::Instance()->canBeError(VeryReal::ScriptManager::Instance()->ReadScene("WinScene", true));
+	
 }
 void GameManager::NextLevel() {
 	level++;
 	VeryReal::SceneManager::Instance()->ActivationScene("Level1Scene", false);
 	VeryReal::SceneManager::Instance()->EliminationScene("Level1Scene", true);
-	VeryReal::ScriptManager::Instance()->ReadScene("Level2Scene", true);
-	VeryReal::ScriptManager::Instance()->ReadPrefabs();
+	VeryReal::ErrorManager::Instance()->canBeError(VeryReal::ScriptManager::Instance()->ReadScene("Level2Scene", true));
+	VeryReal::ErrorManager::Instance()->canBeError(VeryReal::ScriptManager::Instance()->ReadPrefabs());
 }
 
 void GameManager::Lose() {
@@ -62,7 +65,7 @@ void GameManager::Lose() {
 		VeryReal::SceneManager::Instance()->ActivationScene("Level2Scene", false);
 		VeryReal::SceneManager::Instance()->EliminationScene("Level2Scene", true);
 	}
-	VeryReal::ScriptManager::Instance()->ReadScene("LoseScene", true);
+	VeryReal::ErrorManager::Instance()->canBeError(VeryReal::ScriptManager::Instance()->ReadScene("LoseScene", true));
 }
 
 void GameManager::CreateRandomTrees() {
