@@ -36,6 +36,7 @@ void GameManager::Play() {
 	VeryReal::ErrorManager::Instance()->canBeError(VeryReal::ScriptManager::Instance()->ReadScene("Level1Scene", true));
 	VeryReal::ErrorManager::Instance()->canBeError(VeryReal::ScriptManager::Instance()->ReadPrefabs());
 }
+
 void GameManager::Win() {
 	if (level == 0) {
 		VeryReal::SceneManager::Instance()->ActivationScene("Level1Scene", false);
@@ -48,6 +49,7 @@ void GameManager::Win() {
 	VeryReal::ErrorManager::Instance()->canBeError(VeryReal::ScriptManager::Instance()->ReadScene("WinScene", true));
 	
 }
+
 void GameManager::NextLevel() {
 	level++;
 	VeryReal::SceneManager::Instance()->ActivationScene("Level1Scene", false);

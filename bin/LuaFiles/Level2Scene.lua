@@ -398,9 +398,9 @@ Entities={
             {
                 name="EnemyWaveComponent",
                 parameters={
-
+                    level = 2,
+                    startingEnemies = 5
                 }
-
             }
         }
     }

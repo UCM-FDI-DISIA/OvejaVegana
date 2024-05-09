@@ -14,18 +14,19 @@ using namespace OvejaVegana;
 EnemyWaveComponent::EnemyWaveComponent(){}
 EnemyWaveComponent::~EnemyWaveComponent() {}
 
-std::pair<bool, std::string> EnemyWaveComponent::InitComponent() {
+std::pair<bool, std::string> EnemyWaveComponent::InitComponent(int level, int enemiesInitialNumber) {
 	nEnemies = 0;
-	 nEnemies = 0;
-	 time_until_next_wave = 0;
+	time_until_next_wave = 0;
 
-	 nGenerateEnemies = 3;
-	 safe_generation_distance = 35;
+	nGenerateEnemies = enemiesInitialNumber;
+	safe_generation_distance = 35;
+	currLevel = level;
+
 	Entity* player = SceneManager::Instance()->GetActiveScene()->GetEntity("Player");
 	if (player == nullptr) {
 		return{ false,"This scene doesn't have Player. ERROR from EnemyWaveComponent" };
 	}
-	
+
 	player_transform = player->GetComponent<TransformComponent>();
 	if (player_transform == nullptr) {
 		return { false,"player doesn't have TransformComponent. Error from EnemyWaveComponent" };
@@ -37,10 +38,10 @@ std::pair<bool, std::string> EnemyWaveComponent::InitComponent() {
 		scene_side_lenght = 215 - 65;
 		return { true, "EnemyWaveComponent was made Correct" };
 	}
-		
 }
 
 void OvejaVegana::EnemyWaveComponent::Update(const double& dt) {
+	//cout << nEnemies << endl;
 	if (IsWaveCompleated()) {
 		if ((time_until_next_wave -= dt) <= 0 && nWaves > 0) {
 			GenerateNextWave();
@@ -50,7 +51,6 @@ void OvejaVegana::EnemyWaveComponent::Update(const double& dt) {
 				if (currLevel < N_LEVELS) {
 					currLevel++;
 					OvejaVegana::GameManager::Instance()->NextLevel();
-					GenerateNextWave();
 				}
 				else {
 					OvejaVegana::GameManager::Instance()->Win();
@@ -69,8 +69,8 @@ void OvejaVegana::EnemyWaveComponent::GenerateNextWave() {
 		// Logica de posicionamiento alejado del jugador
 		Vector2 rpos = GetRandomPositionAwayFromPlayer();
 		newEnemy->GetComponent<VeryReal::RigidBodyComponent>()->SetPosition(Vector3(rpos.GetX(), rpos.GetY(), player_transform->GetPosition().GetZ()));
+		nEnemies++;
 	}
-	nEnemies = nGenerateEnemies;
 	nGenerateEnemies += nIncreaseGenerationEnemies;
 	time_until_next_wave = TIME_BETWEEN_WAVES;
 }

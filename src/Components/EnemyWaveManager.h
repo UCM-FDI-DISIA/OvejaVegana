@@ -31,7 +31,7 @@ namespace OvejaVegana {
 	public:
 		EnemyWaveComponent();
 		virtual ~EnemyWaveComponent();
-		std::pair<bool, std::string> InitComponent();
+		std::pair<bool, std::string> InitComponent(int level = 1, int enemiesInitialNumber = 3);
 		void Update(const double& dt);
 		void GenerateNextWave();
 		void EnemyDefeated() { nEnemies-=1; }
