@@ -12,7 +12,7 @@ GameManager::~GameManager() {
 
 std::pair<bool, std::string> GameManager::Start() {
 	OvejaVegana::EnemyWaveManager::Init();
-	return VeryReal::ScriptManager::Instance()->ReadScene("MenuScene", true);
+	return VeryReal::ScriptManager::Instance()->ReadScene("LoseScene", true);
 }
 
 void GameManager::Update(const double& dt) {
@@ -25,6 +25,15 @@ void GameManager::Update(const double& dt) {
 }
 
 void GameManager::Menu() {
+	std::string currentScene = VeryReal::SceneManager::Instance()->GetActiveScene()->GetName();
+	if (currentScene == "WinScene") {
+		VeryReal::SceneManager::Instance()->ActivationScene("WinScene", false);
+		VeryReal::SceneManager::Instance()->EliminationScene("WinScene", true);
+	}
+	else if (currentScene == "LoseScene") {
+		VeryReal::SceneManager::Instance()->ActivationScene("LoseScene", false);
+		VeryReal::SceneManager::Instance()->EliminationScene("LoseScene", true);
+	}
 	VeryReal::ScriptManager::Instance()->ReadScene("MenuScene", true);
 	VeryReal::ScriptManager::Instance()->ReadPrefabs();
 }
