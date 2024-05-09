@@ -14,12 +14,11 @@ using namespace OvejaVegana;
 EnemyWaveComponent::EnemyWaveComponent(){}
 EnemyWaveComponent::~EnemyWaveComponent() {}
 
-std::pair<bool, std::string> EnemyWaveComponent::InitComponent(int level) {
-	nEnemies = 0;
+std::pair<bool, std::string> EnemyWaveComponent::InitComponent(int level, int enemiesInitialNumber) {
 	nEnemies = 0;
 	time_until_next_wave = 0;
 
-	nGenerateEnemies = 3;
+	nGenerateEnemies = enemiesInitialNumber;
 	safe_generation_distance = 35;
 	currLevel = level;
 
@@ -42,6 +41,7 @@ std::pair<bool, std::string> EnemyWaveComponent::InitComponent(int level) {
 }
 
 void OvejaVegana::EnemyWaveComponent::Update(const double& dt) {
+	//cout << nEnemies << endl;
 	if (IsWaveCompleated()) {
 		if ((time_until_next_wave -= dt) <= 0 && nWaves > 0) {
 			GenerateNextWave();
@@ -51,7 +51,6 @@ void OvejaVegana::EnemyWaveComponent::Update(const double& dt) {
 				if (currLevel < N_LEVELS) {
 					currLevel++;
 					OvejaVegana::GameManager::Instance()->NextLevel();
-					GenerateNextWave();
 				}
 				else {
 					OvejaVegana::GameManager::Instance()->Win();

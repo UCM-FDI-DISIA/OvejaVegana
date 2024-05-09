@@ -22,7 +22,22 @@ std::pair<bool, std::string> OvejaVegana::CreatorEnemyWaveComponent::SpecificIni
         level = 1;
     }
 
-    return enemywave->InitComponent(level);
+    int startingEnemies;
+    if (parameters_map.find("startingEnemies") != parameters_map.end()) {
+        if (std::holds_alternative<int>(parameters_map.at("startingEnemies").GetVariant())) {
+            startingEnemies = std::get<int>(parameters_map.at("startingEnemies").GetVariant());
+        }
+        else {
+            std::cout << "No se ha especificado ningun valor para startingEnemies este sera seteado por defecto" << std::endl;
+            startingEnemies = 3;
+        }
+    }
+    else {
+        std::cout << "No existe ningun parametro startingEnemies este sera seteado por defecto" << std::endl;
+        startingEnemies = 3;
+    }
+
+    return enemywave->InitComponent(level, startingEnemies);
 }
 
 std::pair<bool, std::string> OvejaVegana::CreatorEnemyWaveComponent::SpecificInitComponentByCopy(VeryReal::Component* c, VeryReal::Component* other) {
