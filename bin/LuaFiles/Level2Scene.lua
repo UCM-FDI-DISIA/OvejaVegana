@@ -391,5 +391,17 @@ Entities={
                 }
             }
         }
+    },
+    {
+        name="EnemyWave",
+        components={
+            {
+                name="EnemyWaveComponent",
+                parameters={
+
+                }
+
+            }
+        }
     }
 }

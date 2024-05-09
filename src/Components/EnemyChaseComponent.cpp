@@ -28,14 +28,14 @@ std::pair<bool, std::string> OvejaVegana::EnemyChaseComponent::InitComponent() {
 		return { false, "Transform isn't in player entity, ERROR from EnemyChaseComponent" };
 	}
 	
-	sonidoMuerte = currScene->GetEntity("sonidoMuerte");
+	/*sonidoMuerte = currScene->GetEntity("sonidoMuerte");
 
 
 	
 	
 	 if (this->sonidoMuerte == nullptr) {
 		return { false, "sonidoMuerte isn't in scene, ERROR from EnemyChaseComponent" };
-	}
+	}*/
 	 
 		return { true, "EnemyChaseComponent created correctly" };
 	
