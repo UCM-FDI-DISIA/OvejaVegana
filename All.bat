@@ -9,7 +9,7 @@ cd VeryReal\VeryRealSolucion
 xcopy bin .\..\..\bin\ /s /e
 
 
-cd .\bin
+cd ..\..\bin
 
 ren  VeryRealProyecto_Release*.exe ______OvejaVegana_______*.exe
 start .
