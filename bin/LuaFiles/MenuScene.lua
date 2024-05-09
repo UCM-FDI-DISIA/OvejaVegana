@@ -10,15 +10,12 @@ Entities={
                     hidden = false     
                 }
             },
-            {
-                name = "UITextComponent",
-                parameters = {                  
-                    name = "playbutton",
-                    font = "Mario",
-                    caption = "PLAY",
-                    zOrder = 3,
-                    charHeight = 0.1,
-                    color = {1.0,0.0,0.0} 
+            {        
+                name = "UISpriteRendererComponent",
+                parameters = {
+                    name = "play", 
+                    material = "play", 
+                    zOrder = 1
                 }
             },
             {
@@ -40,15 +37,12 @@ Entities={
                     hidden = false     
                 }
             },
-            {
-                name = "UITextComponent",
-                parameters = {                  
-                    name = "exitbutton",
-                    font = "Mario",
-                    caption = "EXIT",
-                    zOrder = 3,
-                    charHeight = 0.1,
-                    color = {1.0,0.0,0.0} 
+            {        
+                name = "UISpriteRendererComponent",
+                parameters = {
+                    name = "exit", 
+                    material = "exit", 
+                    zOrder = 1
                 }
             },
             {
@@ -65,20 +59,17 @@ Entities={
             {
                 name = "UITransformComponent",
                 parameters = {                  
-                    position = {0.8, 0.1},
-                    scale = {0.16, 0.05},
+                    position = {0.9, 0.03},
+                    scale = {0.1, 0.1},
                     hidden = false     
                 }
             },
-            {
-                name = "UITextComponent",
-                parameters = {                  
-                    name = "mute",
-                    font = "Mario",
-                    caption = "MUTE",
-                    zOrder = 3,
-                    charHeight = 0.05,
-                    color = {1.0,1.0,1.0} 
+            {        
+                name = "UISpriteRendererComponent",
+                parameters = {
+                    name = "music", 
+                    material = "music", 
+                    zOrder = 1
                 }
             },
             {
@@ -94,11 +85,10 @@ Entities={
         components = {
             {
                 name = "TransformComponent",
-                parameters = {  
-                    a = 0,
+                parameters = {                   
                     position = {0.0, 0.0, 0.0},
                     rotation = {0.0, 0.0, 0.0},
-                    scale = {1, 1, 1}                   
+                    scale = {1.0, 1.0, 1.0}                   
                 }
             },
             {

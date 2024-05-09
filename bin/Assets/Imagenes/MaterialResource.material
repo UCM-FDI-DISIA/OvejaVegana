@@ -87,3 +87,21 @@ material menu
 		}
 	}
 }
+
+material music
+{
+	technique
+	{
+		pass
+		{
+			depth_check off
+			lighting off
+			scene_blend alpha_blend
+			texture_unit 
+			{
+				texture mute.png
+				colour_op replace
+			}
+		}
+	}
+}
