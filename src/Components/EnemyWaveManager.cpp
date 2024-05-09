@@ -15,6 +15,12 @@ EnemyWaveManager::EnemyWaveManager(){}
 EnemyWaveManager::~EnemyWaveManager() {}
 
 std::pair<bool, std::string> EnemyWaveManager::InitComponent() {
+	nEnemies = 0;
+	 nEnemies = 0;
+	 time_until_next_wave = 0;
+
+	 nGenerateEnemies = 3;
+	 safe_generation_distance = 35;
 	Entity* player = SceneManager::Instance()->GetActiveScene()->GetEntity("Player");
 	if (player == nullptr) {
 		return{ false,"This scene doesn't have Player. ERROR from EnemyWaveComponent" };

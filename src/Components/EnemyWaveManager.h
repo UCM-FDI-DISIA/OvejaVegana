@@ -34,7 +34,7 @@ namespace OvejaVegana {
 		std::pair<bool, std::string> InitComponent();
 		void Update(const double& dt);
 		void GenerateNextWave();
-		void EnemyDefeated() { nEnemies--; }
+		void EnemyDefeated() { nEnemies-=1; }
 		bool IsWaveCompleated() { return nEnemies <= 0; }
 		VeryReal::Vector2 GetRandomPositionAwayFromPlayer();
 	};

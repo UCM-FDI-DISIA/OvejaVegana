@@ -10,7 +10,8 @@
 #include "SceneManager.h"
 #include "Scene.h"
 
-
+using namespace VeryReal;
+using namespace OvejaVegana;
 OvejaVegana::LifeComponent::LifeComponent() {
 }
 
@@ -62,7 +63,7 @@ bool OvejaVegana::LifeComponent::decreaselife(float todescrease) {
 		else if (eType == enemy) 
 		{
 			VeryReal::Entity* e= VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("EnemyWave");
-			EnemyWaveManager* ewm = e->GetComponent<EnemyWaveManager>();
+			OvejaVegana::EnemyWaveManager* ewm = e->GetComponent<EnemyWaveManager>();
 			ewm->EnemyDefeated();
 			this->GetEntity()->GetComponent<VeryReal::ColliderComponent>()->SetActive(false);
 			this->GetEntity()->SetActive(false);

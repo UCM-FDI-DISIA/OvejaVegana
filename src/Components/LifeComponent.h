@@ -9,6 +9,9 @@
 namespace VeryReal {
 	class UIProgressBarComponent;
 	class ColiderComponent;
+	class Entity;
+	class EnemyWaveManager;
+
 }
 namespace OvejaVegana{
 	class OVEJAVEGANA_API LifeComponent : public VeryReal::Component {
@@ -35,6 +38,7 @@ namespace OvejaVegana{
 		float currentlife;
 		bool progressbar;
 		VeryReal::UIProgressBarComponent* my_progress_bar;
+		
 	};
 }
 #endif
