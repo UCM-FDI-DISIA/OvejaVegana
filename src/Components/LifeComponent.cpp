@@ -57,8 +57,10 @@ bool OvejaVegana::LifeComponent::decreaselife(float todescrease) {
 	if (currentlife < 1) {
 		if (eType == player) 
 			OvejaVegana::GameManager::Instance()->Lose();
-		//else if (eType == enemy) 
+		else if (eType == enemy) 
 		{
+			//Para llamar al sonido de muerte
+			//this->GetEntity()->GetComponent<OvejaVegana::EnemyChaseComponent>()->GetSonidoMuerte()->GetComponent<VeryReal::AudioSourceComponent>();	
 			OvejaVegana::EnemyWaveManager::Instance()->EnemyDefeated();
 			this->GetEntity()->GetComponent<VeryReal::ColliderComponent>()->SetActive(false);
 			this->GetEntity()->SetActive(false);

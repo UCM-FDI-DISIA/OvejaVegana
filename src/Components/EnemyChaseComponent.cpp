@@ -18,6 +18,7 @@ std::pair<bool, std::string> OvejaVegana::EnemyChaseComponent::InitComponent() {
 		if (player != nullptr) {
 			player_transform = player->GetComponent<VeryReal::TransformComponent>(); 
 		}
+		sonidoMuerte = currScene->GetEntity("sonidoMuerte");
 	}
 
 	if (this->my_movement_component == nullptr) {
@@ -28,6 +29,9 @@ std::pair<bool, std::string> OvejaVegana::EnemyChaseComponent::InitComponent() {
 	}
 	else if (this->player_transform == nullptr) {
 		return { false, "Transform isn't in player entity, ERROR from EnemyChaseComponent" };
+	}
+	else if (this->sonidoMuerte == nullptr) {
+		return { false, "sonidoMuerte isn't in scene, ERROR from EnemyChaseComponent" };
 	}
 	else {
 		return { true, "EnemyChaseComponent created correctly" };
@@ -52,4 +56,9 @@ void OvejaVegana::EnemyChaseComponent::Update(const double& dt) {
 	// Comprobar si se destruye
 
 
+}
+
+VeryReal::Entity* OvejaVegana::EnemyChaseComponent::GetSonidoMuerte()
+{
+	return sonidoMuerte;
 }

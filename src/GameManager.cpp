@@ -12,7 +12,7 @@ GameManager::~GameManager() {
 
 std::pair<bool, std::string> GameManager::Start() {
 	OvejaVegana::EnemyWaveManager::Init();
-	return VeryReal::ScriptManager::Instance()->ReadScene("LoseScene", true);
+	return VeryReal::ScriptManager::Instance()->ReadScene("MenuScene", true);
 }
 
 void GameManager::Update(const double& dt) {
