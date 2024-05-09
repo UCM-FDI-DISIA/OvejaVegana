@@ -7,7 +7,7 @@ namespace VeryReal {
 }
 
 namespace OvejaVegana {
-	class EnemyWaveManager :public VeryReal::Component {
+	class EnemyWaveComponent :public VeryReal::Component {
 	private:
 		int nEnemies = 0;
 		float time_until_next_wave = 0;
@@ -29,8 +29,8 @@ namespace OvejaVegana {
 		VeryReal::TransformComponent* player_transform = nullptr;
 
 	public:
-		EnemyWaveManager();
-		virtual ~EnemyWaveManager();
+		EnemyWaveComponent();
+		virtual ~EnemyWaveComponent();
 		std::pair<bool, std::string> InitComponent();
 		void Update(const double& dt);
 		void GenerateNextWave();

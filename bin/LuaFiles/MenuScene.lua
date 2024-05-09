@@ -10,14 +10,25 @@ Entities={
                     hidden = false     
                 }
             },
-            {        
-                name = "UISpriteRendererComponent",
-                parameters = {
-                    name = "play", 
-                    material = "play", 
-                    zOrder = 1
+            {
+                name = "UITextComponent",
+                parameters = {                  
+                    name = "playbutton",
+                    font = "Mario",
+                    caption = "PLAY",
+                    zOrder = 3,
+                    charHeight = 0.1,
+                    color = {1.0,0.0,0.0} 
                 }
-            },
+             },
+            -- {        
+            --     name = "UISpriteRendererComponent",
+            --     parameters = {
+            --         name = "play", 
+            --         material = "play", 
+            --         zOrder = 1
+            --     }
+            -- },
             {
                 name = "PlayButtonComponent",
                 parameters = {  
@@ -37,12 +48,23 @@ Entities={
                     hidden = false     
                 }
             },
-            {        
-                name = "UISpriteRendererComponent",
-                parameters = {
-                    name = "exit", 
-                    material = "exit", 
-                    zOrder = 1
+            -- {        
+            --     name = "UISpriteRendererComponent",
+            --     parameters = {
+            --         name = "exit", 
+            --         material = "exit", 
+            --         zOrder = 1
+            --     }
+            -- },
+            {
+                name = "UITextComponent",
+                parameters = {                  
+                    name = "exitbutton",
+                    font = "Mario",
+                    caption = "EXIT",
+                    zOrder = 3,
+                    charHeight = 0.1,
+                    color = {1.0,0.0,0.0} 
                 }
             },
             {

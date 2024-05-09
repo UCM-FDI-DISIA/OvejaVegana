@@ -63,8 +63,13 @@ bool OvejaVegana::LifeComponent::decreaselife(float todescrease) {
 		else if (eType == enemy) 
 		{
 			VeryReal::Entity* e= VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("EnemyWave");
-			OvejaVegana::EnemyWaveManager* ewm = e->GetComponent<EnemyWaveManager>();
-			ewm->EnemyDefeated();
+			if (e != nullptr)
+			{
+				OvejaVegana::EnemyWaveComponent* ewm = e->GetComponent<EnemyWaveComponent>();
+				if (ewm != nullptr) {
+					ewm->EnemyDefeated();
+				}
+			}
 			this->GetEntity()->GetComponent<VeryReal::ColliderComponent>()->SetActive(false);
 			this->GetEntity()->SetActive(false);
 		}

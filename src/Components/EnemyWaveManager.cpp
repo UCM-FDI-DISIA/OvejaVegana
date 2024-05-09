@@ -11,10 +11,10 @@
 using namespace std;
 using namespace VeryReal;
 using namespace OvejaVegana;
-EnemyWaveManager::EnemyWaveManager(){}
-EnemyWaveManager::~EnemyWaveManager() {}
+EnemyWaveComponent::EnemyWaveComponent(){}
+EnemyWaveComponent::~EnemyWaveComponent() {}
 
-std::pair<bool, std::string> EnemyWaveManager::InitComponent() {
+std::pair<bool, std::string> EnemyWaveComponent::InitComponent() {
 	nEnemies = 0;
 	 nEnemies = 0;
 	 time_until_next_wave = 0;
@@ -40,7 +40,7 @@ std::pair<bool, std::string> EnemyWaveManager::InitComponent() {
 		
 }
 
-void OvejaVegana::EnemyWaveManager::Update(const double& dt) {
+void OvejaVegana::EnemyWaveComponent::Update(const double& dt) {
 	if (IsWaveCompleated()) {
 		if ((time_until_next_wave -= dt) <= 0 && nWaves > 0) {
 			GenerateNextWave();
@@ -60,7 +60,7 @@ void OvejaVegana::EnemyWaveManager::Update(const double& dt) {
 	}
 }
 
-void OvejaVegana::EnemyWaveManager::GenerateNextWave() {
+void OvejaVegana::EnemyWaveComponent::GenerateNextWave() {
 	for (int e = 0; e < nGenerateEnemies; ++e) {
 		// Instanciar prefab
 		std::string enemyID = "Enemy" + to_string('-') + "RemainingWaves_" + to_string(nWaves) + "-ID_" + to_string(e + 1);
@@ -75,7 +75,7 @@ void OvejaVegana::EnemyWaveManager::GenerateNextWave() {
 	time_until_next_wave = TIME_BETWEEN_WAVES;
 }
 
-VeryReal::Vector2 OvejaVegana::EnemyWaveManager::GetRandomPositionAwayFromPlayer() {
+VeryReal::Vector2 OvejaVegana::EnemyWaveComponent::GetRandomPositionAwayFromPlayer() {
 	VeryReal::Vector2 playerPosition = VeryReal::Vector2(player_transform->GetPosition().GetX(), player_transform->GetPosition().GetY());
 	VeryReal::Vector2 randomPosition;
 	do {
