@@ -10,12 +10,23 @@ Entities={
                     hidden = false     
                 }
             },
-            {        
-                name = "UISpriteRendererComponent",
-                parameters = {
-                    name = "menu", 
-                    material = "menu", 
-                    zOrder = 1
+            -- {        
+            --     name = "UISpriteRendererComponent",
+            --     parameters = {
+            --         name = "menu", 
+            --         material = "menu", 
+            --         zOrder = 1
+            --     }
+            -- },
+            {
+                name = "UITextComponent",
+                parameters = {                  
+                    name = "menubutton",
+                    font = "Mario",
+                    caption = "MENU",
+                    zOrder = 3,
+                    charHeight = 0.1,
+                    color = {1.0,0.0,0.0} 
                 }
             },
             {
@@ -37,12 +48,15 @@ Entities={
                     hidden = false     
                 }
             },        
-            {        
-                name = "UISpriteRendererComponent",
-                parameters = {
-                    name = "exit", 
-                    material = "exit", 
-                    zOrder = 1
+            {
+                name = "UITextComponent",
+                parameters = {                  
+                    name = "exitbutton",
+                    font = "Mario",
+                    caption = "EXIT",
+                    zOrder = 3,
+                    charHeight = 0.1,
+                    color = {1.0,0.0,0.0} 
                 }
             },
             {
