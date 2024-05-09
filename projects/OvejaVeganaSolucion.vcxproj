@@ -22,6 +22,7 @@
     <ClCompile Include="..\src\Components\BulletComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorBulletComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorEnemyChaseComponent.cpp" />
+    <ClCompile Include="..\src\Components\CreatorEnemyWaveComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorExitButtonComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorHealComponent.cpp" />
     <ClCompile Include="..\src\Components\CreatorLifeComponent.cpp" />
@@ -51,6 +52,7 @@
     <ClInclude Include="..\src\Components\BulletComponent.h" />
     <ClInclude Include="..\src\Components\CreatorBulletComponent.h" />
     <ClInclude Include="..\src\Components\CreatorEnemyChaseComponent.h" />
+    <ClInclude Include="..\src\Components\CreatorEnemyWaveComponent.h" />
     <ClInclude Include="..\src\Components\CreatorExitButtonComponent.h" />
     <ClInclude Include="..\src\Components\CreatorHealComponent.h" />
     <ClInclude Include="..\src\Components\CreatorLifeComponent.h" />

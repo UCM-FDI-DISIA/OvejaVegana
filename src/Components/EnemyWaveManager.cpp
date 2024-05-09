@@ -10,26 +10,31 @@
 
 using namespace std;
 using namespace VeryReal;
+using namespace OvejaVegana;
+EnemyWaveManager::EnemyWaveManager(){}
+EnemyWaveManager::~EnemyWaveManager() {}
 
-bool OvejaVegana::EnemyWaveManager::InitManager() {
+std::pair<bool, std::string> EnemyWaveManager::InitComponent() {
 	Entity* player = SceneManager::Instance()->GetActiveScene()->GetEntity("Player");
-	if (player != nullptr) {
-		player_transform = player->GetComponent<TransformComponent>();
-		if (player_transform != nullptr) {
-			srand(static_cast<unsigned int>(time(nullptr))); // Semilla de numeros aleatorios
-			time_until_next_wave = TIME_BETWEEN_WAVES;
-			scene_topleft_corner = Vector2(-120, 215);
-			scene_side_lenght = 215 - 65;
-			return true;
-		}
+	if (player == nullptr) {
+		return{ false,"This scene doesn't have Player. ERROR from EnemyWaveComponent" };
 	}
-	return false;
+	
+	player_transform = player->GetComponent<TransformComponent>();
+	if (player_transform == nullptr) {
+		return { false,"player doesn't have TransformComponent. Error from EnemyWaveComponent" };
+	}
+	if (player_transform != nullptr) {
+		srand(static_cast<unsigned int>(time(nullptr))); // Semilla de numeros aleatorios
+		time_until_next_wave = TIME_BETWEEN_WAVES;
+		scene_topleft_corner = Vector2(-120, 215);
+		scene_side_lenght = 215 - 65;
+		return { true, "EnemyWaveComponent was made Correct" };
+	}
+		
 }
 
 void OvejaVegana::EnemyWaveManager::Update(const double& dt) {
-	//cout << "TIEMPO: " << time_until_next_wave << " " << "ENEMIGOS RESTANTES: " << nEnemies << endl;
-	//cout << nWaves << " " << WAVES_PER_LEVEL << " " << currLevel << " " << N_LEVELS << endl;
-	//cout << time_until_next_wave << endl;
 	if (IsWaveCompleated()) {
 		if ((time_until_next_wave -= dt) <= 0 && nWaves > 0) {
 			GenerateNextWave();

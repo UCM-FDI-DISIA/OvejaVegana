@@ -1,5 +1,5 @@
 #pragma once
-#include <Manager.h>
+#include <Component.h>
 #include "Vector2.h"
 
 namespace VeryReal {
@@ -7,7 +7,7 @@ namespace VeryReal {
 }
 
 namespace OvejaVegana {
-	class EnemyWaveManager :public VeryReal::Manager<EnemyWaveManager> {
+	class EnemyWaveManager :public VeryReal::Component {
 	private:
 		int nEnemies = 0;
 		float time_until_next_wave = 0;
@@ -29,15 +29,9 @@ namespace OvejaVegana {
 		VeryReal::TransformComponent* player_transform = nullptr;
 
 	public:
-		static bool Init() {
-			EnemyWaveManager* a = new EnemyWaveManager();
-			if (a != nullptr) {
-				instance_pointer.reset(a);
-				return true;
-			}
-			return false;
-		}
-		bool InitManager();
+		EnemyWaveManager();
+		virtual ~EnemyWaveManager();
+		std::pair<bool, std::string> InitComponent();
 		void Update(const double& dt);
 		void GenerateNextWave();
 		void EnemyDefeated() { nEnemies--; }
