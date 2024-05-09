@@ -19,11 +19,10 @@ namespace OvejaVegana {
 				return true;
 			}
 			return false;
-
 		}
 		virtual ~GameManager();
 		std::pair<bool, std::string> Start();
-		void Update(const double& dt);
+		
 		void Win();
 		void NextLevel();
 		void Lose();

@@ -367,7 +367,7 @@ Entities={
         
     }
     {
-        name="EnemyWaveComponent",
+        name="EnemyWave",
         components={
             {
                 name="EnemyWaveComponent",

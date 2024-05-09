@@ -7,6 +7,8 @@
 #include "GameManager.h"
 #include "EnemyWaveManager.h"
 #include "LifeComponent.h"
+#include "SceneManager.h"
+#include "Scene.h"
 
 
 OvejaVegana::LifeComponent::LifeComponent() {
@@ -59,9 +61,9 @@ bool OvejaVegana::LifeComponent::decreaselife(float todescrease) {
 			OvejaVegana::GameManager::Instance()->Lose();
 		else if (eType == enemy) 
 		{
-			//Para llamar al sonido de muerte
-			//this->GetEntity()->GetComponent<OvejaVegana::EnemyChaseComponent>()->GetSonidoMuerte()->GetComponent<VeryReal::AudioSourceComponent>();	
-			OvejaVegana::EnemyWaveManager::Instance()->EnemyDefeated();
+			VeryReal::Entity* e= VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("EnemyWave");
+			EnemyWaveManager* ewm = e->GetComponent<EnemyWaveManager>();
+			ewm->EnemyDefeated();
 			this->GetEntity()->GetComponent<VeryReal::ColliderComponent>()->SetActive(false);
 			this->GetEntity()->SetActive(false);
 		}
