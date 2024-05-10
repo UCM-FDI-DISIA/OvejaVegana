@@ -138,7 +138,7 @@ Entities={
                     isstatic = false,
                     modelname = "mapa1.mesh",
                     entityname= "Mundo",
-                    materialname = ""
+                    materialname = "Grass"
                 }
             },
             {
@@ -341,7 +341,7 @@ Entities={
                 parameters = {                  
                     modelname = "Medkit.mesh",
                     entityname= "cura",
-                    materialname = "MedkitMaterial",
+                    materialname = "",
                     isstatic = false
                 }
             }
