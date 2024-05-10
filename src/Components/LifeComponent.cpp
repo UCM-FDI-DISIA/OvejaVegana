@@ -1,6 +1,7 @@
 #include "LifeComponent.h"
 #include "EnemyChaseComponent.h"
 #include "PlayerInputComponent.h"
+#include "AudioSourceComponent.h"
 #include <UI/UIProgressBarComponent.h>
 #include "ColliderComponent.h"
 #include "Entity.h"
@@ -28,9 +29,12 @@ std::pair<bool, std::string> OvejaVegana::LifeComponent::InitComponent(float max
 		if (!my_progress_bar) {
 			return { false, "UIProgressBarComponent isn't in this entity, ERROR from LifeComponent" };
 		}
+
 	}
-	else
+	else {
 		eType = enemy;
+
+	}
 
 	currentlife = max;
 	maxlife = max;
@@ -52,16 +56,23 @@ bool OvejaVegana::LifeComponent::decreaselife(float todescrease) {
 	currentlife -= todescrease;
 	if (eType == player)
 	{
+		VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("SonidoHarmPlayer")->GetComponent<VeryReal::AudioSourceComponent>()->Play();
 		if (my_progress_bar)
 			my_progress_bar->setProgress(currentlife);
+	}
+	else if (eType == enemy) {
+		VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("SonidoHarmEnemy")->GetComponent<VeryReal::AudioSourceComponent>()->Play();
 	}
 
 
 	if (currentlife < 1) {
-		if (eType == player) 
+		if (eType == player) {
+			VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("SonidoDeathPlayer")->GetComponent<VeryReal::AudioSourceComponent>()->Play();
 			OvejaVegana::GameManager::Instance()->Lose();
+		}
 		else if (eType == enemy) 
 		{
+			VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("SonidoDeathEnemy")->GetComponent<VeryReal::AudioSourceComponent>()->Play();
 			VeryReal::Entity* e= VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("EnemyWave");
 			if (e != nullptr)
 			{

@@ -1,6 +1,7 @@
 #include "PlayerShootComponent.h"
 #include "RigidBodyComponent.h"
 #include "TransformComponent.h"
+#include "AudioSourceComponent.h"
 #include "SceneManager.h"
 #include "Scene.h"
 #include "Entity.h"
@@ -14,7 +15,13 @@ std::pair<bool, std::string> OvejaVegana::PlayerShootComponent::InitComponent() 
     if (this->my_transform == nullptr) {
         return { false, "Transform isn't in this entity, ERROR from PlayerShootComponent" };
     }
-    else return { true, "PlayerShootComponent created correctly" };
+
+    my_audio = this->GetEntity()->GetComponent<VeryReal::AudioSourceComponent>();
+    if (this->my_audio == nullptr) {
+        return { false, "AudioSourceComponent isn't in this entity, ERROR from PlayerShootComponent" };
+    }
+    
+    return { true, "PlayerShootComponent created correctly" };
 }
 
 void OvejaVegana::PlayerShootComponent::Update(const double& dt) {
@@ -43,6 +50,6 @@ void OvejaVegana::PlayerShootComponent::Shoot(VeryReal::Vector3 shootDirection){
         bala_rigidbody->SetPosition(my_transform->GetPosition());
         bala_rigidbody->SetVelocityLinear(bulletVelocity);
     }
-
+    my_audio->Play();
     numB++;
 }

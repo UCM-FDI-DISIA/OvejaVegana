@@ -121,6 +121,24 @@ Entities={
                     offset = {0.0, 0.0, 0.0},
                     zOrder = 0
                 }
+            },
+            {
+                name = "AudioListenerComponent",
+                parameters = {
+
+                }
+            },
+            {
+                name = "AudioSourceComponent", 
+                parameters ={
+                    name = "audioIntro1",
+                    path = "sonido_menu_inicio-pausa.mp3",
+                    onstart = true,
+                    loop = true,
+                    threed = false,
+                    volume = 1,
+                    groupchannel = "music"
+                }
             }
         }
     }

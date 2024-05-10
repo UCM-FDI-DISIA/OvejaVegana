@@ -10,6 +10,7 @@
 namespace VeryReal {
     class TransformComponent;
     class RigidBodyComponent;
+    class AudioSourceComponent;
 }
 
 #pragma warning(disable : 4251)
@@ -20,6 +21,7 @@ namespace OvejaVegana {
     private:
         VeryReal::TransformComponent* my_transform = nullptr;
         VeryReal::RigidBodyComponent* my_rigidbody = nullptr;
+        VeryReal::AudioSourceComponent* my_audio = nullptr;
         int numB = 0;
 
     public:

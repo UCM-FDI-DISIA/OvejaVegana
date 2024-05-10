@@ -11,6 +11,7 @@ namespace VeryReal {
 	class ColiderComponent;
 	class Entity;
 	class EnemyWaveManager;
+	class AudioSourceComponent;
 
 }
 namespace OvejaVegana{
@@ -38,6 +39,8 @@ namespace OvejaVegana{
 		float currentlife;
 		bool progressbar;
 		VeryReal::UIProgressBarComponent* my_progress_bar;
+		VeryReal::AudioSourceComponent* my_harm_audio;
+		VeryReal::AudioSourceComponent* my_death_audio;
 		
 	};
 }

@@ -69,6 +69,24 @@ Entities={
                     offset = {0.0, 0.0, 0.0},
                     zOrder = 5
                 }
+            },
+            {
+                name = "AudioListenerComponent",
+                parameters = {
+
+                }
+            },
+            {
+                name = "AudioSourceComponent", 
+                parameters ={
+                    name = "audioperder",
+                    path = "sonido_perder.mp3",
+                    onstart = true,
+                    loop = true,
+                    threed = false,
+                    volume = 1,
+                    groupchannel = "music"
+                }
             }
         }
     }

@@ -32,7 +32,19 @@ Entities={
                     nearclipdist = 0.1,
                     shdws = true
                 }
-	        }  
+	        },
+            {
+             name = "AudioSourceComponent", 
+                parameters ={
+                    name = "audioJuego1",
+                    path = "sonido_juego.mp3",
+                    onstart = true,
+                    loop = true,
+                    threed = false,
+                    volume = 1.5,
+                    groupchannel = "music"
+                 }
+             }
         }
     },
     {
@@ -101,6 +113,19 @@ Entities={
                 }
             },
             {
+                name = "AudioSourceComponent", 
+                   parameters ={
+                       name = "audiodisparo",
+                       path = "sonido_disparo.mp3",
+                       onstart = false,
+                       loop = false,
+                       threed = false,
+                       volume = 1.5,
+                       groupchannel = "music"
+                    }
+            },
+                
+            {
                 name = "PlayerShootComponent",
                 parameters ={
         
@@ -118,6 +143,7 @@ Entities={
                     health = 3
                 }
             }
+            
 
         }
     }, 
@@ -347,26 +373,6 @@ Entities={
             }
         }
     },
-    {   name = "sonidoMuerte",
-        components = {
-            {
-                name = "TransformComponent",
-                parameters = {  
-                    a = 0,
-                    position = { 0, 0, 0},
-                    rotation = {0, 0, 0},
-                    scale = {1, 1, 1}                    
-                }
-            }
-            -- {
-            --     name = "AudioSourceComponent",
-            --     parameters = {   
-
-            --     }
-            -- }
-        }
-        
-    },
     {
         name="EnemyWave",
         components={
@@ -378,5 +384,135 @@ Entities={
 
             }
         }
+    },
+    {
+        name = "SonidoHarmPlayer",
+        components ={
+            {
+            name = "TransformComponent",
+            parameters = {  
+                 a = 0,
+                 position = {0,0,0},
+                 rotation = {0, 0, 0},
+                 scale = {0, 0, 0} 
+            }                  
+           },
+           {
+            name = "AudioSourceComponent", 
+               parameters ={
+                   name = "audioHarmPlayer1",
+                   path = "sonido_daño_jugador.mp3",
+                   onstart = false,
+                   loop = false,
+                   threed = false,
+                   volume = 1.5,
+                   groupchannel = "effects"
+                }
+            }
+        }
+    },
+    {
+        name = "SonidoDeathPlayer",
+        components ={
+            {
+            name = "TransformComponent",
+            parameters = {  
+                 a = 0,
+                 position = {0,0,0},
+                 rotation = {0, 0, 0},
+                 scale = {0, 0, 0} 
+            }                  
+           },
+           {
+            name = "AudioSourceComponent", 
+               parameters ={
+                   name = "audioDeathPlayer1",
+                   path = "sonido_muerte_jugador.mp3",
+                   onstart = false,
+                   loop = false,
+                   threed = false,
+                   volume = 1.5,
+                   groupchannel = "effects"
+                }
+            }
+        }
+    },
+    {
+        name = "SonidoHarmEnemy",
+        components ={
+            {
+            name = "TransformComponent",
+            parameters = {  
+                 a = 0,
+                 position = {0,0,0},
+                 rotation = {0, 0, 0},
+                 scale = {0, 0, 0} 
+            }                  
+           },
+           {
+            name = "AudioSourceComponent", 
+               parameters ={
+                   name = "audioHarmEnemy1",
+                   path = "sonido_muerte_enemigo.mp3",
+                   onstart = false,
+                   loop = false,
+                   threed = false,
+                   volume = 1.5,
+                   groupchannel = "effects"
+                }
+            }
+        }
+    },
+    {
+        name = "SonidoDeathEnemy",
+        components ={
+            {
+            name = "TransformComponent",
+            parameters = {  
+                 a = 0,
+                 position = {0,0,0},
+                 rotation = {0, 0, 0},
+                 scale = {0, 0, 0} 
+            }                  
+           },
+           {
+            name = "AudioSourceComponent", 
+               parameters ={
+                   name = "audioDeathEnemy1",
+                   path = "sonido_muerte_enemigos.mp3",
+                   onstart = false,
+                   loop = false,
+                   threed = false,
+                   volume = 1.5,
+                   groupchannel = "effects"
+                }
+            }
+        }
     }
 }
+
+
+-- name = "SonidoHarmEnemy",
+--         components = {
+--             {
+--             name = "TransformComponent",
+--             parameters = {  
+--              a = 0,
+--                  position = {0,0,0},
+--                  rotation = {0, 0, 0},
+--                  scale = {0, 0, 0}                   
+--            },
+--            {
+--                name = "AudioSourceComponent", 
+--                parameters ={
+--                    name = "audioHarmENemy1",
+--                    path = "sonido_muerte_enemigo.mp3",
+--                    onstart = false,
+--                    loop = false,
+--                    threed = false,
+--                    volume = 1.5,
+--                    groupchannel = "effects"
+--                }
+--            }
+--         }
+--     }

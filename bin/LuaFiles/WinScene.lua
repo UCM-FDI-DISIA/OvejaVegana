@@ -69,6 +69,24 @@ Entities={
                     offset = {0.0, 0.0, 0.0},
                     zOrder = 4
                 }
+            },
+            {
+                name = "AudioListenerComponent",
+                parameters = {
+
+                }
+            },
+            {
+                name = "AudioSourceComponent", 
+                parameters ={
+                    name = "audiowin",
+                    path = "sonido_ganar.mp3",
+                    onstart = true,
+                    loop = true,
+                    threed = false,
+                    volume = 1,
+                    groupchannel = "music"
+                }
             }
         }
     }
