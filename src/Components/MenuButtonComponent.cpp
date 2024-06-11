@@ -6,7 +6,7 @@
 
 void OvejaVegana::MenuButtonComponent::Action()
 {
-	my_cam = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("Camera")->GetComponent<VeryReal::CameraComponent>();
-	my_cam->desactive();
+	
+	
 	OvejaVegana::GameManager::Instance()->Menu();
 }
