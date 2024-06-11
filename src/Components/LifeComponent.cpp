@@ -61,7 +61,13 @@ bool OvejaVegana::LifeComponent::decreaselife(float todescrease) {
 			my_progress_bar->setProgress(currentlife);
 	}
 	else if (eType == enemy) {
-		VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("SonidoHarmEnemy")->GetComponent<VeryReal::AudioSourceComponent>()->Play();
+		AudioSourceComponent * aux = VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("SonidoHarmEnemy")->GetComponent<VeryReal::AudioSourceComponent>();
+		if (aux == nullptr) {
+			return true;
+		}
+		else {
+			aux->Play();
+		}
 	}
 
 
@@ -93,8 +99,7 @@ bool OvejaVegana::LifeComponent::decreaselife(float todescrease) {
 void OvejaVegana::LifeComponent::OnCollisionEnter(VeryReal::Entity* other) {
 
 	if (this->GetEntity()->GetComponent<OvejaVegana::PlayerInputComponent>() && other->GetComponent<OvejaVegana::EnemyChaseComponent>()) {
-		//quita vida al enemigo
+		//quita vida 
 		this->GetEntity()->GetComponent<OvejaVegana::LifeComponent>()->decreaselife(1.0);
-		other->GetComponent<OvejaVegana::LifeComponent>()->decreaselife(1.0);
 	}
 }
