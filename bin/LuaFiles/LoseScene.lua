@@ -30,6 +30,36 @@ Entities={
         }
     },
     {
+        name = "MenuButton",
+        components = {           
+            {
+                name = "UITransformComponent",
+                parameters = {                  
+                    position = {0.4, 0.5},
+                    scale = {0.2, 0.1},
+                    hidden = false     
+                }
+            },        
+            {
+                name = "UITextComponent",
+                parameters = {                  
+                    name = "menubutton",
+                    font = "Mario",
+                    caption = "MENU",
+                    zOrder = 3,
+                    charHeight = 0.1,
+                    color = {1.0,0.0,0.0} 
+                }
+            },
+            {
+                name = "MenuButtonComponent",
+                parameters = {  
+                                  
+                }
+            }
+        }
+    },
+    {
         name = "Loser",
         components = {           
             {
