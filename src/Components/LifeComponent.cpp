@@ -56,7 +56,13 @@ bool OvejaVegana::LifeComponent::decreaselife(float todescrease) {
 	currentlife -= todescrease;
 	if (eType == player)
 	{
-		VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("SonidoHarmPlayer")->GetComponent<VeryReal::AudioSourceComponent>()->Play();
+		AudioSourceComponent* aux =VeryReal::SceneManager::Instance()->GetActiveScene()->GetEntity("SonidoHarmPlayer")->GetComponent<VeryReal::AudioSourceComponent>();
+		if (aux == nullptr) {
+			return true;
+		}
+		else {
+			aux->Play();
+		}
 		if (my_progress_bar)
 			my_progress_bar->setProgress(currentlife);
 	}
