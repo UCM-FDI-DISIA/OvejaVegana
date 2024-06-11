@@ -1,6 +1,6 @@
 Entities={
     {
-        name = "ExitButton",
+        name = "ExitButton2",
         components = {           
             {
                 name = "UITransformComponent",
@@ -13,7 +13,7 @@ Entities={
             {
                 name = "UITextComponent",
                 parameters = {                  
-                    name = "exitbutton",
+                    name = "exitbutton2",
                     font = "Mario",
                     caption = "EXIT",
                     zOrder = 3,
