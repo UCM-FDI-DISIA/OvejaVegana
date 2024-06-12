@@ -5,7 +5,7 @@ Entities={
             {
                 name = "UITransformComponent",
                 parameters = {                  
-                    position = {0.4, 0.6},
+                    position = {0.4, 0.7},
                     scale = {0.2, 0.1},
                     hidden = false     
                 }
@@ -13,7 +13,7 @@ Entities={
             {
                 name = "UITextComponent",
                 parameters = {                  
-                    name = "exitbutton",
+                    name = "exitbutton3",
                     font = "Mario",
                     caption = "EXIT",
                     zOrder = 3,
@@ -23,6 +23,36 @@ Entities={
             },
             {
                 name = "ExitButtonComponent",
+                parameters = {  
+                                  
+                }
+            }
+        }
+    },
+    {
+        name = "MenuButton2",
+        components = {           
+            {
+                name = "UITransformComponent",
+                parameters = {                  
+                    position = {0.4, 0.5},
+                    scale = {0.2, 0.1},
+                    hidden = false     
+                }
+            },        
+            {
+                name = "UITextComponent",
+                parameters = {                  
+                    name = "menubutton2",
+                    font = "Mario",
+                    caption = "MENU",
+                    zOrder = 3,
+                    charHeight = 0.1,
+                    color = {1.0,0.0,0.0} 
+                }
+            },
+            {
+                name = "MenuButtonComponent",
                 parameters = {  
                                   
                 }
