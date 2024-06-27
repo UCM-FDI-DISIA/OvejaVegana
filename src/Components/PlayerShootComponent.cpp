@@ -5,6 +5,7 @@
 #include "SceneManager.h"
 #include "Scene.h"
 #include "Entity.h"
+#include "SmokeEffect.h"
 
 OvejaVegana::PlayerShootComponent::PlayerShootComponent() {
 
@@ -20,14 +21,14 @@ std::pair<bool, std::string> OvejaVegana::PlayerShootComponent::InitComponent() 
     if (this->my_audio == nullptr) {
         return { false, "AudioSourceComponent isn't in this entity, ERROR from PlayerShootComponent" };
     }
-    
+
     return { true, "PlayerShootComponent created correctly" };
 }
 
 void OvejaVegana::PlayerShootComponent::Update(const double& dt) {
 }
 
-void OvejaVegana::PlayerShootComponent::Shoot(VeryReal::Vector3 shootDirection){
+void OvejaVegana::PlayerShootComponent::Shoot(VeryReal::Vector3 shootDirection) {
     // Crea un prefab de la bala
     VeryReal::Entity* bala = VeryReal::SceneManager::Instance()->GetActiveScene()->CreatePrefab("PrefabBala", "bala" + std::to_string(numB));
     if (!bala) {
@@ -51,5 +52,19 @@ void OvejaVegana::PlayerShootComponent::Shoot(VeryReal::Vector3 shootDirection){
         bala_rigidbody->SetVelocityLinear(bulletVelocity);
     }
     my_audio->Play();
+    CreateSmokeEffect(my_transform->GetPosition());
     numB++;
+}
+
+void OvejaVegana::PlayerShootComponent::CreateSmokeEffect(const VeryReal::Vector3& position) {
+    VeryReal::Entity* smoke = VeryReal::SceneManager::Instance()->GetActiveScene()->CreatePrefab("PrefabSmoke", "smoke" + std::to_string(numB));
+    if (!smoke) {
+        std::cout << "Failed to create smoke effect\n";
+        return;
+    }
+
+    VeryReal::SmokeEffect* smokeEffect = smoke->GetComponent<VeryReal::SmokeEffect>();
+    if (smokeEffect) {
+        smokeEffect->InitComponent("HumoEstela", "SmokeEffect",  position, VeryReal::Vector3(1, 1, 1), VeryReal::Vector4(0.5, 0.5, 0.5, 1), 0.5, 50);
+    }
 }

@@ -1,4 +1,4 @@
-Prefabs={
+Prefabs = {
     {
         name = "PrefabBala",
         components = {
@@ -43,7 +43,6 @@ Prefabs={
                 parameters = {
                 }
             }
-            
         }
     },
     {
@@ -104,52 +103,30 @@ Prefabs={
                 }
             }        
         }
-    },  
-    -- {   name = "PrefabCuracion",
-    --     components = {
-    --         {
-    --             name = "TransformComponent",
-    --             parameters = {  
-    --                 a = 0,
-    --                 position = { 0, 1000, 400},
-    --                 rotation = {0, 0, 0},
-    --                 scale = {20, 20, 20}                    
-    --             }
-    --         },
-    --         {
-    --             name = "HealComponent",
-    --             parameters = {
-    --                 amount = 1
-    --             }
-    --         },
-    --         {
-    --             name = "ColliderComponent",
-    --             parameters = {
-    --             }
-    --         },
-    --         {
-    --             name = "RigidBodyComponent",
-    --             parameters = {
-    --                 shapeType = 1,
-    --                 movementType = 1,
-    --                 size = {10, 10, 10},
-    --                 mass = 1.0,
-    --                 friction = 1.0,
-    --                 restitution = 1.0,
-    --                 trigger = true,
-    --                 mask = 1,
-    --                 group = 2
-    --             }
-    --         },
-    --         {
-    --             name = "MeshRenderComponent",
-    --             parameters = {                  
-    --                 modelname = "Medkit.mesh",
-    --                 entityname= "cura",
-    --                 materialname = "MedkitMaterial",
-    --                 isstatic = false
-    --             }
-    --         }
-    --     }
-    -- }
+    },
+    {
+        name = "PrefabSmoke",
+        components = {
+            {
+                name = "TransformComponent",
+                parameters = {          
+                    position = {0, 0, 0},
+                    rotation = {0, 0, 0},
+                    scale = {1, 1, 1}
+                }
+            },
+            {
+                name = "SmokeEffect",
+                parameters = {
+                    particleSystemName = "HumoDisparo",
+                    templateName = "SmokeEffect",
+                    position = {0, 0, 0},
+                    scale = {1, 1, 1},
+                    color = {1, 1, 1, 1},
+                    duration = 0.5,
+                    density = 50
+                }
+            }   
+        }
+    }
 }
