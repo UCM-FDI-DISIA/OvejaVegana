@@ -367,7 +367,7 @@ Entities={
                 parameters = {                  
                     modelname = "Medkit.mesh",
                     entityname= "cura",
-                    materialname = "",
+                    materialname = "MedkitMaterial4",
                     isstatic = false
                 }
             }
