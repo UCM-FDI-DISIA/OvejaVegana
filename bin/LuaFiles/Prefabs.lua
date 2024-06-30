@@ -112,7 +112,16 @@ Prefabs = {
                 parameters = {          
                     position = {0, 0, 0},
                     rotation = {0, 0, 0},
-                    scale = {1, 1, 1}
+                    scale = {15, 15, 15}
+                }
+            },
+            {
+                name = "MeshRenderComponent",
+                parameters = {                  
+                    isstatic = false,
+                    modelname = "Bala.mesh",
+                    entityname= "Humos",
+                    materialname = "SmokeEffect_T"
                 }
             },
             {
@@ -121,12 +130,13 @@ Prefabs = {
                     particleSystemName = "HumoDisparo",
                     templateName = "SmokeEffect",
                     position = {0, 0, 0},
-                    scale = {1, 1, 1},
+                    scale = {100, 100, 100},
                     color = {1, 1, 1, 1},
                     duration = 0.5,
                     density = 50
                 }
-            }   
+            }
+
         }
     }
 }

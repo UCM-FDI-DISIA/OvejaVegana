@@ -1,6 +1,6 @@
 particle_system SmokeEffect
 {
-    material SmokeEffect
+    material SmokeEffect_T
     particle_width 75
     particle_height 75
     cull_each false

@@ -1,4 +1,4 @@
-material SmokeEffect
+material SmokeEffect_T
 {
     technique
     {

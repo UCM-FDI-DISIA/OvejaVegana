@@ -6,10 +6,9 @@
 #include "Scene.h"
 #include "Entity.h"
 #include "SmokeEffect.h"
+#include <iostream> // Para los logs
 
-OvejaVegana::PlayerShootComponent::PlayerShootComponent() {
-
-}
+OvejaVegana::PlayerShootComponent::PlayerShootComponent() { }
 
 std::pair<bool, std::string> OvejaVegana::PlayerShootComponent::InitComponent() {
     my_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
@@ -21,7 +20,10 @@ std::pair<bool, std::string> OvejaVegana::PlayerShootComponent::InitComponent() 
     if (this->my_audio == nullptr) {
         return { false, "AudioSourceComponent isn't in this entity, ERROR from PlayerShootComponent" };
     }
-
+    my_smoke = this->GetEntity()->GetComponent<VeryReal::SmokeEffect>();
+    if (this->my_smoke == nullptr) {
+        return { false, "SmokeEffect isn't in this entity, ERROR from PlayerShootComponent" };
+    }
     return { true, "PlayerShootComponent created correctly" };
 }
 
@@ -52,19 +54,22 @@ void OvejaVegana::PlayerShootComponent::Shoot(VeryReal::Vector3 shootDirection) 
         bala_rigidbody->SetVelocityLinear(bulletVelocity);
     }
     my_audio->Play();
-    CreateSmokeEffect(my_transform->GetPosition());
     numB++;
+
+    // Crear el efecto de humo
+    CreateSmokeEffect(bala_transform->GetPosition(), numB);
 }
 
-void OvejaVegana::PlayerShootComponent::CreateSmokeEffect(const VeryReal::Vector3& position) {
+void OvejaVegana::PlayerShootComponent::CreateSmokeEffect(const VeryReal::Vector3& position, int numB) {
+    std::cout << "Creating SmokeEffect at Position: " << position.GetX() << ", " << position.GetY() << ", " << position.GetZ() << std::endl;
     VeryReal::Entity* smoke = VeryReal::SceneManager::Instance()->GetActiveScene()->CreatePrefab("PrefabSmoke", "smoke" + std::to_string(numB));
     if (!smoke) {
-        std::cout << "Failed to create smoke effect\n";
+        std::cout << "Failed to create smoke\n";
         return;
     }
 
-    VeryReal::SmokeEffect* smokeEffect = smoke->GetComponent<VeryReal::SmokeEffect>();
-    if (smokeEffect) {
-        smokeEffect->InitComponent("HumoEstela", "SmokeEffect",  position, VeryReal::Vector3(1, 1, 1), VeryReal::Vector4(0.5, 0.5, 0.5, 1), 0.5, 50);
+    VeryReal::TransformComponent* smoke_transform = smoke->GetComponent<VeryReal::TransformComponent>();
+    if (smoke_transform) {
+        smoke_transform->SetPosition(position);
     }
 }

@@ -22,15 +22,16 @@ namespace OvejaVegana {
         VeryReal::TransformComponent* my_transform = nullptr;
         VeryReal::RigidBodyComponent* my_rigidbody = nullptr;
         VeryReal::AudioSourceComponent* my_audio = nullptr;
+        VeryReal::SmokeEffect* my_smoke = nullptr;
         int numB = 0;
 
-        void CreateSmokeEffect(const VeryReal::Vector3& position);
 
     public:
         PlayerShootComponent();
         virtual std::pair<bool, std::string> InitComponent();
         virtual void Update(const double& dt);
         void Shoot(VeryReal::Vector3 shootDirection);
+        void CreateSmokeEffect(const VeryReal::Vector3& position, int numB);
     };
 
 }
