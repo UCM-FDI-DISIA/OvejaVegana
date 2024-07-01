@@ -7,9 +7,7 @@
 #include "Entity.h"
 #include <SmokeComponent.h>
 
-OvejaVegana::PlayerShootComponent::PlayerShootComponent() {
-
-}
+OvejaVegana::PlayerShootComponent::PlayerShootComponent() {}
 
 std::pair<bool, std::string> OvejaVegana::PlayerShootComponent::InitComponent() {
     my_transform = this->GetEntity()->GetComponent<VeryReal::TransformComponent>();
@@ -21,14 +19,13 @@ std::pair<bool, std::string> OvejaVegana::PlayerShootComponent::InitComponent() 
     if (this->my_audio == nullptr) {
         return { false, "AudioSourceComponent isn't in this entity, ERROR from PlayerShootComponent" };
     }
-    
+
     return { true, "PlayerShootComponent created correctly" };
 }
 
-void OvejaVegana::PlayerShootComponent::Update(const double& dt) {
-}
+void OvejaVegana::PlayerShootComponent::Update(const double& dt) {}
 
-void OvejaVegana::PlayerShootComponent::Shoot(VeryReal::Vector3 shootDirection){
+void OvejaVegana::PlayerShootComponent::Shoot(VeryReal::Vector3 shootDirection) {
     // Crea un prefab de la bala
     VeryReal::Entity* bala = VeryReal::SceneManager::Instance()->GetActiveScene()->CreatePrefab("PrefabBala", "bala" + std::to_string(numB));
     if (!bala) {
@@ -40,28 +37,20 @@ void OvejaVegana::PlayerShootComponent::Shoot(VeryReal::Vector3 shootDirection){
     VeryReal::TransformComponent* bala_transform = bala->GetComponent<VeryReal::TransformComponent>();
     VeryReal::RigidBodyComponent* bala_rigidbody = bala->GetComponent<VeryReal::RigidBodyComponent>();
     if (bala_rigidbody != nullptr && bala_transform != nullptr) {
-        // Calcula la rotación basada en la dirección de disparo
-        float angle = std::atan2(shootDirection.GetY(), shootDirection.GetX()); // Ángulo en radianes
-        angle = angle * (180.0 / 3.141592); // Convertir a grados
-
         bala_transform->SetPosition(my_transform->GetPosition());
         VeryReal::Vector3 bulletVelocity = shootDirection * 100.0f; // Ajusta la velocidad de la bala según sea necesario
 
-        // Si el componente RigidBody está presente, configura también su posición y velocidad
         bala_rigidbody->SetPosition(my_transform->GetPosition());
         bala_rigidbody->SetVelocityLinear(bulletVelocity);
     }
-    // Create smoke effect
-    VeryReal::Entity* smoke = VeryReal::SceneManager::Instance()->GetActiveScene()->CreatePrefab("PrefabSmoke", "smoke" + std::to_string(numB));
-    if (smoke) {
-        VeryReal::TransformComponent* smoke_transform = smoke->GetComponent<VeryReal::TransformComponent>();
-        smoke->GetComponent<OvejaVegana::SmokeComponent>();
-        if (smoke_transform) {
-            smoke_transform->SetPosition(bala_transform->GetPosition());
-        }
+
+    // Crear el efecto de humo en la dirección del disparo usando CreateSmokeEffect
+    OvejaVegana::SmokeComponent* smoke_component = bala->GetComponent<OvejaVegana::SmokeComponent>();
+    if (smoke_component) {
+        smoke_component->CreateSmokeEffect(bala_transform->GetPosition());
     }
     else {
-        std::cout << "Failed to create smoke\n";
+        std::cout << "SmokeComponent not found\n";
     }
 
     my_audio->Play();

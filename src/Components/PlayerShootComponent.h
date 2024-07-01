@@ -11,16 +11,20 @@ namespace VeryReal {
     class TransformComponent;
     class RigidBodyComponent;
     class AudioSourceComponent;
+    class SmokeEffect;
 }
 
 #pragma warning(disable : 4251)
 
 namespace OvejaVegana {
 
+    class SmokeComponent;
+
     class OVEJAVEGANA_API PlayerShootComponent : public VeryReal::Component {
     private:
         VeryReal::TransformComponent* my_transform = nullptr;
         VeryReal::RigidBodyComponent* my_rigidbody = nullptr;
+        VeryReal::Entity* my_smoke = nullptr;
         VeryReal::AudioSourceComponent* my_audio = nullptr;
         int numB = 0;
 
