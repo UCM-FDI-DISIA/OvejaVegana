@@ -123,8 +123,7 @@ Entities={
                        volume = 1.5,
                        groupchannel = "music"
                     }
-            },
-                
+            },            
             {
                 name = "PlayerShootComponent",
                 parameters ={
@@ -164,7 +163,7 @@ Entities={
                     isstatic = false,
                     modelname = "mapa1.mesh",
                     entityname= "Mundo",
-                    materialname = "Grass"
+                    materialname = ""
                 }
             },
             {
@@ -367,7 +366,7 @@ Entities={
                 parameters = {                  
                     modelname = "Medkit.mesh",
                     entityname= "cura",
-                    materialname = "MedkitMaterial4",
+                    materialname = "",
                     isstatic = false
                 }
             }
@@ -490,29 +489,3 @@ Entities={
         }
     }
 }
-
-
--- name = "SonidoHarmEnemy",
---         components = {
---             {
---             name = "TransformComponent",
---             parameters = {  
---              a = 0,
---                  position = {0,0,0},
---                  rotation = {0, 0, 0},
---                  scale = {0, 0, 0}                   
---            },
---            {
---                name = "AudioSourceComponent", 
---                parameters ={
---                    name = "audioHarmENemy1",
---                    path = "sonido_muerte_enemigo.mp3",
---                    onstart = false,
---                    loop = false,
---                    threed = false,
---                    volume = 1.5,
---                    groupchannel = "effects"
---                }
---            }
---         }
---     }
