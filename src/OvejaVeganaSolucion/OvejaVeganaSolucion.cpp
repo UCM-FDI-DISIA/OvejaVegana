@@ -26,6 +26,7 @@
 #include "CreatorHealComponent.h"
 #include "CreatorBulletComponent.h"
 #include "CreatorEnemyWaveComponent.h"
+#include "CreatorSmokeComponent.h"
 using namespace VeryReal;
 
 extern "C"  //Para que al exportar la función de las DLLs los nombres no se contaminen (name mangling), esto es usado por el compilador para permitir la sobrecarga de funciones
@@ -50,6 +51,7 @@ extern "C"  //Para que al exportar la función de las DLLs los nombres no se con
         VeryReal::Creator::Instance()->AddCreator("HealComponent", new OvejaVegana::CreatorHealComponent());
         VeryReal::Creator::Instance()->AddCreator("BulletComponent", new OvejaVegana::CreatorBulletComponent());
         VeryReal::Creator::Instance()->AddCreator("EnemyWaveComponent", new OvejaVegana::CreatorEnemyWaveComponent());
+        VeryReal::Creator::Instance()->AddCreator("SmokeComponent", new OvejaVegana::CreatorSmokeComponent());
         //VeryReal::ScriptManager::Instance()->ExposeFunctionsToLua("Arboles", OvejaVegana::GameManager::Instance()->CreateRandomTrees);
         //VeryReal::ScriptManager::Instance()->ReadFunction();
         return OvejaVegana::GameManager::Instance()->Start();

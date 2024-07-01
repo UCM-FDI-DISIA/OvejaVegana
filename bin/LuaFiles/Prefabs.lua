@@ -111,8 +111,8 @@ Prefabs = {
                 name = "TransformComponent",
                 parameters = {          
                     position = {0, 0, 0},
-                    rotation = {0, 0, 0},
-                    scale = {15, 15, 15}
+                    rotation = {0, 90, 0},
+                    scale = {5, 5, 5}
                 }
             },
             {
@@ -134,6 +134,11 @@ Prefabs = {
                     color = {1, 1, 1, 1},
                     duration = 0.5,
                     density = 50
+                }
+            },
+            {
+                name = "SmokeComponent",
+                parameters = {
                 }
             }
 
