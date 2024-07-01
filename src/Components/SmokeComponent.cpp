@@ -50,6 +50,7 @@ void OvejaVegana::SmokeComponent::CreateSmokeEffect(const VeryReal::Vector3& pos
         VeryReal::SmokeEffect* smokeEffect = smokeEntity->GetComponent<VeryReal::SmokeEffect>();
         if (smokeEffect) {
             smokeEffect->setEncendido();
+            smokeEffect->setPosition(position);
             smoke_transform->SetPosition(position);
             remainingDuration = duration;
         }
